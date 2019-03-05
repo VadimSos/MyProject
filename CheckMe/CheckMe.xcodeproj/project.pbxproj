@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
+		3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F91C265222EF19D0033AD1F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C25F222E40300033AD1F /* Login.storyboard */,
+				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
+				3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3FF79DAE22287972002DDCEB = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +82,8 @@
 				3FF79DCD2228855D002DDCEB /* SupportFiles */,
 				3FF79DBC22287972002DDCEB /* ViewController.swift */,
 				3FF79DBE22287972002DDCEB /* Main.storyboard */,
-				3F91C25F222E40300033AD1F /* Login.storyboard */,
-				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
 				3FF79DCE22290195002DDCEB /* Favorites.storyboard */,
+				3F91C265222EF19D0033AD1F /* Login */,
 				3FF79DC622287974002DDCEB /* Info.plist */,
 			);
 			path = CheckMe;
@@ -117,6 +128,7 @@
 				3FF79DB422287972002DDCEB /* Frameworks */,
 				3FF79DB522287972002DDCEB /* Resources */,
 				3FF79DCC22287CFB002DDCEB /* ShellScript */,
+				915DCDFAE36E13A1205F6481 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +227,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		915DCDFAE36E13A1205F6481 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -222,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,

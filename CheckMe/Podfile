@@ -6,5 +6,6 @@ target 'CheckMe' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'Locksmith'
 
 end
