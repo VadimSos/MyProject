@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
+		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
 		3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC122287974002DDCEB /* Assets.xcassets */; };
 		3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */; };
+		3FF79DCF22290195002DDCEB /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DCE22290195002DDCEB /* Favorites.storyboard */; };
 		A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +28,7 @@
 		3FF79DC122287974002DDCEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FF79DC422287974002DDCEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF79DC622287974002DDCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF79DCE22290195002DDCEB /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		954C181D7A3E11715F79FA96 /* Pods-CheckMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.release.xcconfig"; sourceTree = "<group>"; };
 		A114A2BC7F11C89772AC2BB2 /* Pods-CheckMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.debug.xcconfig"; sourceTree = "<group>"; };
 		F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +70,9 @@
 				3FF79DCD2228855D002DDCEB /* SupportFiles */,
 				3FF79DBC22287972002DDCEB /* ViewController.swift */,
 				3FF79DBE22287972002DDCEB /* Main.storyboard */,
+				3F91C25F222E40300033AD1F /* Login.storyboard */,
+				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
+				3FF79DCE22290195002DDCEB /* Favorites.storyboard */,
 				3FF79DC622287974002DDCEB /* Info.plist */,
 			);
 			path = CheckMe;
@@ -158,6 +167,8 @@
 			files = (
 				3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */,
 				3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */,
+				3FF79DCF22290195002DDCEB /* Favorites.storyboard in Resources */,
+				3F91C260222E40300033AD1F /* Login.storyboard in Resources */,
 				3FF79DC022287972002DDCEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,
 			);

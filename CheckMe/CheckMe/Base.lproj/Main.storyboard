@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iba-cE-BdK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,83 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CheckMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfR-OS-ukb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="WET-Ti-wuO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ync-L2-Ro6">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xqX-7E-dCz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xqX-7E-dCz" secondAttribute="bottom" id="6WZ-pc-wAg"/>
+                                    <constraint firstAttribute="trailing" secondItem="xqX-7E-dCz" secondAttribute="trailing" id="9K6-rh-zIR"/>
+                                    <constraint firstItem="xqX-7E-dCz" firstAttribute="leading" secondItem="ync-L2-Ro6" secondAttribute="leading" id="iXg-Mm-qub"/>
+                                    <constraint firstItem="xqX-7E-dCz" firstAttribute="top" secondItem="ync-L2-Ro6" secondAttribute="top" id="mmq-Le-6bu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ync-L2-Ro6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="88C-eU-Lk3"/>
+                            <constraint firstItem="gfR-OS-ukb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AyF-JN-Ek9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ync-L2-Ro6" secondAttribute="bottom" id="I85-zC-CTs"/>
+                            <constraint firstItem="gfR-OS-ukb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IM5-5m-gXf"/>
+                            <constraint firstItem="gfR-OS-ukb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LOU-P7-JHh"/>
+                            <constraint firstItem="ync-L2-Ro6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OFI-gX-HhX"/>
+                            <constraint firstItem="ync-L2-Ro6" firstAttribute="top" secondItem="gfR-OS-ukb" secondAttribute="bottom" id="jhD-KM-FeU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="Home_page" selectedImage="Home_page" id="zxN-6q-ha9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1009" y="123"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="mcj-b5-fl3">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Favorites" storyboardName="Favorites" id="ro7-ni-PQJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4Tc-PG-rfD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afg-us-9Zo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="580"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="45m-AZ-ZUB">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iba-cE-BdK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q8G-9d-UlP">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FLj-a6-0E7"/>
+                        <segue destination="ro7-ni-PQJ" kind="relationship" relationship="viewControllers" id="CYM-bC-TAn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9Y-F0-ese" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home_page" width="30" height="30"/>
+    </resources>
 </document>

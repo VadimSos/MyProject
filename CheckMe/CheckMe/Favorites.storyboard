@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PeH-rK-YBP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="o1O-4B-kkq">
+            <objects>
+                <viewController storyboardIdentifier="Favorites" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PeH-rK-YBP" customClass="ViewController" customModule="CheckMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WE9-Vw-Nuh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bT4-R7-0q0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="3Pa-TW-YkE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbY-Ch-Mtu">
+                                <rect key="frame" x="0.0" y="70" width="375" height="478"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ld-RI-6yc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="478"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0Ld-RI-6yc" firstAttribute="top" secondItem="VbY-Ch-Mtu" secondAttribute="top" id="86p-Zh-q0U"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Ld-RI-6yc" secondAttribute="bottom" id="PZx-Np-qHx"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Ld-RI-6yc" secondAttribute="trailing" id="blF-ff-cNc"/>
+                                    <constraint firstItem="0Ld-RI-6yc" firstAttribute="leading" secondItem="VbY-Ch-Mtu" secondAttribute="leading" id="rQM-s6-AXZ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-QE-F4Y">
+                                <rect key="frame" x="0.0" y="548" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ubU-77-HXN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MXY-QE-F4Y" firstAttribute="trailing" secondItem="qaw-Fv-gof" secondAttribute="trailing" id="102-9e-M1H"/>
+                            <constraint firstItem="VbY-Ch-Mtu" firstAttribute="trailing" secondItem="qaw-Fv-gof" secondAttribute="trailing" id="Ooe-XQ-uaH"/>
+                            <constraint firstItem="bT4-R7-0q0" firstAttribute="top" secondItem="WE9-Vw-Nuh" secondAttribute="top" id="ROd-fr-d3v"/>
+                            <constraint firstItem="bT4-R7-0q0" firstAttribute="trailing" secondItem="qaw-Fv-gof" secondAttribute="trailing" id="Snp-dD-DE6"/>
+                            <constraint firstItem="MXY-QE-F4Y" firstAttribute="leading" secondItem="qaw-Fv-gof" secondAttribute="leading" id="VLm-Wb-Htt"/>
+                            <constraint firstItem="MXY-QE-F4Y" firstAttribute="top" secondItem="VbY-Ch-Mtu" secondAttribute="bottom" id="Zw3-CT-Gse"/>
+                            <constraint firstItem="VbY-Ch-Mtu" firstAttribute="top" secondItem="bT4-R7-0q0" secondAttribute="bottom" id="gSS-5e-M4C"/>
+                            <constraint firstItem="bT4-R7-0q0" firstAttribute="leading" secondItem="qaw-Fv-gof" secondAttribute="leading" id="kiB-yv-rI2"/>
+                            <constraint firstItem="MXY-QE-F4Y" firstAttribute="bottom" secondItem="qaw-Fv-gof" secondAttribute="bottom" id="oKt-tC-fEl"/>
+                            <constraint firstItem="VbY-Ch-Mtu" firstAttribute="leading" secondItem="qaw-Fv-gof" secondAttribute="leading" id="pgv-yj-JZg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qaw-Fv-gof"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Like_page" id="QE1-kE-uDx">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fDE-Je-L3b" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Like_page" width="32" height="32"/>
+    </resources>
+</document>
