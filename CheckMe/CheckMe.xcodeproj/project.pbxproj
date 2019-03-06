@@ -10,6 +10,7 @@
 		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */; };
+		3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C267222F90D40033AD1F /* RoundedUIElements.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3F91C267222F90D40033AD1F /* RoundedUIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIElements.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		3F91C266222F90A40033AD1F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C267222F90D40033AD1F /* RoundedUIElements.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		3FF79DAE22287972002DDCEB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		3FF79DB922287972002DDCEB /* CheckMe */ = {
 			isa = PBXGroup;
 			children = (
+				3F91C266222F90A40033AD1F /* UI */,
 				3FF79DCD2228855D002DDCEB /* SupportFiles */,
 				3FF79DBC22287972002DDCEB /* ViewController.swift */,
 				3FF79DBE22287972002DDCEB /* Main.storyboard */,
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */,
+				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,

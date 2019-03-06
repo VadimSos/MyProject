@@ -9,6 +9,10 @@
 import UIKit
 import Locksmith
 
+protocol  CreateAccountViewControllerDElegate: class {
+	func swithToLoginVC(mail: String)
+}
+
 class CreateAccountViewController: UIViewController {
 
 	// MARK: Outlets
@@ -22,6 +26,7 @@ class CreateAccountViewController: UIViewController {
 	let userMail = "MyMail"
 	let userAccount = "MyAccount"
 	let userPassword = "MyPassword"
+	weak var delegate: CreateAccountViewControllerDElegate?
 
 	// MARK: Lifecycle
 
@@ -33,7 +38,15 @@ class CreateAccountViewController: UIViewController {
 	// MARK: Actions
 
 	@IBAction func createAccountButtonDidTap(_ sender: UIButton) {
-			saveAccount()
+		saveAccount()
+		delegateDataToLoginVC()
+	}
+
+	func delegateDataToLoginVC() {
+		if let delegateMail = passowordTextField.text {
+			delegate?.swithToLoginVC(mail: delegateMail)
+			dismiss(animated: true, completion: nil)
+		}
 	}
 
 	func saveAccount() {

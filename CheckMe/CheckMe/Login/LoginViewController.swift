@@ -7,22 +7,41 @@
 //
 
 import UIKit
+import Locksmith
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, CreateAccountViewControllerDElegate {
+
+	// MARK: Outlets
+
+	@IBOutlet weak var mailTextField: UITextField!
+
+	// MAKR: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
-    /*
-    // MARK: - Navigation
+	override func viewWillAppear(_ animated: Bool) {
+		let login = UserDefaults.standard.string(forKey: "MyMail")
+		print(login ?? "Mail do not saved")
+		let password = Locksmith.loadDataForUserAccount(userAccount: "MyAccount")
+		print(password ?? "Password do not saved")
+	}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "createAccount" {
+			guard let destinationVC = segue.destination as? CreateAccountViewController else {
+				return
+			}
+			destinationVC.delegate = self
+		}
+
+	}
+
+	// MARK: Actions
+
+	func swithToLoginVC(mail: String) {
+		mailTextField.text = mail
+	}
 
 }
