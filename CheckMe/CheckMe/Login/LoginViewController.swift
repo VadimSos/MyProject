@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	// MARK: Outlets
 
 	@IBOutlet weak var mailTextField: UITextField!
+	@IBOutlet weak var passwordTextField: UITextField!
 
 	// MAKR: Lifecycle
 
@@ -24,7 +25,7 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	override func viewWillAppear(_ animated: Bool) {
 		let login = UserDefaults.standard.string(forKey: "MyMail")
 		print(login ?? "Mail do not saved")
-		let password = Locksmith.loadDataForUserAccount(userAccount: "MyAccount")
+		let password = Locksmith.loadDataForUserAccount(userAccount: "MyPassword")
 		print(password ?? "Password do not saved")
 	}
 
@@ -40,8 +41,64 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 
 	// MARK: Actions
 
+	@IBAction func loginButtonDidTap(_ sender: UIButton) {
+		if checkDataIsEmpty() {
+			doLogin()
+		}
+	}
+
 	func swithToLoginVC(mail: String) {
 		mailTextField.text = mail
+	}
+
+	func switchToMainVC() {
+		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
+		if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+			appDelegate.window?.rootViewController = loginVC
+		}
+	}
+
+	func doLogin() {
+		if mailTextField.text == UserDefaults.standard.string(forKey: "MyMail") {
+			if let saveData = Locksmith.loadDataForUserAccount(userAccount: "MyPassword") {
+				if passwordTextField.text == (saveData["MyAccount"] as? String) {
+					switchToMainVC()
+				} else {
+					showAlertDataIsWrong()
+				}
+			}
+		}
+	}
+
+	func checkDataIsEmpty() -> Bool {
+		let result = false
+		if let mail = mailTextField.text {
+			if mail.textMailIsEmpty(text: mail) {
+				showAlertDataIsEmpty()
+			} else {
+				result == true
+			}
+		}
+
+		if let password = passwordTextField.text {
+			if password.textPasswordIsEmpty(text: password) {
+				showAlertDataIsWrong()
+			} else {
+				result == true
+			}
+		}
+		return result
+	}
+
+	// MAKR: Alerts
+
+	func showAlertDataIsEmpty() {
+		UIAlertController.showError(message: NSLocalizedString("Data is emoty", comment: ""), from: self, with: .cancel)
+	}
+
+	func showAlertDataIsWrong() {
+		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""), from: self, with: .cancel)
 	}
 
 }

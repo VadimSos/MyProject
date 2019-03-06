@@ -23,7 +23,7 @@ class CreateAccountViewController: UIViewController {
 
 	// MARK: Variables/Constants
 
-	let userMail = "MyMail"
+	private let userMail = "MyMail"
 	let userAccount = "MyAccount"
 	let userPassword = "MyPassword"
 	weak var delegate: CreateAccountViewControllerDElegate?
@@ -38,67 +38,64 @@ class CreateAccountViewController: UIViewController {
 	// MARK: Actions
 
 	@IBAction func createAccountButtonDidTap(_ sender: UIButton) {
-		saveAccount()
-		delegateDataToLoginVC()
+		if saveAccount() {
+			delegateDataToLoginVC()
+		}
 	}
 
 	func delegateDataToLoginVC() {
-		if let delegateMail = passowordTextField.text {
+		if let delegateMail = mailTextField.text {
 			delegate?.swithToLoginVC(mail: delegateMail)
 			dismiss(animated: true, completion: nil)
 		}
 	}
 
-	func saveAccount() {
-		if textMailIsEmpty() {
-			showAlertIfDataIsEmpty()
-		} else {
-			if let mailExist = mailTextField.text?.isValidLogin(), mailExist {
-				saveMail()
+	func saveAccount() -> Bool {
+		var result = false
+		if let mail = mailTextField.text {
+			if mail.textMailIsEmpty(text: mail) {
+				showAlertIfDataIsEmpty()
 			} else {
-				showAlertIfDataIsIncorrect()
+				if mail.isValidLogin() {
+					saveMail()
+					result = true
+				} else {
+					showAlertIfDataIsIncorrect()
+				}
 			}
 		}
 
-		if textPasswordIsEmpty() {
-			showAlertIfDataIsEmpty()
-		} else {
-			if let dataExist = passowordTextField.text?.isValidPassword(), dataExist, passowordTextField.text == confirmpasswordTextField.text {
-				savePassword()
+		if let password = passowordTextField.text {
+			if password.textPasswordIsEmpty(text: password) {
+				showAlertIfDataIsEmpty()
+				result = false
+			} else {
+				if password.isValidPassword(), passowordTextField.text == confirmpasswordTextField.text {
+					savePassword()
+					result = true
+				} else {
+					showAlertIfDataIsIncorrect()
+					result = false
+				}
 			}
 		}
+
+//		if result {
+//			showAlertDataSavedSuccefully()
+//		}
+		return result
 	}
 
 	func saveMail() {
-		if let inputMail = mailTextField.text, inputMail.count > 0 {
-			UserDefaults.standard.set(inputMail, forKey: "E-mail")
-		}
+			UserDefaults.standard.set(mailTextField.text, forKey: userMail)
 	}
 
 	func savePassword() {
-		if let passData = Locksmith.loadDataForUserAccount(userAccount: userMail), passData[userPassword] != nil {
-			do {
-				try Locksmith.saveData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
-			} catch {
-				print("Password is not saved")
-			}
+		do {
+			try Locksmith.saveData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
+		} catch {
+			print("Password is not saved")
 		}
-	}
-
-	func textMailIsEmpty() -> Bool {
-		var result = false
-		if let login = mailTextField.text, login.count == 0 {
-			result = true
-		}
-		return result
-	}
-
-	func textPasswordIsEmpty() -> Bool {
-		var result = false
-		if let password = passowordTextField.text, password.count == 0 {
-			result = true
-		}
-		return result
 	}
 
 	// MARK: Alerts
@@ -110,30 +107,8 @@ class CreateAccountViewController: UIViewController {
 	func showAlertIfDataIsEmpty() {
 		UIAlertController.showError(message: NSLocalizedString("Empty data", comment: ""), from: self, with: .cancel)
 	}
-}
 
-// MARK: Validation login/password
-
-extension String {
-	func isValidLogin() -> Bool {
-		let mailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-		return NSPredicate(format: "SELF MATCHES %@", mailFormat).evaluate(with: self)
-	}
-
-	func isValidPassword() -> Bool {
-		//Minimum 8 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character
-		let passwordFormat = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
-		let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordFormat).evaluate(with: self)
-		return passwordPredicate
-	}
-}
-
-extension UIAlertController {
-	static func showError(message: String, from viewController: UIViewController, with style: UIAlertAction.Style = .default) {
-
-		let alertController = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: message, preferredStyle: .alert)
-		alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: style, handler: nil))
-
-		viewController.present(alertController, animated: true, completion: nil)
+	func showAlertDataSavedSuccefully() {
+		UIAlertController.showSuccess(message: NSLocalizedString("Saved sucesfully", comment: ""), from: self, with: .cancel)
 	}
 }
