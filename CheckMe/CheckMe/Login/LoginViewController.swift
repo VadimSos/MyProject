@@ -72,12 +72,12 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	}
 
 	func checkDataIsEmpty() -> Bool {
-		let result = false
+		var result = false
 		if let mail = mailTextField.text {
 			if mail.textMailIsEmpty(text: mail) {
 				showAlertDataIsEmpty()
 			} else {
-				result == true
+				result = true
 			}
 		}
 
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 			if password.textPasswordIsEmpty(text: password) {
 				showAlertDataIsWrong()
 			} else {
-				result == true
+				result = true
 			}
 		}
 		return result

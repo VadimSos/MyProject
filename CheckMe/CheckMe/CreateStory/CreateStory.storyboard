@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GAr-Ua-MbT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="cHr-sH-0JG">
+            <objects>
+                <viewController storyboardIdentifier="Favorites" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GAr-Ua-MbT" customClass="ViewController" customModule="CheckMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nzT-f3-hdl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvZ-Zu-GCI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="LLT-I1-g2i"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-rb-VJG">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IJN-eG-qDq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IJN-eG-qDq" secondAttribute="trailing" id="EEt-Vm-7db"/>
+                                    <constraint firstAttribute="bottom" secondItem="IJN-eG-qDq" secondAttribute="bottom" id="Rlh-8u-vnQ"/>
+                                    <constraint firstItem="IJN-eG-qDq" firstAttribute="leading" secondItem="uTZ-rb-VJG" secondAttribute="leading" id="mXu-ZU-nmP"/>
+                                    <constraint firstItem="IJN-eG-qDq" firstAttribute="top" secondItem="uTZ-rb-VJG" secondAttribute="top" id="yEi-9Z-FPI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uTZ-rb-VJG" firstAttribute="leading" secondItem="kbw-Y4-1RQ" secondAttribute="leading" id="4zH-Pe-4ti"/>
+                            <constraint firstItem="BvZ-Zu-GCI" firstAttribute="trailing" secondItem="kbw-Y4-1RQ" secondAttribute="trailing" id="72Y-ce-lym"/>
+                            <constraint firstItem="BvZ-Zu-GCI" firstAttribute="top" secondItem="nzT-f3-hdl" secondAttribute="top" id="DOO-YR-BiQ"/>
+                            <constraint firstItem="uTZ-rb-VJG" firstAttribute="bottom" secondItem="kbw-Y4-1RQ" secondAttribute="bottom" id="IP1-NW-dyP"/>
+                            <constraint firstItem="uTZ-rb-VJG" firstAttribute="top" secondItem="BvZ-Zu-GCI" secondAttribute="bottom" id="bPF-P3-nLc"/>
+                            <constraint firstItem="uTZ-rb-VJG" firstAttribute="trailing" secondItem="kbw-Y4-1RQ" secondAttribute="trailing" id="re6-l9-kG9"/>
+                            <constraint firstItem="BvZ-Zu-GCI" firstAttribute="leading" secondItem="kbw-Y4-1RQ" secondAttribute="leading" id="s7g-Zo-KHp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kbw-Y4-1RQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Add_page" id="Gcn-b2-TKR">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zi4-qR-2vv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.8" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add_page" width="30" height="30"/>
+    </resources>
+</document>
