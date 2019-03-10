@@ -67,7 +67,11 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 				} else {
 					showAlertDataIsWrong()
 				}
+			} else {
+				showAlertDataIsWrong()
 			}
+		} else {
+			showAlertDataIsWrong()
 		}
 	}
 

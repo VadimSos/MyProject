@@ -8,21 +8,28 @@
 
 import UIKit
 
-class CreateStoryViewController: UIViewController {
+class CreateStoryViewController: UIViewController, CategoryTableViewControllerDelegate {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var categoryLabel: UILabel!
+
+	@IBAction func choseCategoryButtonDidTap(_ sender: UIButton) {
+	}
+
+	func didCellPressed(category: String) {
+		categoryLabel.text = category
+	}
+
+	override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "showCategoryVC" {
+			guard let destinationVC = segue.destination as? CategoryTableViewController else {
+				return
+			}
+			destinationVC.delegate = self
+		}
+	}
 
 }
