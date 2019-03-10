@@ -20,6 +20,7 @@
 		3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */; };
 		3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */; };
 		3F91C28A22354C6D0033AD1F /* CreateStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28922354C6D0033AD1F /* CreateStoryTableViewCell.swift */; };
+		3F91C28C223598510033AD1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28B223598510033AD1F /* Color.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryViewController.swift; sourceTree = "<group>"; };
 		3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		3F91C28922354C6D0033AD1F /* CreateStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStoryTableViewCell.swift; sourceTree = "<group>"; };
+		3F91C28B223598510033AD1F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				3F91C267222F90D40033AD1F /* RoundedUIElements.swift */,
 				3F91C26B223038900033AD1F /* UIAlertController.swift */,
+				3F91C28B223598510033AD1F /* Color.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
+				3F91C28C223598510033AD1F /* Color.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */,
