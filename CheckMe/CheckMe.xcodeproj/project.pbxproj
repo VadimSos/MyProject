@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
+<<<<<<< Updated upstream
+=======
+		3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */; };
+		3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C267222F90D40033AD1F /* RoundedUIElements.swift */; };
+		3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26B223038900033AD1F /* UIAlertController.swift */; };
+		3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26D2230451A0033AD1F /* StringExtension.swift */; };
+		3F91C2712230E44F0033AD1F /* CreateStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C2702230E44F0033AD1F /* CreateStory.storyboard */; };
+		3F91C2752230E7200033AD1F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C2742230E7200033AD1F /* Settings.storyboard */; };
+		3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */; };
+		3F91C27A2230E7E80033AD1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2792230E7E80033AD1F /* SettingsViewController.swift */; };
+		3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */; };
+		3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */; };
+		3F91C28A22354C6D0033AD1F /* CreateStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28922354C6D0033AD1F /* CreateStoryTableViewCell.swift */; };
+>>>>>>> Stashed changes
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
@@ -21,6 +35,20 @@
 /* Begin PBXFileReference section */
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3F91C267222F90D40033AD1F /* RoundedUIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIElements.swift; sourceTree = "<group>"; };
+		3F91C26B223038900033AD1F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		3F91C26D2230451A0033AD1F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		3F91C2702230E44F0033AD1F /* CreateStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateStory.storyboard; sourceTree = "<group>"; };
+		3F91C2742230E7200033AD1F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		3F91C2792230E7E80033AD1F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryViewController.swift; sourceTree = "<group>"; };
+		3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		3F91C28922354C6D0033AD1F /* CreateStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStoryTableViewCell.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +74,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< Updated upstream
+=======
+		3F91C265222EF19D0033AD1F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C25F222E40300033AD1F /* Login.storyboard */,
+				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
+				3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3F91C266222F90A40033AD1F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C267222F90D40033AD1F /* RoundedUIElements.swift */,
+				3F91C26B223038900033AD1F /* UIAlertController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3F91C26F223045660033AD1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C26D2230451A0033AD1F /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3F91C2782230E7D40033AD1F /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3FF79DCE22290195002DDCEB /* Favorites.storyboard */,
+				3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		3F91C27B2230E7EC0033AD1F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C2742230E7200033AD1F /* Settings.storyboard */,
+				3F91C2792230E7E80033AD1F /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3F91C27E2230E8020033AD1F /* CreateStory */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C2702230E44F0033AD1F /* CreateStory.storyboard */,
+				3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */,
+				3F91C28922354C6D0033AD1F /* CreateStoryTableViewCell.swift */,
+				3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */,
+			);
+			path = CreateStory;
+			sourceTree = "<group>";
+		};
+		3F91C283223540130033AD1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		3FF79DAE22287972002DDCEB = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +161,12 @@
 		3FF79DB922287972002DDCEB /* CheckMe */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
+=======
+				3F91C283223540130033AD1F /* Model */,
+				3F91C26F223045660033AD1F /* Extensions */,
+				3F91C266222F90A40033AD1F /* UI */,
+>>>>>>> Stashed changes
 				3FF79DCD2228855D002DDCEB /* SupportFiles */,
 				3FF79DBC22287972002DDCEB /* ViewController.swift */,
 				3FF79DBE22287972002DDCEB /* Main.storyboard */,
@@ -222,8 +322,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
+=======
+				3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */,
+				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
+				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
+				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
+				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
+				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
+				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
+				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
+				3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */,
+				3F91C28A22354C6D0033AD1F /* CreateStoryTableViewCell.swift in Sources */,
+>>>>>>> Stashed changes
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
