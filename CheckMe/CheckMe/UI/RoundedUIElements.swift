@@ -14,3 +14,10 @@ class RoundButtons: UIButton {
 		layer.cornerRadius = frame.height * 0.2
 	}
 }
+
+class RoundTextView: UITextView {
+	override func layoutSubviews() {
+		super .layoutSubviews()
+		layer.cornerRadius = frame.height * 0.1
+	}
+}

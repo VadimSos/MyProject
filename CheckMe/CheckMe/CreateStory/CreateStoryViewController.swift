@@ -61,3 +61,19 @@ extension CreateStoryViewController: UITextViewDelegate {
 		}
 	}
 }
+
+extension CreateStoryViewController: UICollectionViewDataSource {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return 8
+	}
+
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? CreateStoryCollectionViewCell else {
+			fatalError()
+		}
+
+		cell.photoImageView.image = UIImage(named: "AddPhotoToCollection")
+		return cell
+	}
+
+}

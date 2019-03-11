@@ -48,7 +48,7 @@ extension CategoryTableViewController: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CreateStoryTableViewCell else {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryTableViewCell else {
 			fatalError("Fatal Error")
 		}
 		cell.textLabel?.text = categoryNames[indexPath.row]

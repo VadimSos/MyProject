@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateStoryTableViewCell: UITableViewCell {
+class CategoryTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var titleLabel: UILabel!
 
