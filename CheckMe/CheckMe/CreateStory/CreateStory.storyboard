@@ -41,16 +41,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVv-iL-kcZ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-Br-PP8">
                                                 <rect key="frame" x="8" y="46" width="359" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="lcf-gd-nSl"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="GAr-Ua-MbT" id="b75-CB-ngh"/>
+                                                </connections>
+                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32B-SX-3lj">
                                                 <rect key="frame" x="8" y="146" width="359" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,18 +76,19 @@
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="56Y-7W-weB"/>
-                                            <constraint firstAttribute="trailing" secondItem="fVv-iL-kcZ" secondAttribute="trailing" constant="8" id="5G8-WD-qRj"/>
                                             <constraint firstAttribute="trailing" secondItem="3xJ-K0-6zK" secondAttribute="trailing" constant="8" id="8Zg-Bd-dGX"/>
-                                            <constraint firstItem="32B-SX-3lj" firstAttribute="top" secondItem="fVv-iL-kcZ" secondAttribute="bottom" constant="40" id="A3j-YF-lrm"/>
                                             <constraint firstItem="3xJ-K0-6zK" firstAttribute="top" secondItem="32B-SX-3lj" secondAttribute="top" id="CxF-eT-6BL"/>
+                                            <constraint firstAttribute="trailing" secondItem="8CU-Br-PP8" secondAttribute="trailing" constant="8" id="Egb-tM-x9f"/>
                                             <constraint firstItem="N86-VU-9r6" firstAttribute="leading" secondItem="YQX-fx-Zwj" secondAttribute="leading" constant="8" id="Ik1-xC-XeN"/>
-                                            <constraint firstItem="fVv-iL-kcZ" firstAttribute="leading" secondItem="YQX-fx-Zwj" secondAttribute="leading" constant="8" id="ROX-YI-nRN"/>
+                                            <constraint firstItem="8CU-Br-PP8" firstAttribute="height" secondItem="N86-VU-9r6" secondAttribute="height" constant="30" id="P5q-ZD-u3o"/>
                                             <constraint firstAttribute="trailing" secondItem="N86-VU-9r6" secondAttribute="trailing" constant="8" id="SWu-Qu-nrA"/>
                                             <constraint firstItem="32B-SX-3lj" firstAttribute="leading" secondItem="YQX-fx-Zwj" secondAttribute="leading" constant="8" id="Wgz-q7-dcP"/>
                                             <constraint firstItem="3xJ-K0-6zK" firstAttribute="bottom" secondItem="32B-SX-3lj" secondAttribute="bottom" id="YeE-TK-aTm"/>
                                             <constraint firstItem="3xJ-K0-6zK" firstAttribute="height" secondItem="32B-SX-3lj" secondAttribute="height" id="dXB-y6-LLf"/>
+                                            <constraint firstItem="8CU-Br-PP8" firstAttribute="top" secondItem="N86-VU-9r6" secondAttribute="bottom" constant="8" id="fwO-wD-f6T"/>
                                             <constraint firstItem="N86-VU-9r6" firstAttribute="top" secondItem="YQX-fx-Zwj" secondAttribute="top" constant="8" id="kkW-Bx-hNE"/>
-                                            <constraint firstItem="fVv-iL-kcZ" firstAttribute="top" secondItem="N86-VU-9r6" secondAttribute="bottom" constant="8" id="lzf-b3-v2A"/>
+                                            <constraint firstItem="8CU-Br-PP8" firstAttribute="leading" secondItem="YQX-fx-Zwj" secondAttribute="leading" constant="8" id="l37-SS-JUn"/>
+                                            <constraint firstItem="32B-SX-3lj" firstAttribute="top" secondItem="8CU-Br-PP8" secondAttribute="bottom" constant="40" id="mfO-MK-4dI"/>
                                             <constraint firstAttribute="trailing" secondItem="32B-SX-3lj" secondAttribute="trailing" constant="8" id="uAc-Tf-9xu"/>
                                         </constraints>
                                     </view>
@@ -141,6 +141,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="categoryLabel" destination="3xJ-K0-6zK" id="cca-Wz-BZP"/>
+                        <outlet property="descriptionTextView" destination="8CU-Br-PP8" id="iHx-dE-f5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zi4-qR-2vv" sceneMemberID="firstResponder"/>

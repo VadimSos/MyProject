@@ -14,13 +14,19 @@ protocol CategoryTableViewControllerDelegate: class {
 
 class CategoryTableViewController: UIViewController {
 
+	// MARK: - Variables
+
 	var categoryNames: [String] = []
 	weak var delegate: CategoryTableViewControllerDelegate?
+
+	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupTableViewData()
 	}
+
+	// MARK: - Actiones
 
 	func setupTableViewData() {
 		let item1 = "Спорт"
@@ -33,6 +39,8 @@ class CategoryTableViewController: UIViewController {
 	}
 
 }
+
+// MARK: - Extensions
 
 extension CategoryTableViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +55,7 @@ extension CategoryTableViewController: UITableViewDataSource {
 		tableView.tableFooterView = UIView(frame: .zero)
 		return cell
 	}
+
 }
 
 extension CategoryTableViewController: UITableViewDelegate {
@@ -55,6 +64,5 @@ extension CategoryTableViewController: UITableViewDelegate {
 		delegate?.didCellPressed(category: category)
 
 		navigationController?.popViewController(animated: true)
-//		print(self.categoryNames[indexPath.row])
 	}
 }

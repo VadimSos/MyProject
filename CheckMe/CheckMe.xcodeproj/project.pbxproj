@@ -120,9 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				3F91C2702230E44F0033AD1F /* CreateStory.storyboard */,
+				3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */,
 				3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */,
 				3F91C28922354C6D0033AD1F /* CreateStoryTableViewCell.swift */,
-				3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */,
 			);
 			path = CreateStory;
 			sourceTree = "<group>";
