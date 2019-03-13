@@ -11,6 +11,7 @@ import Foundation
 // MAKR: Text Characters Match Validation
 
 extension String {
+
 	func isValidLogin() -> Bool {
 		let mailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 		return NSPredicate(format: "SELF MATCHES %@", mailFormat).evaluate(with: self)
@@ -23,14 +24,14 @@ extension String {
 		return passwordPredicate
 	}
 
-	// MAKR: Text Empty Validation
+	// MAKR:- Text Empty Validation
 
-	func textMailIsEmpty(text: String?) -> Bool {
-		var result = false
-		if let login = text, login.count == 0 {
-			result = true
-		}
-		return result
+	func isEmpty() -> Bool {
+		return self.count == 0
+	}
+
+	func textMailIsEmpty() -> Bool {
+		return isEmpty()
 	}
 
 	func textPasswordIsEmpty(text: String?) -> Bool {

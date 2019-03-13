@@ -14,14 +14,14 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 
 	@IBOutlet weak var categoryLabel: UILabel!
 	@IBOutlet weak var descriptionTextView: UITextView!
-	var magnesiumColor = UIColor.init(red: 0.754, green: 0.754, blue: 0.754, alpha: 1.0)
+//	var magnesiumColor = UIColor.init(red: 0.754, green: 0.754, blue: 0.754, alpha: 1.0)
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		descriptionTextView.text = "Description"
-		descriptionTextView.textColor = magnesiumColor
+		descriptionTextView.textColor = .magnezium()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,7 +48,7 @@ extension CreateStoryViewController: UITextViewDelegate {
 	// MARK: - Description edditing
 
 	func textViewDidBeginEditing(_ textView: UITextView) {
-		if textView.textColor == magnesiumColor {
+		if textView.textColor == UIColor.magnezium() {
 			textView.text = nil
 			textView.textColor = UIColor.black
 		}
@@ -57,7 +57,7 @@ extension CreateStoryViewController: UITextViewDelegate {
 	func textViewDidEndEditing(_ textView: UITextView) {
 		if textView.text.isEmpty {
 			textView.text = "Desription"
-			textView.textColor = magnesiumColor
+			textView.textColor = UIColor.magnezium()
 		}
 	}
 }
@@ -75,5 +75,17 @@ extension CreateStoryViewController: UICollectionViewDataSource {
 		cell.photoImageView.image = UIImage(named: "AddPhotoToCollection")
 		return cell
 	}
+}
 
+extension CreateStoryViewController: UICollectionViewDelegate {
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let cell = collectionView.cellForItem(at: indexPath) as? CreateStoryCollectionViewCell else {
+			return
+		}
+		CameraHandler.shared.showActioSheet(vc: self)
+		CameraHandler.shared.imagePickedBlock = { (image) in
+			cell.photoImageView.image = image
+		}
+	}
 }

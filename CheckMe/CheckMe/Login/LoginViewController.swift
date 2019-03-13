@@ -47,6 +47,13 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 		}
 	}
 
+	@IBAction func forgotPasswordDidTap(_ sender: UIButton) {
+		mailTextField.text = UserDefaults.standard.string(forKey: "MyMail")
+		if let passoword = Locksmith.loadDataForUserAccount(userAccount: "MyPassword") {
+			passwordTextField.text = (passoword["MyAccount"] as? String)
+		}
+	}
+
 	func swithToLoginVC(mail: String) {
 		mailTextField.text = mail
 	}
@@ -78,7 +85,7 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	func checkDataIsEmpty() -> Bool {
 		var result = false
 		if let mail = mailTextField.text {
-			if mail.textMailIsEmpty(text: mail) {
+			if mail.textMailIsEmpty() {
 				showAlertDataIsEmpty()
 			} else {
 				result = true

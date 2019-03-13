@@ -65,6 +65,9 @@
                                                 <rect key="frame" x="149" y="114" width="81" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <state key="normal" title="Forgot password"/>
+                                                <connections>
+                                                    <action selector="forgotPasswordDidTap:" destination="djO-2B-gDd" eventType="touchUpInside" id="gFQ-xi-WPp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-l4-xCg" customClass="RoundButtons" customModule="CheckMe" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="170" width="303" height="60"/>

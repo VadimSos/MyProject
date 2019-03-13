@@ -19,12 +19,20 @@ extension UIAlertController {
 		viewController.present(alertController, animated: true, completion: nil)
 	}
 
-	static func showSuccess(message: String, from viewController: UIViewController, with style: UIAlertAction.Style = .default) {
+	static func showSuccess(message: String, from viewController: UIViewController) {
 
-		let alertController = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: message, preferredStyle: .alert)
-		alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: style, handler: nil))
+		showAlert(title: NSLocalizedString("Success", comment: ""),
+				  message: message,
+				  from: viewController)
+	}
+
+	static func showAlert(title: String, message: String, from viewController: UIViewController) {
+
+		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+												style: .default,
+												handler: nil))
 
 		viewController.present(alertController, animated: true, completion: nil)
 	}
-
 }

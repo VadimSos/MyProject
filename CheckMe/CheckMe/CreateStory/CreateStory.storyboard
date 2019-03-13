@@ -37,13 +37,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="sqr-cu-vmS"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-Br-PP8" customClass="RoundTextView" customModule="CheckMe" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="46" width="359" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.7523762583732605" green="0.7523762583732605" blue="0.752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <connections>
@@ -129,6 +129,7 @@
                                         </cells>
                                         <connections>
                                             <outlet property="dataSource" destination="GAr-Ua-MbT" id="Pu8-zH-l9j"/>
+                                            <outlet property="delegate" destination="GAr-Ua-MbT" id="gmm-XQ-a7w"/>
                                         </connections>
                                     </collectionView>
                                 </subviews>

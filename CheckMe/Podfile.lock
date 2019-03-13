@@ -1,20 +1,37 @@
 PODS:
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - GoogleAnalytics (3.17.0)
   - Locksmith (4.0.0)
+  - ReachabilitySwift (4.3.0)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - GoogleAnalytics
   - Locksmith
+  - ReachabilitySwift
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - GoogleAnalytics
     - Locksmith
+    - ReachabilitySwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 2b5cbe64a91c9f3a55069c283003ab674729f5b0
+PODFILE CHECKSUM: a2810213e6cf85a01874b8bda2459c05a8fe0d9d
 
 COCOAPODS: 1.5.3

@@ -53,7 +53,7 @@ class CreateAccountViewController: UIViewController {
 	func saveAccount() -> Bool {
 		var result = false
 		if let mail = mailTextField.text {
-			if mail.textMailIsEmpty(text: mail) {
+			if mail.textMailIsEmpty() {
 				showAlertIfDataIsEmpty()
 			} else {
 				if mail.isValidLogin() {
@@ -109,6 +109,6 @@ class CreateAccountViewController: UIViewController {
 	}
 
 	func showAlertDataSavedSuccefully() {
-		UIAlertController.showSuccess(message: NSLocalizedString("Saved sucesfully", comment: ""), from: self, with: .cancel)
+		UIAlertController.showSuccess(message: NSLocalizedString("Saved sucesfully", comment: ""), from: self)
 	}
 }

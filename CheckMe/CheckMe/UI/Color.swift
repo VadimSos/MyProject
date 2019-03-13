@@ -14,3 +14,10 @@ class ColorLabels: UILabel {
 		self.textColor = UIColor.init(red: 0.275, green: 0.486, blue: 0.141, alpha: 1.0)
 	}
 }
+
+extension UIColor {
+
+	static func magnezium() -> UIColor {
+		return UIColor.init(red: 0.754, green: 0.754, blue: 0.754, alpha: 1.0)
+	}
+}
