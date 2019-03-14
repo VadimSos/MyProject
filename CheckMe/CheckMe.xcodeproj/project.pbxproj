@@ -26,6 +26,12 @@
 		3F91C29322396F450033AD1F /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C29522396F450033AD1F /* File.strings */; };
 		3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C296223983690033AD1F /* SettingsTableViewCell.swift */; };
 		3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */; };
+		3F91C29B223ABDCD0033AD1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91C29A223ABDCD0033AD1F /* CoreData.framework */; };
+		3F91C29F223ABEDF0033AD1F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */; };
+		3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A0223AC4890033AD1F /* Post+CoreDataProperties.swift */; };
+		3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A1223AC4890033AD1F /* Post+CoreDataClass.swift */; };
+		3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */; };
+		3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
@@ -55,6 +61,12 @@
 		3F91C29422396F450033AD1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/File.strings; sourceTree = "<group>"; };
 		3F91C296223983690033AD1F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3F91C29A223ABDCD0033AD1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3F91C2A0223AC4890033AD1F /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3F91C2A1223AC4890033AD1F /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F91C29B223ABDCD0033AD1F /* CoreData.framework in Frameworks */,
 				A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,9 +156,22 @@
 		3F91C283223540130033AD1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F91C29C223ABEC90033AD1F /* Persistance */,
 				3F91C28F223818800033AD1F /* CameraHandler.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3F91C29C223ABEC90033AD1F /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C2A1223AC4890033AD1F /* Post+CoreDataClass.swift */,
+				3F91C2A0223AC4890033AD1F /* Post+CoreDataProperties.swift */,
+				3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */,
+				3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */,
+				3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */,
+			);
+			path = Persistance;
 			sourceTree = "<group>";
 		};
 		3FF79DAE22287972002DDCEB = {
@@ -207,6 +233,7 @@
 		D59F79435B7A610858A7C144 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F91C29A223ABDCD0033AD1F /* CoreData.framework */,
 				F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */,
 			);
 			name = Frameworks;
@@ -360,17 +387,22 @@
 			files = (
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
+				3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */,
 				3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */,
 				3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
+				3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
+				3F91C29F223ABEDF0033AD1F /* Model.xcdatamodeld in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
+				3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
+				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,
 				3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
@@ -586,6 +618,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */,
+			);
+			currentVersion = 3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3FF79DAF22287972002DDCEB /* Project object */;
 }
