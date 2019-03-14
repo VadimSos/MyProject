@@ -20,18 +20,20 @@ class ChangePasswordViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
+		self.view.addGestureRecognizer(tap)
 	}
 
 	// MARK: - Actions
 
-	@IBAction func stopBarButton(_ sender: UIBarButtonItem) {
-	}
+	@IBAction func returnToSettingsVC(_ sender: UIBarButtonItem) {
+		self.performSegue(withIdentifier: "stopBarButton", sender: nil)
+			}
+
 	@IBAction func changePasswordButtonDidTap(_ sender: UIButton) {
 
-		if let saveData = Locksmith.loadDataForUserAccount(userAccount: "MyAccount") {
-			if currentPasswordTextField.text == (saveData["MyAccount"] as? String) && currentPasswordTextField.text == newPasswordTextField.text {
-				savePassword()
-			}
+		if currentPasswordTextField.text == newPasswordTextField.text {
+			savePassword()
 		}
 
 		self.performSegue(withIdentifier: "returnToSettingsVC", sender: nil)
@@ -45,14 +47,7 @@ class ChangePasswordViewController: UIViewController {
 		}
 	}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	@objc func hideKeyBoard(sender: UITapGestureRecognizer? = nil) {
+		view.endEditing(true)
+	}
 }

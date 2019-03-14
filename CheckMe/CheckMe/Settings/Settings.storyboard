@@ -222,7 +222,8 @@
                     <navigationItem key="navigationItem" title="Change password" id="LTb-Up-jur">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="yAg-Gg-IYp">
                             <connections>
-                                <action selector="stopBarButton:" destination="wMl-2T-Zql" id="dty-FM-Eta"/>
+                                <action selector="returnToSettingsVC:" destination="wMl-2T-Zql" id="kUG-FX-MsZ"/>
+                                <segue destination="zCh-x6-qCc" kind="show" identifier="stopBarButton" id="H4p-8n-UsL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -280,6 +281,7 @@
         <image name="Settings_page" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UTQ-Sd-4Ah"/>
+        <segue reference="nPz-1w-iWf"/>
+        <segue reference="H4p-8n-UsL"/>
     </inferredMetricsTieBreakers>
 </document>
