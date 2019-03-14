@@ -10,7 +10,9 @@ import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+	
+
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

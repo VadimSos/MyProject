@@ -25,6 +25,7 @@
 		3F91C290223818800033AD1F /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28F223818800033AD1F /* CameraHandler.swift */; };
 		3F91C29322396F450033AD1F /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C29522396F450033AD1F /* File.strings */; };
 		3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C296223983690033AD1F /* SettingsTableViewCell.swift */; };
+		3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DBD22287972002DDCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBC22287972002DDCEB /* ViewController.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		3F91C28F223818800033AD1F /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		3F91C29422396F450033AD1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/File.strings; sourceTree = "<group>"; };
 		3F91C296223983690033AD1F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBC22287972002DDCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				3F91C2742230E7200033AD1F /* Settings.storyboard */,
 				3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */,
 				3F91C296223983690033AD1F /* SettingsTableViewCell.swift */,
+				3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */,
 				3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
+				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,

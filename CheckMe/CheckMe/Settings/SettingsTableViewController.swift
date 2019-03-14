@@ -55,6 +55,13 @@ extension SettingsTableViewController: UITableViewDataSource {
 		return nil
 	}
 
+	func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		if section < headers.count {
+			return headers[section]
+		}
+		return nil
+	}
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return userData[section].count
 	}
@@ -67,4 +74,11 @@ extension SettingsTableViewController: UITableViewDataSource {
 		return cell
 	}
 
+}
+
+extension SettingsTableViewController: UITableViewDelegate {
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		self.performSegue(withIdentifier: "changePasswordID", sender: self)
+	}
 }

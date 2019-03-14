@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zCh-x6-qCc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wFG-D3-bJI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,16 +63,10 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2bv-Ab-oVZ" id="SXJ-ws-lga">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8Q-7P-Mm4">
-                                                            <rect key="frame" x="15" y="6" width="69" height="30"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" title="Password">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="gls-tx-lXZ" kind="show" identifier="changePasswordID" id="nPz-1w-iWf"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logoutCell" id="pAm-iA-LjC" customClass="SettingsTableViewCell" customModule="CheckMe" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="160" width="375" height="44"/>
@@ -94,6 +88,7 @@
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="zCh-x6-qCc" id="hlU-Rh-AHS"/>
+                                            <outlet property="delegate" destination="zCh-x6-qCc" id="YLA-b2-MaZ"/>
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IA-V2-Om0">
@@ -139,9 +134,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iOz-rL-qIW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Settings_page" id="IS3-5I-Pnv">
-                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="76q-T3-soX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="mailLabel" destination="r8F-VA-LhC" id="AD9-c7-fEw"/>
@@ -149,10 +142,144 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVo-qE-Dmt" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1948" y="122.78860569715144"/>
+        </scene>
+        <!--Change password-->
+        <scene sceneID="Nxy-yv-OTR">
+            <objects>
+                <viewController id="wMl-2T-Zql" customClass="ChangePasswordViewController" customModule="CheckMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NRn-jO-StN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR5-5q-LJH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChangePassword" translatesAutoresizingMaskIntoConstraints="NO" id="08N-zu-QXc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="08N-zu-QXc" secondAttribute="bottom" id="72K-KE-92t"/>
+                                    <constraint firstAttribute="height" constant="250" id="7aL-H8-Jrv"/>
+                                    <constraint firstItem="08N-zu-QXc" firstAttribute="top" secondItem="GR5-5q-LJH" secondAttribute="top" id="DyG-A1-mk4"/>
+                                    <constraint firstItem="08N-zu-QXc" firstAttribute="leading" secondItem="GR5-5q-LJH" secondAttribute="leading" id="G7Z-rq-s1V"/>
+                                    <constraint firstAttribute="trailing" secondItem="08N-zu-QXc" secondAttribute="trailing" id="KDy-Nk-bhv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rJ-Ip-G1W">
+                                <rect key="frame" x="0.0" y="314" width="375" height="353"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfH-2q-WbN">
+                                        <rect key="frame" x="12" y="8" width="350" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wv-fu-RH6">
+                                        <rect key="frame" x="12" y="46" width="350" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qe-Oe-jw1">
+                                        <rect key="frame" x="0.0" y="303" width="375" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qEe-98-mDw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Change password"/>
+                                        <connections>
+                                            <action selector="changePasswordButtonDidTap:" destination="wMl-2T-Zql" eventType="touchUpInside" id="1Se-A2-DtA"/>
+                                            <segue destination="zCh-x6-qCc" kind="show" identifier="returnToSettingsVC" id="UTQ-Sd-4Ah"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9qe-Oe-jw1" firstAttribute="leading" secondItem="5rJ-Ip-G1W" secondAttribute="leading" id="BJ9-WN-7db"/>
+                                    <constraint firstAttribute="trailing" secondItem="9qe-Oe-jw1" secondAttribute="trailing" id="Jsv-9g-gT9"/>
+                                    <constraint firstAttribute="bottom" secondItem="9qe-Oe-jw1" secondAttribute="bottom" id="fCz-pH-9fD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5rJ-Ip-G1W" firstAttribute="trailing" secondItem="DlA-3G-xrw" secondAttribute="trailing" id="5SL-j1-snR"/>
+                            <constraint firstItem="GR5-5q-LJH" firstAttribute="leading" secondItem="DlA-3G-xrw" secondAttribute="leading" id="NCL-YP-BMH"/>
+                            <constraint firstItem="5rJ-Ip-G1W" firstAttribute="bottom" secondItem="DlA-3G-xrw" secondAttribute="bottom" id="VCp-h3-tyX"/>
+                            <constraint firstItem="GR5-5q-LJH" firstAttribute="top" secondItem="DlA-3G-xrw" secondAttribute="top" id="W8Q-Ws-f62"/>
+                            <constraint firstItem="5rJ-Ip-G1W" firstAttribute="top" secondItem="GR5-5q-LJH" secondAttribute="bottom" id="b5H-jU-RBg"/>
+                            <constraint firstItem="GR5-5q-LJH" firstAttribute="trailing" secondItem="DlA-3G-xrw" secondAttribute="trailing" id="eiZ-5g-WBU"/>
+                            <constraint firstItem="5rJ-Ip-G1W" firstAttribute="leading" secondItem="DlA-3G-xrw" secondAttribute="leading" id="zSE-wM-xJF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DlA-3G-xrw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change password" id="LTb-Up-jur">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="yAg-Gg-IYp">
+                            <connections>
+                                <action selector="stopBarButton:" destination="wMl-2T-Zql" id="dty-FM-Eta"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentPasswordTextField" destination="zfH-2q-WbN" id="Sll-Vd-ld7"/>
+                        <outlet property="newPasswordTextField" destination="0wv-fu-RH6" id="CZs-fY-b6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67q-p6-w91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3847.1999999999998" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LCe-7Q-igA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wFG-D3-bJI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Settings_page" id="IS3-5I-Pnv">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EIU-1L-zON">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zCh-x6-qCc" kind="relationship" relationship="rootViewController" id="iTO-n3-4ll"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3S-Fp-rav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1008.8" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WjI-hH-0wp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gls-tx-lXZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uut-5g-YWm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wMl-2T-Zql" kind="relationship" relationship="rootViewController" id="q9I-Ml-flE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxi-ei-1po" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2908" y="122.78860569715144"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ChangePassword" width="256" height="256"/>
         <image name="Settings_page" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UTQ-Sd-4Ah"/>
+    </inferredMetricsTieBreakers>
 </document>
