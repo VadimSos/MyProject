@@ -132,6 +132,19 @@
                                             <outlet property="delegate" destination="GAr-Ua-MbT" id="gmm-XQ-a7w"/>
                                         </connections>
                                     </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HT-bw-vse">
+                                        <rect key="frame" x="0.0" y="496" width="375" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vDv-Ss-N31"/>
+                                        </constraints>
+                                        <state key="normal" title="Save post">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="savePostButtonDidTap:" destination="GAr-Ua-MbT" eventType="touchUpInside" id="Dtk-4x-AGh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -139,10 +152,13 @@
                                     <constraint firstItem="U2n-qx-Mkx" firstAttribute="leading" secondItem="uTZ-rb-VJG" secondAttribute="leading" id="D57-z1-6rS"/>
                                     <constraint firstItem="YQX-fx-Zwj" firstAttribute="top" secondItem="U2n-qx-Mkx" secondAttribute="bottom" id="FPo-mX-tHS"/>
                                     <constraint firstAttribute="trailing" secondItem="U2n-qx-Mkx" secondAttribute="trailing" id="W1X-wl-OCS"/>
+                                    <constraint firstAttribute="trailing" secondItem="1HT-bw-vse" secondAttribute="trailing" id="ZPX-ke-8o8"/>
                                     <constraint firstItem="YQX-fx-Zwj" firstAttribute="top" secondItem="K5M-uf-SGr" secondAttribute="bottom" constant="8" id="lXh-Vo-KtC"/>
+                                    <constraint firstAttribute="bottom" secondItem="1HT-bw-vse" secondAttribute="bottom" constant="8" id="mda-Rc-JQ4"/>
                                     <constraint firstItem="YQX-fx-Zwj" firstAttribute="leading" secondItem="uTZ-rb-VJG" secondAttribute="leading" id="p0I-ad-22h"/>
                                     <constraint firstItem="K5M-uf-SGr" firstAttribute="top" secondItem="uTZ-rb-VJG" secondAttribute="top" id="qnN-IW-nUx"/>
                                     <constraint firstAttribute="trailing" secondItem="K5M-uf-SGr" secondAttribute="trailing" id="vQx-Hq-zih"/>
+                                    <constraint firstItem="1HT-bw-vse" firstAttribute="leading" secondItem="uTZ-rb-VJG" secondAttribute="leading" id="vRS-0I-ncW"/>
                                     <constraint firstItem="U2n-qx-Mkx" firstAttribute="top" secondItem="uTZ-rb-VJG" secondAttribute="top" id="vh3-i6-4gJ"/>
                                     <constraint firstAttribute="trailing" secondItem="YQX-fx-Zwj" secondAttribute="trailing" id="xUy-bH-fX0"/>
                                 </constraints>
@@ -162,6 +178,7 @@
                     <connections>
                         <outlet property="categoryLabel" destination="3xJ-K0-6zK" id="cca-Wz-BZP"/>
                         <outlet property="descriptionTextView" destination="8CU-Br-PP8" id="iHx-dE-f5O"/>
+                        <outlet property="productNameTF" destination="N86-VU-9r6" id="5w3-Jm-2B9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zi4-qR-2vv" sceneMemberID="firstResponder"/>

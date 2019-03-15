@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateStoryViewController: UIViewController, CategoryTableViewControllerDelegate {
 
@@ -14,7 +15,7 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 
 	@IBOutlet weak var categoryLabel: UILabel!
 	@IBOutlet weak var descriptionTextView: UITextView!
-//	var magnesiumColor = UIColor.init(red: 0.754, green: 0.754, blue: 0.754, alpha: 1.0)
+	@IBOutlet weak var productNameTF: UITextField!
 
 	// MARK: - Lifecycle
 
@@ -38,8 +39,36 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	@IBAction func choseCategoryButtonDidTap(_ sender: UIButton) {
 	}
 
+	@IBAction func savePostButtonDidTap(_ sender: UIButton) {
+		saveToCoreData(name: productNameTF.text!, description: descriptionTextView.text, label: categoryLabel.text!)
+
+//		let displayMainVC = UIStoryboard(name: "MainTableViewController", bundle: nil).instantiateInitialViewController()
+		tabBarController?.selectedIndex = 0
+	}
+
 	func didCellPressed(category: String) {
 		categoryLabel.text = category
+	}
+
+	func saveToCoreData(name: String, description: String, label: String) {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+				return
+		}
+
+		let managedContext = appDelegate.persistentContainer.viewContext
+
+		let entity = NSEntityDescription.entity(forEntityName: "Post", in: managedContext)
+		let newUser = NSManagedObject(entity: entity!, insertInto: managedContext)
+
+		newUser.setValue(productNameTF.text, forKey: "name")
+		newUser.setValue(descriptionTextView.text, forKey: "desciption")
+		newUser.setValue(categoryLabel.text, forKey: "category")
+
+		do {
+			try managedContext.save()
+		} catch let error as NSError {
+			print("Could not save. \(error), \(error.userInfo)")
+		}
 	}
 }
 
