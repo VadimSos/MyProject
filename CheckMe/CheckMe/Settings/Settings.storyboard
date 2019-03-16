@@ -210,14 +210,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DlA-3G-xrw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Change password" id="LTb-Up-jur">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="yAg-Gg-IYp">
-                            <connections>
-                                <action selector="returnToSettingsVC:" destination="wMl-2T-Zql" id="kUG-FX-MsZ"/>
-                                <segue destination="zCh-x6-qCc" kind="show" identifier="stopBarButton" id="H4p-8n-UsL"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Change password" id="LTb-Up-jur"/>
                     <connections>
                         <outlet property="currentPasswordTextField" destination="zfH-2q-WbN" id="Sll-Vd-ld7"/>
                         <outlet property="newPasswordTextField" destination="0wv-fu-RH6" id="CZs-fY-b6f"/>

@@ -79,6 +79,9 @@ extension SettingsTableViewController: UITableViewDataSource {
 extension SettingsTableViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		self.performSegue(withIdentifier: "changePasswordID", sender: self)
+		let passwordRow = indexPath
+		if passwordRow.section == 2 {
+				self.performSegue(withIdentifier: "changePasswordID", sender: self)
+		}
 	}
 }
