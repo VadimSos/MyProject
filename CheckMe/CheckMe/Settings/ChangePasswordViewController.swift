@@ -20,8 +20,7 @@ class ChangePasswordViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
-		self.view.addGestureRecognizer(tap)
+		self.hideKeyboardWhenTappedAround()
 	}
 
 	// MARK: - Actions
@@ -45,9 +44,5 @@ class ChangePasswordViewController: UIViewController {
 		} catch {
 			print("Password is not saved")
 		}
-	}
-
-	@objc func hideKeyBoard(sender: UITapGestureRecognizer? = nil) {
-		view.endEditing(true)
 	}
 }

@@ -153,13 +153,23 @@
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTd-Z0-K6Y">
+                                                <rect key="frame" x="320" y="15" width="48" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonDidTap:" destination="xrQ-LU-bbh" eventType="touchUpInside" id="dea-q7-03j"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="dHj-XF-9v0" firstAttribute="leading" secondItem="Yqw-oZ-tNc" secondAttribute="leading" id="B3Q-YG-QKD"/>
                                             <constraint firstItem="dHj-XF-9v0" firstAttribute="top" secondItem="Yqw-oZ-tNc" secondAttribute="top" constant="8" id="J3Y-8s-Sqg"/>
                                             <constraint firstAttribute="width" constant="375" id="NXx-eb-fce"/>
+                                            <constraint firstAttribute="trailing" secondItem="eTd-Z0-K6Y" secondAttribute="trailing" constant="7" id="SVb-Ph-kv8"/>
+                                            <constraint firstItem="eTd-Z0-K6Y" firstAttribute="top" secondItem="Yqw-oZ-tNc" secondAttribute="top" constant="15" id="U5U-ha-Fck"/>
                                             <constraint firstAttribute="trailing" secondItem="dHj-XF-9v0" secondAttribute="trailing" id="ceO-bJ-I41"/>
+                                            <constraint firstAttribute="bottom" secondItem="eTd-Z0-K6Y" secondAttribute="bottom" constant="15" id="fjr-KA-CU3"/>
                                             <constraint firstAttribute="bottom" secondItem="dHj-XF-9v0" secondAttribute="bottom" constant="8" id="qkU-Nl-Hy6"/>
                                             <constraint firstAttribute="width" secondItem="Yqw-oZ-tNc" secondAttribute="height" multiplier="25:4" id="yva-iN-QLB"/>
                                         </constraints>

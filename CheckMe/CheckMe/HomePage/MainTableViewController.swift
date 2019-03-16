@@ -14,13 +14,12 @@ class MainTableViewController: UIViewController {
 	// MARK: - Variables
 
 	@IBOutlet weak var tableView: UITableView!
-	var postCD: [NSManagedObject] = []
+	var postNameCD: [Post] = []
 
 	// MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
     }
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +36,7 @@ class MainTableViewController: UIViewController {
 			NSFetchRequest<NSManagedObject>(entityName: "Post")
 
 		do {
-			postCD = try managedContext.fetch(fetchRequest)
+			postNameCD = try managedContext.fetch(fetchRequest) as? [Post] ?? []
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
@@ -51,20 +50,19 @@ class MainTableViewController: UIViewController {
 extension MainTableViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return postCD.count
+		return postNameCD.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-		let person = postCD[indexPath.row]
+		let name: Post = postNameCD[indexPath.row]
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as? MainTableViewCell else {
 			fatalError("error")
 		}
 
-		cell.nameMainVCLabel.text = person.value(forKey: "name") as? String
-		cell.descriptionMainVCLabel.text = person.value(forKey: "desciption") as? String
-		cell.categoryMainVCLabel.text = person.value(forKey: "category") as? String
-//		cell.textLabel?.text = person.value(forKey: "name") as? String
+		cell.nameMainVCLabel.text = name.name// value(forKey: "name") as? String
+		cell.descriptionMainVCLabel.text = name.desciption//.value(forKey: "desciption") as? String
+		cell.categoryMainVCLabel.text = name.category //.value(forKey: "category") as? String
 		return cell
 	}
 }

@@ -43,6 +43,10 @@ class CreateAccountViewController: UIViewController {
 		}
 	}
 
+	@IBAction func cancelButtonDidTap(_ sender: UIButton) {
+		dismiss(animated: true, completion: nil)
+	}
+
 	func delegateDataToLoginVC() {
 		if let delegateMail = mailTextField.text {
 			delegate?.swithToLoginVC(mail: delegateMail)

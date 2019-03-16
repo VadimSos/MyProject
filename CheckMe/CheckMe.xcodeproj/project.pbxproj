@@ -23,7 +23,7 @@
 		3F91C28C223598510033AD1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28B223598510033AD1F /* Color.swift */; };
 		3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28D2236E5350033AD1F /* CreateStoryCollectionViewCell.swift */; };
 		3F91C290223818800033AD1F /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28F223818800033AD1F /* CameraHandler.swift */; };
-		3F91C29322396F450033AD1F /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C29522396F450033AD1F /* File.strings */; };
+		3F91C29322396F450033AD1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C29522396F450033AD1F /* Localizable.strings */; };
 		3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C296223983690033AD1F /* SettingsTableViewCell.swift */; };
 		3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */; };
 		3F91C29B223ABDCD0033AD1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91C29A223ABDCD0033AD1F /* CoreData.framework */; };
@@ -34,6 +34,7 @@
 		3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */; };
 		3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */; };
 		3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E63223C0453006015CC /* MainTableViewCell.swift */; };
+		3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E66223C22A8006015CC /* HideKeyBoard.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
 		3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC122287974002DDCEB /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F3820EE223D3BF400159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		3F91C28B223598510033AD1F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3F91C28D2236E5350033AD1F /* CreateStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F91C28F223818800033AD1F /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
-		3F91C29422396F450033AD1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/File.strings; sourceTree = "<group>"; };
+		3F91C29422396F450033AD1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F91C296223983690033AD1F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3F91C29A223ABDCD0033AD1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -70,6 +72,7 @@
 		3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		3FF00E63223C0453006015CC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		3FF00E66223C22A8006015CC /* HideKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoard.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF79DBA22287972002DDCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF79DBF22287972002DDCEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				3F91C26D2230451A0033AD1F /* StringExtension.swift */,
+				3FF00E66223C22A8006015CC /* HideKeyBoard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,7 +193,6 @@
 		3FF79DAE22287972002DDCEB = {
 			isa = PBXGroup;
 			children = (
-				3F91C29522396F450033AD1F /* File.strings */,
 				3FF79DB922287972002DDCEB /* CheckMe */,
 				3FF79DB822287972002DDCEB /* Products */,
 				9D8D2BA08DE68CAE8BFBE3FD /* Pods */,
@@ -218,6 +221,7 @@
 				3F91C2782230E7D40033AD1F /* Favorites */,
 				3F91C265222EF19D0033AD1F /* Login */,
 				3FF79DC622287974002DDCEB /* Info.plist */,
+				3F91C29522396F450033AD1F /* Localizable.strings */,
 			);
 			path = CheckMe;
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 3FF79DAE22287972002DDCEB;
 			productRefGroup = 3FF79DB822287972002DDCEB /* Products */;
@@ -315,7 +320,7 @@
 				3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */,
 				3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */,
 				3FF79DCF22290195002DDCEB /* Favorites.storyboard in Resources */,
-				3F91C29322396F450033AD1F /* File.strings in Resources */,
+				3F91C29322396F450033AD1F /* Localizable.strings in Resources */,
 				3F91C260222E40300033AD1F /* Login.storyboard in Resources */,
 				3FF79DC022287972002DDCEB /* Main.storyboard in Resources */,
 				3F91C2752230E7200033AD1F /* Settings.storyboard in Resources */,
@@ -416,6 +421,7 @@
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */,
+				3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
 				3F91C28A22354C6D0033AD1F /* CategoryTableViewCell.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,
@@ -426,12 +432,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3F91C29522396F450033AD1F /* File.strings */ = {
+		3F91C29522396F450033AD1F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3F91C29422396F450033AD1F /* en */,
+				3F3820EE223D3BF400159CE2 /* ru */,
 			);
-			name = File.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		3FF79DBE22287972002DDCEB /* Main.storyboard */ = {
@@ -457,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -518,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

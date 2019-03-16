@@ -105,7 +105,7 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	// MAKR: Alerts
 
 	func showAlertDataIsEmpty() {
-		UIAlertController.showError(message: NSLocalizedString("Data is emoty", comment: ""), from: self, with: .cancel)
+		UIAlertController.showError(message: NSLocalizedString("Data is empty", comment: ""), from: self, with: .cancel)
 	}
 
 	func showAlertDataIsWrong() {

@@ -23,6 +23,8 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		super.viewDidLoad()
 		descriptionTextView.text = "Description"
 		descriptionTextView.textColor = .magnezium()
+
+		self.hideKeyboardWhenTappedAround()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,11 +60,14 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		let managedContext = appDelegate.persistentContainer.viewContext
 
 		let entity = NSEntityDescription.entity(forEntityName: "Post", in: managedContext)
-		let newUser = NSManagedObject(entity: entity!, insertInto: managedContext)
+		let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as? Post
 
-		newUser.setValue(productNameTF.text, forKey: "name")
-		newUser.setValue(descriptionTextView.text, forKey: "desciption")
-		newUser.setValue(categoryLabel.text, forKey: "category")
+		newUser?.name = name
+		newUser?.desciption = descriptionTextView.text
+		newUser?.category = categoryLabel.text
+//		setValue(productNameTF.text, forKey: "name")
+//		newUser.setValue(descriptionTextView.text, forKey: "desciption")
+//		newUser.setValue(categoryLabel.text, forKey: "category")
 
 		do {
 			try managedContext.save()
