@@ -105,11 +105,11 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	// MAKR: Alerts
 
 	func showAlertDataIsEmpty() {
-		UIAlertController.showError(message: NSLocalizedString("Data is empty", comment: ""), from: self, with: .cancel)
+		UIAlertController.showError(message: NSLocalizedString("Data is empty", comment: ""), from: self)
 	}
 
 	func showAlertDataIsWrong() {
-		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""), from: self, with: .cancel)
+		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""), from: self)
 	}
 
 }

@@ -105,11 +105,11 @@ class CreateAccountViewController: UIViewController {
 	// MARK: Alerts
 
 	func showAlertIfDataIsIncorrect() {
-		UIAlertController.showError(message: NSLocalizedString("Wrong data", comment: ""), from: self, with: .cancel)
+		UIAlertController.showError(message: NSLocalizedString("Wrong data", comment: ""), from: self)
 	}
 
 	func showAlertIfDataIsEmpty() {
-		UIAlertController.showError(message: NSLocalizedString("Empty data", comment: ""), from: self, with: .cancel)
+		UIAlertController.showError(message: NSLocalizedString("Empty data", comment: ""), from: self)
 	}
 
 	func showAlertDataSavedSuccefully() {

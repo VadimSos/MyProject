@@ -81,7 +81,25 @@ extension SettingsTableViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let passwordRow = indexPath
 		if passwordRow.section == 2 {
-				self.performSegue(withIdentifier: "changePasswordID", sender: self)
+			self.performSegue(withIdentifier: "changePasswordID", sender: self)
+		}
+
+		if indexPath.section == 3 {
+			let myAlert = UIAlertController(title: "Logout",
+											message: "Are you sure to exit?",
+											preferredStyle: UIAlertController.Style.alert)
+			myAlert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
+											style: UIAlertAction.Style.cancel,
+											handler: nil))
+			myAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+											style: UIAlertAction.Style.default,
+											handler: { _ in
+				let storyboard = UIStoryboard(name: "Login", bundle: nil)
+				let logout = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
+				self.present(logout, animated: true, completion: nil)
+			}))
+
+			self.present(myAlert, animated: true, completion: nil)
 		}
 	}
 }
