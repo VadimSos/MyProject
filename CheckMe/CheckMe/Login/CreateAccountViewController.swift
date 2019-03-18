@@ -20,7 +20,11 @@ class CreateAccountViewController: UIViewController {
 	@IBOutlet weak var mailTextField: UITextField!
 	@IBOutlet weak var passowordTextField: UITextField!
 	@IBOutlet weak var confirmpasswordTextField: UITextField!
-
+	@IBOutlet weak var nameTextField: UITextField!
+	@IBOutlet weak var familyNameTextField: UITextField!
+	@IBOutlet weak var cellPhoneNumberTF: UITextField!
+	@IBOutlet weak var phoneNumberTF: UITextField!
+	
 	// MARK: Variables/Constants
 
 	private let userMail = "MyMail"
@@ -83,10 +87,6 @@ class CreateAccountViewController: UIViewController {
 				}
 			}
 		}
-
-//		if result {
-//			showAlertDataSavedSuccefully()
-//		}
 		return result
 	}
 

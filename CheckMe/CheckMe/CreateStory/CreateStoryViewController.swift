@@ -65,6 +65,10 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		newUser?.name = name
 		newUser?.desciption = descriptionTextView.text
 		newUser?.category = categoryLabel.text
+		if let img = UIImage(named: "photo") {
+			let data = img.pngData() as NSData?
+			newUser?.photo = data
+		}
 //		setValue(productNameTF.text, forKey: "name")
 //		newUser.setValue(descriptionTextView.text, forKey: "desciption")
 //		newUser.setValue(categoryLabel.text, forKey: "category")

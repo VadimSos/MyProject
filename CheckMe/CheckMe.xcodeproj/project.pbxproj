@@ -45,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		3F3820EE223D3BF400159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2 (User uodated).xcdatamodel"; sourceTree = "<group>"; };
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -643,9 +644,10 @@
 		3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */,
 				3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */,
 			);
-			currentVersion = 3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */;
+			currentVersion = 3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
