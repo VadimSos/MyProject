@@ -121,7 +121,7 @@ extension CreateStoryViewController: UICollectionViewDelegate {
 		guard let cell = collectionView.cellForItem(at: indexPath) as? CreateStoryCollectionViewCell else {
 			return
 		}
-		CameraHandler.shared.showActioSheet(vc: self)
+		CameraHandler.shared.showActioSheet(vcAlert: self)
 		CameraHandler.shared.imagePickedBlock = { (image) in
 			cell.photoImageView.image = image
 		}

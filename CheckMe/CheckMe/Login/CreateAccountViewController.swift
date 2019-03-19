@@ -24,7 +24,7 @@ class CreateAccountViewController: UIViewController {
 	@IBOutlet weak var familyNameTextField: UITextField!
 	@IBOutlet weak var cellPhoneNumberTF: UITextField!
 	@IBOutlet weak var phoneNumberTF: UITextField!
-	
+
 	// MARK: Variables/Constants
 
 	private let userMail = "MyMail"

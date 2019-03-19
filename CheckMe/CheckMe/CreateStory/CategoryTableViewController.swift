@@ -29,12 +29,12 @@ class CategoryTableViewController: UIViewController {
 	// MARK: - Actiones
 
 	func setupTableViewData() {
-		let item1 = "Спорт"
-		let item2 = "Топливо"
-		let item3 = "Такси"
-		let item4 = "Питание"
-		let item5 = "Медикаменты"
-		let item6 = "Лечение"
+		let item1 = NSLocalizedString("Sport", comment: "")
+		let item2 = NSLocalizedString("Gas", comment: "")
+		let item3 = NSLocalizedString("Taxi", comment: "")
+		let item4 = NSLocalizedString("Foot", comment: "")
+		let item5 = NSLocalizedString("Medicine", comment: "")
+		let item6 = NSLocalizedString("Treatment", comment: "")
 		categoryNames = [item1, item2, item3, item4, item5, item6]
 	}
 

@@ -43,10 +43,10 @@ class MainTableViewController: UIViewController {
 
 		tableView.reloadData()
 	}
-	
+
 	@IBAction func addPostToFavorites(_ sender: UIBarButtonItem) {
 	}
-	
+
 }
 
 	// MARK: - Table view data source

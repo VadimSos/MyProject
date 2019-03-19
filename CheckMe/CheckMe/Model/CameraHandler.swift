@@ -36,21 +36,21 @@ class CameraHandler: NSObject {
 		}
 	}
 
-	func showActioSheet(vc: UIViewController) {
-		currentVC = vc
+	func showActioSheet(vcAlert: UIViewController) {
+		currentVC = vcAlert
 		let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-		actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert: UIAlertAction) -> Void in
+		actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_: UIAlertAction) -> Void in
 			self.camera()
 		}))
 
-		actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+		actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (_: UIAlertAction!) -> Void in
 			self.photoLibrary()
 		}))
 
 		actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-		vc.present(actionSheet, animated: true, completion: nil)
+		vcAlert.present(actionSheet, animated: true, completion: nil)
 	}
 }
 
