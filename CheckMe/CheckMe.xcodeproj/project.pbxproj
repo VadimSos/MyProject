@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */; };
 		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		3F3820EE223D3BF400159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2 (User uodated).xcdatamodel"; sourceTree = "<group>"; };
+		3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				3FF79DCE22290195002DDCEB /* Favorites.storyboard */,
 				3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */,
+				3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
 				3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */,
+				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C29F223ABEDF0033AD1F /* Model.xcdatamodeld in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,

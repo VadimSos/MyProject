@@ -124,7 +124,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="D3W-wO-tuB"/>
+                    <navigationItem key="navigationItem" id="D3W-wO-tuB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jep-dl-1Qe">
+                            <connections>
+                                <action selector="addPostToFavorites:" destination="BYZ-38-t0r" id="rDf-wo-hsX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="xqX-7E-dCz" id="miJ-SH-YcU"/>
                     </connections>

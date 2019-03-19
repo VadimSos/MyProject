@@ -43,6 +43,10 @@ class MainTableViewController: UIViewController {
 
 		tableView.reloadData()
 	}
+	
+	@IBAction func addPostToFavorites(_ sender: UIBarButtonItem) {
+	}
+	
 }
 
 	// MARK: - Table view data source
@@ -63,7 +67,7 @@ extension MainTableViewController: UITableViewDataSource {
 		cell.nameMainVCLabel.text = name.name// value(forKey: "name") as? String
 		cell.descriptionMainVCLabel.text = name.desciption//.value(forKey: "desciption") as? String
 		cell.categoryMainVCLabel.text = name.category //.value(forKey: "category") as? String
-		
+
 		return cell
 	}
 }
