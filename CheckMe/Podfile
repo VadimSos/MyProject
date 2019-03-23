@@ -11,5 +11,8 @@ target 'CheckMe' do
   pod 'Crashlytics'
   pod 'GoogleAnalytics'
   pod 'ReachabilitySwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end

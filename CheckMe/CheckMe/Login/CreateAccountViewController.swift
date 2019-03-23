@@ -96,7 +96,9 @@ class CreateAccountViewController: UIViewController {
 
 	func savePassword() {
 		do {
-			try Locksmith.saveData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
+			try Locksmith.updateData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
+//			Locksmith.saveData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
+
 		} catch {
 			print("Password is not saved")
 		}

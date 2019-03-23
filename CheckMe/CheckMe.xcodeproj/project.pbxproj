@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */; };
+		3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */; };
 		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */; };
@@ -48,6 +49,7 @@
 		3F3820EE223D3BF400159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2 (User uodated).xcdatamodel"; sourceTree = "<group>"; };
 		3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				3F91C2782230E7D40033AD1F /* Favorites */,
 				3F91C265222EF19D0033AD1F /* Login */,
 				3FF79DC622287974002DDCEB /* Info.plist */,
+				3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */,
 				3F91C29522396F450033AD1F /* Localizable.strings */,
 			);
 			path = CheckMe;
@@ -322,6 +325,7 @@
 			files = (
 				3F91C2712230E44F0033AD1F /* CreateStory.storyboard in Resources */,
 				3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */,
+				3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */,
 				3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */,
 				3FF79DCF22290195002DDCEB /* Favorites.storyboard in Resources */,
 				3F91C29322396F450033AD1F /* Localizable.strings in Resources */,
@@ -383,15 +387,31 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
