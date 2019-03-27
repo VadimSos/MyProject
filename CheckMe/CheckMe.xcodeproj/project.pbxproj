@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */; };
 		3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */; };
+		3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F4224B46D900159CE2 /* WelcomViewController.swift */; };
 		3F91C260222E40300033AD1F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C25F222E40300033AD1F /* Login.storyboard */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
-		3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */; };
+		3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* RegisterViewController.swift */; };
 		3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C267222F90D40033AD1F /* RoundedUIElements.swift */; };
 		3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26B223038900033AD1F /* UIAlertController.swift */; };
 		3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26D2230451A0033AD1F /* StringExtension.swift */; };
@@ -50,9 +51,10 @@
 		3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2 (User uodated).xcdatamodel"; sourceTree = "<group>"; };
 		3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F3820F4224B46D900159CE2 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		3F91C25F222E40300033AD1F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3F91C263222EF1570033AD1F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F91C267222F90D40033AD1F /* RoundedUIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIElements.swift; sourceTree = "<group>"; };
 		3F91C26B223038900033AD1F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		3F91C26D2230451A0033AD1F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -107,8 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				3F91C25F222E40300033AD1F /* Login.storyboard */,
+				3F3820F4224B46D900159CE2 /* WelcomViewController.swift */,
 				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
-				3F91C263222EF1570033AD1F /* CreateAccountViewController.swift */,
+				3F91C263222EF1570033AD1F /* RegisterViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -430,7 +433,7 @@
 				3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */,
 				3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */,
 				3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */,
-				3F91C264222EF1570033AD1F /* CreateAccountViewController.swift in Sources */,
+				3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
 				3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */,
@@ -442,6 +445,7 @@
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
 				3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
+				3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,

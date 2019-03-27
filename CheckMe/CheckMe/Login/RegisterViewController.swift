@@ -8,12 +8,13 @@
 
 import UIKit
 import Locksmith
+import FirebaseAuth
 
-protocol  CreateAccountViewControllerDElegate: class {
+protocol  RegisterViewControllerDElegate: class {
 	func swithToLoginVC(mail: String)
 }
 
-class CreateAccountViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
 	// MARK: Outlets
 
@@ -27,10 +28,10 @@ class CreateAccountViewController: UIViewController {
 
 	// MARK: Variables/Constants
 
-	private let userMail = "MyMail"
-	let userAccount = "MyAccount"
-	let userPassword = "MyPassword"
-	weak var delegate: CreateAccountViewControllerDElegate?
+//	private let userMail = "MyMail"
+//	let userAccount = "MyAccount"
+//	let userPassword = "MyPassword"
+	weak var delegate: RegisterViewControllerDElegate?
 
 	// MARK: Lifecycle
 
@@ -47,10 +48,6 @@ class CreateAccountViewController: UIViewController {
 		}
 	}
 
-	@IBAction func cancelButtonDidTap(_ sender: UIButton) {
-		dismiss(animated: true, completion: nil)
-	}
-
 	func delegateDataToLoginVC() {
 		if let delegateMail = mailTextField.text {
 			delegate?.swithToLoginVC(mail: delegateMail)
@@ -59,27 +56,16 @@ class CreateAccountViewController: UIViewController {
 	}
 
 	func saveAccount() -> Bool {
-		var result = false
-		if let mail = mailTextField.text {
-			if mail.textMailIsEmpty() {
-				showAlertIfDataIsEmpty()
-			} else {
-				if mail.isValidLogin() {
-					saveMail()
-					result = true
-				} else {
-					showAlertIfDataIsIncorrect()
-				}
-			}
-		}
 
-		if let password = passowordTextField.text {
-			if password.textPasswordIsEmpty(text: password) {
+		var result = false
+
+		if let password = passowordTextField.text, let mail = mailTextField.text {
+			if password.textPasswordIsEmpty(text: password), mail.textMailIsEmpty() {
 				showAlertIfDataIsEmpty()
 				result = false
 			} else {
 				if password.isValidPassword(), passowordTextField.text == confirmpasswordTextField.text {
-					savePassword()
+					createAccount()
 					result = true
 				} else {
 					showAlertIfDataIsIncorrect()
@@ -90,18 +76,14 @@ class CreateAccountViewController: UIViewController {
 		return result
 	}
 
-	func saveMail() {
-			UserDefaults.standard.set(mailTextField.text, forKey: userMail)
-	}
+	func createAccount() {
 
-	func savePassword() {
-		do {
-			try Locksmith.updateData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
-//			Locksmith.saveData(data: [userAccount : passowordTextField.text!], forUserAccount: userPassword)
-
-		} catch {
-			print("Password is not saved")
+		Auth.auth().createUser(withEmail: mailTextField.text!, password: passowordTextField.text!) { (authResult, error) in
+			if error != nil {
+				
+			}
 		}
+
 	}
 
 	// MARK: Alerts

@@ -8,8 +8,9 @@
 
 import UIKit
 import Locksmith
+import FirebaseAuth
 
-class LoginViewController: UIViewController, CreateAccountViewControllerDElegate {
+class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 
 	// MARK: Outlets
 
@@ -22,22 +23,22 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
         super.viewDidLoad()
     }
 
-	override func viewWillAppear(_ animated: Bool) {
-		let login = UserDefaults.standard.string(forKey: "MyMail")
-		print(login ?? "Mail do not saved")
-		let password = Locksmith.loadDataForUserAccount(userAccount: "MyPassword")
-		print(password ?? "Password do not saved")
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "createAccount" {
-			guard let destinationVC = segue.destination as? CreateAccountViewController else {
-				return
-			}
-			destinationVC.delegate = self
-		}
-
-	}
+//	override func viewWillAppear(_ animated: Bool) {
+//		let login = UserDefaults.standard.string(forKey: "MyMail")
+//		print(login ?? "Mail do not saved")
+//		let password = Locksmith.loadDataForUserAccount(userAccount: "MyPassword")
+//		print(password ?? "Password do not saved")
+//	}
+//
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		if segue.identifier == "createAccount" {
+//			guard let destinationVC = segue.destination as? RegisterViewController else {
+//				return
+//			}
+//			destinationVC.delegate = self
+//		}
+//
+//	}
 
 	// MARK: Actions
 
@@ -67,19 +68,23 @@ class LoginViewController: UIViewController, CreateAccountViewControllerDElegate
 	}
 
 	func doLogin() {
-		if mailTextField.text == UserDefaults.standard.string(forKey: "MyMail") {
-			if let saveData = Locksmith.loadDataForUserAccount(userAccount: "MyPassword") {
-				if passwordTextField.text == (saveData["MyAccount"] as? String) {
-					switchToMainVC()
-				} else {
-					showAlertDataIsWrong()
-				}
-			} else {
-				showAlertDataIsWrong()
-			}
-		} else {
-			showAlertDataIsWrong()
+		Auth.auth().signIn(withEmail: mailTextField.text!, password: passwordTextField.text!) { [weak self] user, error in
+			guard let strongSelf = self else { return }
+			// ...
 		}
+//		if mailTextField.text == UserDefaults.standard.string(forKey: "MyMail") {
+//			if let saveData = Locksmith.loadDataForUserAccount(userAccount: "MyPassword") {
+//				if passwordTextField.text == (saveData["MyAccount"] as? String) {
+//					switchToMainVC()
+//				} else {
+//					showAlertDataIsWrong()
+//				}
+//			} else {
+//				showAlertDataIsWrong()
+//			}
+//		} else {
+//			showAlertDataIsWrong()
+//		}
 	}
 
 	func checkDataIsEmpty() -> Bool {
