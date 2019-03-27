@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpW-Ga-q5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1976.8" y="-346.77661169415296"/>
+            <point key="canvasLocation" x="1161" y="-347"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="M9H-vg-NnD">
@@ -263,12 +263,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG4-pv-Bca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1976.8" y="411.544227886057"/>
+            <point key="canvasLocation" x="1161" y="433"/>
         </scene>
         <!--Welcom View Controller-->
         <scene sceneID="cfc-5i-XUZ">
             <objects>
-                <viewController id="bQW-l1-j5Y" customClass="WelcomViewController" customModule="CheckMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomViewController" id="bQW-l1-j5Y" customClass="WelcomViewController" customModule="CheckMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="drY-8h-LNc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -34,11 +34,7 @@ extension String {
 		return isEmpty()
 	}
 
-	func textPasswordIsEmpty(text: String?) -> Bool {
-		var result = false
-		if let password = text, password.count == 0 {
-			result = true
-		}
-		return result
+	func textPasswordIsEmpty() -> Bool {
+		return isEmpty()
 	}
 }

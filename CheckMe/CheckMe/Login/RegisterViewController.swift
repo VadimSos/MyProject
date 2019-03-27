@@ -43,8 +43,8 @@ class RegisterViewController: UIViewController {
 	// MARK: Actions
 
 	@IBAction func createAccountButtonDidTap(_ sender: UIButton) {
-		if saveAccount() {
-			delegateDataToLoginVC()
+		guard saveAccount() else {
+			return
 		}
 	}
 
@@ -60,7 +60,7 @@ class RegisterViewController: UIViewController {
 		var result = false
 
 		if let password = passowordTextField.text, let mail = mailTextField.text {
-			if password.textPasswordIsEmpty(text: password), mail.textMailIsEmpty() {
+			if password.textPasswordIsEmpty(), mail.textMailIsEmpty() {
 				showAlertIfDataIsEmpty()
 				result = false
 			} else {
@@ -80,7 +80,13 @@ class RegisterViewController: UIViewController {
 
 		Auth.auth().createUser(withEmail: mailTextField.text!, password: passowordTextField.text!) { (authResult, error) in
 			if error != nil {
-				
+				print(error!)
+			} else {
+				let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+				let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
+				if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+					appDelegate.window?.rootViewController = loginVC
+				}
 			}
 		}
 

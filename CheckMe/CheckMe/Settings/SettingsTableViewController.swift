@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsTableViewController: UIViewController {
 
@@ -94,8 +95,15 @@ extension SettingsTableViewController: UITableViewDelegate {
 			myAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
 											style: UIAlertAction.Style.default,
 											handler: { _ in
+				let firebaseAuth = Auth.auth()
+				do {
+					try firebaseAuth.signOut()
+				} catch let signOutError as NSError {
+					print ("Error signing out: %@", signOutError)
+				}
+
 				let storyboard = UIStoryboard(name: "Login", bundle: nil)
-				let logout = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
+				let logout = storyboard.instantiateViewController(withIdentifier: "WelcomViewController") as UIViewController
 				self.present(logout, animated: true, completion: nil)
 			}))
 

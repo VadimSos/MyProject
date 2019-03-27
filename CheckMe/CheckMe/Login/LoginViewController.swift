@@ -68,23 +68,13 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 	}
 
 	func doLogin() {
-		Auth.auth().signIn(withEmail: mailTextField.text!, password: passwordTextField.text!) { [weak self] user, error in
-			guard let strongSelf = self else { return }
-			// ...
+		Auth.auth().signIn(withEmail: mailTextField.text!, password: passwordTextField.text!) { (user, error) in
+			if error != nil {
+				print(error!)
+			} else {
+				self.switchToMainVC()
+			}
 		}
-//		if mailTextField.text == UserDefaults.standard.string(forKey: "MyMail") {
-//			if let saveData = Locksmith.loadDataForUserAccount(userAccount: "MyPassword") {
-//				if passwordTextField.text == (saveData["MyAccount"] as? String) {
-//					switchToMainVC()
-//				} else {
-//					showAlertDataIsWrong()
-//				}
-//			} else {
-//				showAlertDataIsWrong()
-//			}
-//		} else {
-//			showAlertDataIsWrong()
-//		}
 	}
 
 	func checkDataIsEmpty() -> Bool {
@@ -98,7 +88,7 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 		}
 
 		if let password = passwordTextField.text {
-			if password.textPasswordIsEmpty(text: password) {
+			if password.textPasswordIsEmpty() {
 				showAlertDataIsWrong()
 			} else {
 				result = true
