@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseCore
+import FirebaseDatabase
 
 class SettingsTableViewController: UIViewController {
 
@@ -16,28 +18,40 @@ class SettingsTableViewController: UIViewController {
 	@IBOutlet weak var mailLabel: UILabel!
 	var userData: [[String]] = []
 	let headers = [" ", " ", " ", " "]
+	let ref = Database.database().reference()
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-		mailLabel.text = UserDefaults.standard.string(forKey: "MyMail")
+		mailLabel.text = Auth.auth().currentUser?.email
 		setupTableViewData()
     }
 
 	// MARK: - Actiones
 
 	func setupTableViewData() {
-		let item1 = "Вадим"
-		let item2 = "Сосновский"
-		let item3 = "+375295123456"
-		let item4 = "+375172342312"
-		let item5 = "Date of birth"
-		let item6 = "Gender"
-		let item7 = "Password"
-		let item8 = "Logout"
+		guard let userID = Auth.auth().currentUser?.uid else { return }
 
-		userData = [[item1, item2, item3, item4], [item5, item6], [item7], [item8]]
+		ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+		let value = snapshot.value as? [String: Any]
+		let userName = value?["name"] as? String ?? ""
+
+		let userFamilyName = value?["familyName"] as? String ?? ""
+		let userCellPhoneNumber = value?["cellPhoneNumber"] as? String ?? ""
+		let userPhoneNumber = value?["phoneNumber"] as? String ?? ""
+
+			let item1 = "userName"
+			let item2 = ""
+			let item3 = ""
+			let item4 = ""
+			let item5 = "Date of birth"
+			let item6 = "Gender"
+			let item7 = "Password"
+			let item8 = "Logout"
+
+			self.userData = [[item1, item2, item3, item4], [item5, item6], [item7], [item8]]
+		})
 	}
 }
 

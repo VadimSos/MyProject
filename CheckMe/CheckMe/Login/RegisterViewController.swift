@@ -8,6 +8,7 @@
 
 import UIKit
 import Locksmith
+import Firebase
 import FirebaseAuth
 
 protocol  RegisterViewControllerDElegate: class {
@@ -31,6 +32,7 @@ class RegisterViewController: UIViewController {
 //	private let userMail = "MyMail"
 //	let userAccount = "MyAccount"
 //	let userPassword = "MyPassword"
+	let ref = Database.database().reference()
 	weak var delegate: RegisterViewControllerDElegate?
 
 	// MARK: Lifecycle
@@ -40,12 +42,32 @@ class RegisterViewController: UIViewController {
 
 	}
 
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+
+		guard let userUID = Auth.auth().currentUser?.uid else { return }
+
+		ref.child("users").child(userUID).child("name").setValue(nameTextField.text)
+		ref.child("users").child(userUID).child("familyName").setValue(familyNameTextField.text)
+		ref.child("users").child(userUID).child("cellPhoneNumber").setValue(cellPhoneNumberTF.text)
+		ref.child("users").child(userUID).child("phoneNumber").setValue(phoneNumberTF.text)
+	}
+
 	// MARK: Actions
 
 	@IBAction func createAccountButtonDidTap(_ sender: UIButton) {
 		guard saveAccount() else {
 			return
 		}
+		notifyAboutRegisterInfo()
+	}
+
+	//notification to send data to other VCz
+	func notifyAboutRegisterInfo() {
+		NotificationCenter.default.post(name: NSNotification.Name.init("userInfo"), object: nil, userInfo: ["name": nameTextField.text!,
+			"familyName": familyNameTextField.text!,
+			"cellPhoneNumberTF": cellPhoneNumberTF.text!,
+			"phoneNumberTF": phoneNumberTF.text!])
 	}
 
 	func delegateDataToLoginVC() {

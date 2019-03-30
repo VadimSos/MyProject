@@ -16,6 +16,9 @@ PODS:
     - FirebaseAnalytics (= 5.6.0)
   - Firebase/CoreOnly (5.17.0):
     - FirebaseCore (= 5.3.0)
+  - Firebase/Database (5.17.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.1.0)
   - Firebase/Firestore (5.17.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (= 1.0.1)
@@ -36,6 +39,10 @@ PODS:
   - FirebaseAuthInterop (1.0.0)
   - FirebaseCore (5.3.0):
     - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.1.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - leveldb-library (~> 1.18)
   - FirebaseFirestore (1.0.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
@@ -113,6 +120,7 @@ DEPENDENCIES:
   - Fabric
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - Firebase/Firestore
   - GoogleAnalytics
   - Locksmith
@@ -129,6 +137,7 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstanceID
     - GoogleAnalytics
@@ -153,6 +162,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: 0f61e1329237da5682c49c9abd135e8f9d07a151
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: c0c4befb82374d6aef64d800e569f47625352edc
+  FirebaseDatabase: 23acb0c53cd4d4070a427b60100b2e4aaa97c45d
   FirebaseFirestore: e95af4fe30552092d6e72a8f97ea475d93891b75
   FirebaseInstanceID: 4522aad88f69297622062c0e9ffccdee3dd9b151
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
@@ -168,6 +178,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 5b7562a738897041ea2afe703ddf7dd19f808bc9
+PODFILE CHECKSUM: 7d6dde266128d44d21a51aaf306163309fba92f3
 
 COCOAPODS: 1.5.3
