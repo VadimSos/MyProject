@@ -129,6 +129,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="mailLabel" destination="r8F-VA-LhC" id="AD9-c7-fEw"/>
+                        <outlet property="tableView" destination="dt7-B9-dMp" id="RiI-yQ-bO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVo-qE-Dmt" sceneMemberID="firstResponder"/>

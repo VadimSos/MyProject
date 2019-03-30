@@ -16,6 +16,7 @@ class SettingsTableViewController: UIViewController {
 	// MARK: - Variables
 
 	@IBOutlet weak var mailLabel: UILabel!
+	@IBOutlet weak var tableView: UITableView!
 	var userData: [[String]] = []
 	let headers = [" ", " ", " ", " "]
 	let ref = Database.database().reference()
@@ -31,26 +32,31 @@ class SettingsTableViewController: UIViewController {
 	// MARK: - Actiones
 
 	func setupTableViewData() {
+		
+		
 		guard let userID = Auth.auth().currentUser?.uid else { return }
-
+//		ref.child("users").child(userID).observe(.value) { (data) in
+//			let name: String = (data.value as? String)!
+//			print(name)
+//		}
 		ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
 		let value = snapshot.value as? [String: Any]
 		let userName = value?["name"] as? String ?? ""
-
 		let userFamilyName = value?["familyName"] as? String ?? ""
 		let userCellPhoneNumber = value?["cellPhoneNumber"] as? String ?? ""
 		let userPhoneNumber = value?["phoneNumber"] as? String ?? ""
 
-			let item1 = "userName"
-			let item2 = ""
-			let item3 = ""
-			let item4 = ""
+			let item1 = userName
+			let item2 = userFamilyName
+			let item3 = userCellPhoneNumber
+			let item4 = userPhoneNumber
 			let item5 = "Date of birth"
 			let item6 = "Gender"
 			let item7 = "Password"
 			let item8 = "Logout"
 
 			self.userData = [[item1, item2, item3, item4], [item5, item6], [item7], [item8]]
+			self.tableView.reloadData()
 		})
 	}
 }
