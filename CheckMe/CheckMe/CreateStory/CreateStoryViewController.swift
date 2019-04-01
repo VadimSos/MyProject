@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class CreateStoryViewController: UIViewController, CategoryTableViewControllerDelegate {
 
@@ -16,6 +17,9 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	@IBOutlet weak var categoryLabel: UILabel!
 	@IBOutlet weak var descriptionTextView: UITextView!
 	@IBOutlet weak var productNameTF: UITextField!
+
+	var imagesArray: [UIImage] = []
+	let ref = Database.database().reference()
 
 	// MARK: - Lifecycle
 
@@ -42,43 +46,93 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	}
 
 	@IBAction func savePostButtonDidTap(_ sender: UIButton) {
-		saveToCoreData(name: productNameTF.text!, description: descriptionTextView.text, label: categoryLabel.text!)
+//		saveToCoreData(name: productNameTF.text!, description: descriptionTextView.text, label: categoryLabel.text!)
 
 //		let displayMainVC = UIStoryboard(name: "MainTableViewController", bundle: nil).instantiateInitialViewController()
+		saveInfoToFirebaseDB()
 		tabBarController?.selectedIndex = 0
+	}
+
+	/*
+	Firebase databases don't support adding images to the database.
+	Need upload images to a storage provider such as Firebase Cloud Storage and then save the url to that file in database to download from later.
+	*/
+	func saveInfoToFirebaseDB() {
+
+		guard let posts = Auth.auth().currentUser else {
+			return
+		}
+
+		ref.child("posts").child(posts.uid).child("category").setValue(categoryLabel.text)
+		ref.child("posts").child(posts.uid).child("description").setValue(descriptionTextView.text)
+		ref.child("posts").child(posts.uid).child("productName").setValue(productNameTF.text, forKey: "like")
+
+		/*
+		//Create a reference to the image
+		guard let user = Auth.auth().currentUser else { return }
+		let imageRef = Storage.storage().reference().child("posts").child("images").child(user.uid)
+		
+		// Get image data
+		let image = CreateStoryCollectionViewCell()
+		if let uploadData = PhotoArray.shareInstance.photosArray.first?.pngData() {
+		//CameraHandler.shared.imagePickedBlock?(image.photoImageView.image!.pngData()) {
+		//image.photoImageView.image?.pngData() {
+		//imagesArray.first?.pngData() {
+		
+		// Upload image to Firebase Cloud Storage
+		imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+		guard error == nil else {
+		// Handle error
+		return
+		}
+		// Get full image url
+		imageRef.downloadURL { (url, error) in
+		guard let downloadURL = url else {
+		// Handle error
+		return
+		}
+		
+		// Save url to database
+		Firestore.firestore().collection("images").document("myImage").setData(["imageUrl" : downloadURL.absoluteString])
+		}
+		}
+		}
+		*/
 	}
 
 	func didCellPressed(category: String) {
 		categoryLabel.text = category
 	}
 
-	func saveToCoreData(name: String, description: String, label: String) {
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-				return
-		}
-
-		let managedContext = appDelegate.persistentContainer.viewContext
-
-		let entity = NSEntityDescription.entity(forEntityName: "Post", in: managedContext)
-		let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as? Post
-
-		newUser?.name = name
-		newUser?.desciption = descriptionTextView.text
-		newUser?.category = categoryLabel.text
-		if let img = UIImage(named: "photo") {
-			let data = img.pngData() as NSData?
-			newUser?.photo = data
-		}
+//	func saveToCoreData(name: String, description: String, label: String) {
+//		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//				return
+//		}
+//
+//		let managedContext = appDelegate.persistentContainer.viewContext
+//
+//		let entity = NSEntityDescription.entity(forEntityName: "Post", in: managedContext)
+//		let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as? Post
+//
+//		newUser?.name = name
+//		newUser?.desciption = descriptionTextView.text
+//		newUser?.category = categoryLabel.text
+//		if let img = UIImage(named: "photo") {
+//			let data = img.pngData() as NSData?
+//			newUser?.photo = data
+//		}
+//		/*
 //		setValue(productNameTF.text, forKey: "name")
 //		newUser.setValue(descriptionTextView.text, forKey: "desciption")
 //		newUser.setValue(categoryLabel.text, forKey: "category")
-
-		do {
-			try managedContext.save()
-		} catch let error as NSError {
-			print("Could not save. \(error), \(error.userInfo)")
-		}
-	}
+//		*/
+//
+//		do {
+//			try managedContext.save()
+//		} catch let error as NSError {
+//			print("Could not save. \(error), \(error.userInfo)")
+//		}
+//	}
 }
 
 extension CreateStoryViewController: UITextViewDelegate {
@@ -124,6 +178,9 @@ extension CreateStoryViewController: UICollectionViewDelegate {
 		CameraHandler.shared.showActioSheet(vcAlert: self)
 		CameraHandler.shared.imagePickedBlock = { (image) in
 			cell.photoImageView.image = image
+			self.imagesArray.append(image)
+			print(image)
+			print(self.imagesArray)
 		}
 	}
 }

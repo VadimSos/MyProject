@@ -32,13 +32,9 @@ class SettingsTableViewController: UIViewController {
 	// MARK: - Actiones
 
 	func setupTableViewData() {
-		
-		
+
 		guard let userID = Auth.auth().currentUser?.uid else { return }
-//		ref.child("users").child(userID).observe(.value) { (data) in
-//			let name: String = (data.value as? String)!
-//			print(name)
-//		}
+
 		ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
 		let value = snapshot.value as? [String: Any]
 		let userName = value?["name"] as? String ?? ""

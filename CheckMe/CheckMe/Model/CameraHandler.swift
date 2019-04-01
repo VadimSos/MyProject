@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+class PhotoArray {
+	static let shareInstance = PhotoArray()
+	var photosArray: [UIImage] = []
+}
+
 class CameraHandler: NSObject {
 
 	static let shared = CameraHandler()
@@ -61,7 +66,10 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
 
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 		if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//			let collectionImage = CreateStoryCollectionViewCell()
 			self.imagePickedBlock?(image)
+//			PhotoArray.shareInstance.photosArray.append(image)
+//			collectionImage.photoImageView.image = image
 		} else {
 			print("Something went wrong")
 		}
