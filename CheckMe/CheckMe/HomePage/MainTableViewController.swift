@@ -15,8 +15,8 @@ class MainTableViewController: UIViewController {
 	// MARK: - Variables
 
 	@IBOutlet weak var tableView: UITableView!
-	var postNameCD: [Post] = []
-	var postsArray: [String] = []
+//	var postNameCD: [Post] = []
+	var postsArray: [PostsModel] = []
 	let ref = Database.database().reference()
 
 	// MARK: - Lifecycle
@@ -32,20 +32,24 @@ class MainTableViewController: UIViewController {
 
 	func displayPosts() {
 
-//		guard let posts = Auth.auth().currentUser else {
-//			return
-//		}
-//
-//		ref.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
-//			let value = snapshot.value as? [String: Any]
-//			let postCategory = value?["category"] as? String ?? ""
-//			let postDescription = value?["description"] as? String ?? ""
-//			let postProductName = value?["productName"] as? String ?? ""
-//
+		guard let posts = Auth.auth().currentUser else {
+			return
+		}
+
+		ref.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
+			let value = snapshot.value as? [String: Any]
+			let postCategory = value?["category"] as? String ?? ""
+			let postDescription = value?["description"] as? String ?? ""
+			let postProductName = value?["productName"] as? String ?? ""
+
+			let post = PostsModel(name: postCategory, description: postDescription, category: postProductName)
+			self.postsArray.append(post)
 //			self.postsArray = [postCategory, postDescription, postProductName]
-//	}
+			
+			self.tableView.reloadData()
+	}
 
-
+		/*
 		guard let appDelegate =
 		UIApplication.shared.delegate as? AppDelegate else {
 		return
@@ -61,8 +65,7 @@ class MainTableViewController: UIViewController {
 		} catch let error as NSError {
 		print("Could not fetch. \(error), \(error.userInfo)")
 		}
-
-
+	*/
 		tableView.reloadData()
 	}
 
@@ -84,15 +87,18 @@ extension MainTableViewController: UITableViewDataSource {
 			fatalError("error")
 		}
 
-//		let postInfo = postsArray[indexPath.row]
-//		cell.nameMainVCLabel.text = postInfo[(cell.nameMainVCLabel.text)?]
-//		cell.descriptionMainVCLabel.text = postInfo
-//		cell.categoryMainVCLabel.text = postInfo
+		let postInfo: PostsModel
+		postInfo = postsArray[indexPath.row]
+		cell.nameMainVCLabel.text = postInfo.name
+		cell.descriptionMainVCLabel.text = postInfo.description
+		cell.categoryMainVCLabel.text = postInfo.category
 
+		/*
 		let name: Post = postNameCD[indexPath.row]
 		cell.nameMainVCLabel.text = name.name// value(forKey: "name") as? String
 		cell.descriptionMainVCLabel.text = name.desciption//.value(forKey: "desciption") as? String
 		cell.categoryMainVCLabel.text = name.category //.value(forKey: "category") as? String
+		*/
 
 		return cell
 	}
