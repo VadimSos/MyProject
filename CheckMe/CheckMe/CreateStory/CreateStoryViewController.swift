@@ -65,7 +65,7 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 
 		ref.child("posts").child(posts.uid).child("category").setValue(categoryLabel.text)
 		ref.child("posts").child(posts.uid).child("description").setValue(descriptionTextView.text)
-		ref.child("posts").child(posts.uid).child("productName").setValue(productNameTF.text, forKey: "like")
+		ref.child("posts").child(posts.uid).child("productName").setValue(productNameTF.text)
 
 		/*
 		//Create a reference to the image

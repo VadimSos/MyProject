@@ -85,13 +85,27 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 			} else {
 				result = true
 			}
+
+			if mail.isValidLogin() {
+				result = true
+			} else {
+				showAlertDataIsWrong()
+				result = false
+			}
 		}
 
 		if let password = passwordTextField.text {
 			if password.textPasswordIsEmpty() {
-				showAlertDataIsWrong()
+				showAlertDataIsEmpty()
 			} else {
 				result = true
+			}
+
+			if password.isValidLogin() {
+				result = true
+			} else {
+				showAlertDataIsWrong()
+				result = false
 			}
 		}
 		return result
@@ -100,11 +114,15 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 	// MAKR: Alerts
 
 	func showAlertDataIsEmpty() {
-		UIAlertController.showError(message: NSLocalizedString("Data is empty", comment: ""), from: self)
+		UIAlertController.showError(message: NSLocalizedString("Data is empty",
+															   comment: ""), from: self)
 	}
 
 	func showAlertDataIsWrong() {
-		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""), from: self)
+		UIAlertController.showError(message: NSLocalizedString("Data is wrong." +
+																"\n Login should contain 2- 64 symbols and \"@\" \".\"." +
+																"\n Password should have min 8 characters, at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character  ",
+															   comment: ""), from: self)
 	}
 
 }

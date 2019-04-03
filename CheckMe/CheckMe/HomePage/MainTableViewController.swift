@@ -28,6 +28,7 @@ class MainTableViewController: UIViewController {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		tableView.reloadData()
 		}
 
 	func displayPosts() {
@@ -45,7 +46,7 @@ class MainTableViewController: UIViewController {
 			let post = PostsModel(name: postCategory, description: postDescription, category: postProductName)
 			self.postsArray.append(post)
 //			self.postsArray = [postCategory, postDescription, postProductName]
-			
+
 			self.tableView.reloadData()
 	}
 
