@@ -19,7 +19,7 @@
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* RegisterViewController.swift */; };
 		3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C267222F90D40033AD1F /* RoundedUIElements.swift */; };
-		3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26B223038900033AD1F /* UIAlertController.swift */; };
+		3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26B223038900033AD1F /* UIAlertConstructor.swift */; };
 		3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26D2230451A0033AD1F /* StringExtension.swift */; };
 		3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */; };
 		3F91C27A2230E7E80033AD1F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */; };
@@ -70,7 +70,7 @@
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F91C267222F90D40033AD1F /* RoundedUIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIElements.swift; sourceTree = "<group>"; };
-		3F91C26B223038900033AD1F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		3F91C26B223038900033AD1F /* UIAlertConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertConstructor.swift; sourceTree = "<group>"; };
 		3F91C26D2230451A0033AD1F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3F91C267222F90D40033AD1F /* RoundedUIElements.swift */,
-				3F91C26B223038900033AD1F /* UIAlertController.swift */,
+				3F91C26B223038900033AD1F /* UIAlertConstructor.swift */,
 				3F91C28B223598510033AD1F /* Color.swift */,
 			);
 			path = UI;
@@ -464,7 +464,7 @@
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,
-				3F91C26C223038900033AD1F /* UIAlertController.swift in Sources */,
+				3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */,
 				3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
 				3F91C28A22354C6D0033AD1F /* CategoryTableViewCell.swift in Sources */,
