@@ -95,6 +95,11 @@ class RegisterViewController: UIViewController {
 				}
 			}
 		}
+
+		if result == true {
+			showAlertDataSavedSuccefully()
+		}
+
 		return result
 	}
 

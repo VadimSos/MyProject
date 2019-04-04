@@ -5,3 +5,6 @@
   Created by Vadzim Sasnouski on 3/13/19.
   Copyright © 2019 Vadzim Sasnouski. All rights reserved.
 */
+
+	// MARK: - LoginViewController
+"Data is wrong" = "Data is wrong. \nLogin should contain 2 - 64 symbols and \"@ .\" \nPassword should have min 8 characters, at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character";

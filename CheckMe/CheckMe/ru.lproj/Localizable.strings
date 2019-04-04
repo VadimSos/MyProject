@@ -6,18 +6,30 @@
   Copyright © 2019 Vadzim Sasnouski. All rights reserved.
 */
 
-
+	// MARK: - RegisterViewController
 "Wrong data" = "Данные не корректны";
 "Empty data" = "Данные не введены";
 "Saved sucesfully" = "Сохранено успешно";
+
+	// MARK: - LoginViewController
 "Data is empty" = "Данные не введены";
-"Data is wrong" = "Данные не верны";
+"Data is wrong" = "Данные не верны. \nЛогин должен содержать 2 - 64 символов и символы \"@ .\" \nПароль должен содержать минимум: 8 имволов, 1 прописной символ, 1 строчный символ, 1 цифру, 1 специальный символ";
+
+
+	// MARK: - UIAlertController
 "Error" = "Ошибка";
 "Success" = "Выполнено";
+"Cancel" = "Отмена";
+"Confirm logout" = "Подтверждение выхода";
+
+	// MARK: - SettingsTableViewController
+"Date of birth" = "Дата рождения";
+"Gender" = "Пол";
+"Password" = "Пароль";
 "Logout" = "Выход";
 "Are you sure to exit?" = "Вы уверены, что хотите выйти?";
 
-//CategoryTableViewCell info
+	// MARK: - CategoryTableViewCell categories
 "Sport" = "Спорт";
 "Gas" = "Топливо";
 "Taxi" = "Такси";
@@ -25,7 +37,12 @@
 "Medicine" = "Медикаменты";
 "Treatment" = "Лечение";
 
-//Login buttons/labels
+	// MARK: - CameraHangler
+"Camera" = "Камера";
+"Gallery" = "Галерея";
+"Cancel" = "Закрыть";
+
+	//MARK: - Login buttons/labels
 "OyT-Im-1mM.title" = "Создать аккаунт";
 "dqa-dT-mn8" = "Почта";
 "mic-BJ-dv5" = "Пароль";

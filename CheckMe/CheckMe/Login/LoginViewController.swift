@@ -119,10 +119,7 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 	}
 
 	func showAlertDataIsWrong() {
-		UIAlertController.showError(message: NSLocalizedString("Data is wrong." +
-																"\n Login should contain 2- 64 symbols and \"@\" \".\"." +
-																"\n Password should have min 8 characters, at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character  ",
-															   comment: ""), from: self)
+		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""), from: self)
 	}
 
 }
