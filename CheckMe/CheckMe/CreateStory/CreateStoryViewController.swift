@@ -25,7 +25,7 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		descriptionTextView.text = "Description"
+		descriptionTextView.text = NSLocalizedString("Description", comment: "")
 		descriptionTextView.textColor = .magnezium()
 
 		self.hideKeyboardWhenTappedAround()

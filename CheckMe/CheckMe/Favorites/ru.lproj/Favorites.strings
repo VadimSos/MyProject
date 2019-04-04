@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BTk-s2-qXx"; */
+"BTk-s2-qXx.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "DZo-hv-NzW"; */
+"DZo-hv-NzW.title" = "Избранные";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PuL-zk-zS7"; */
+"PuL-zk-zS7.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RgT-QP-fCJ"; */
+"RgT-QP-fCJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "etQ-if-9JN"; */
+"etQ-if-9JN.text" = "Label";

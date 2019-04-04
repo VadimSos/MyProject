@@ -1,0 +1,45 @@
+
+/* Class = "UITextField"; placeholder = "Family name"; ObjectID = "EPn-pE-Ptl"; */
+"EPn-pE-Ptl.placeholder" = "Фамилия";
+
+/* Class = "UITextField"; placeholder = "confirm password"; ObjectID = "EbU-JM-Vtu"; */
+"EbU-JM-Vtu.placeholder" = "подтвердить пароль";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "IaC-oP-xSS"; */
+"IaC-oP-xSS.placeholder" = "Имя";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "TU3-yP-Ugl"; */
+"TU3-yP-Ugl.normalTitle" = "Зарегистрироваться";
+
+/* Class = "UITextField"; placeholder = "enter password"; ObjectID = "WB6-ag-anf"; */
+"WB6-ag-anf.placeholder" = "введите пароль";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "b3f-wg-Qza"; */
+"b3f-wg-Qza.normalTitle" = "Регистрация";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "dqa-dT-mn8"; */
+"dqa-dT-mn8.placeholder" = "Почта";
+
+/* Class = "UITextField"; placeholder = "phone number"; ObjectID = "ffP-Wh-QeI"; */
+"ffP-Wh-QeI.placeholder" = "телефон дом.";
+
+/* Class = "UITextField"; placeholder = "phone number"; ObjectID = "hOP-ac-LXW"; */
+"hOP-ac-LXW.placeholder" = "телефон моб.";
+
+/* Class = "UITextField"; placeholder = "enter E-mail"; ObjectID = "j01-fL-Csq"; */
+"j01-fL-Csq.placeholder" = "Введите почту";
+
+/* Class = "UIButton"; normalTitle = "Forgot password"; ObjectID = "j6t-pK-HJ0"; */
+"j6t-pK-HJ0.normalTitle" = "Восстановить пароль";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "mic-BJ-dv5"; */
+"mic-BJ-dv5.placeholder" = "Пароль";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "oxo-l4-xCg"; */
+"oxo-l4-xCg.normalTitle" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "tJN-CG-9Nv"; */
+"tJN-CG-9Nv.normalTitle" = "Войти";
+
+/* Class = "UILabel"; text = "CheckMe"; ObjectID = "uIu-3u-SEM"; */
+"uIu-3u-SEM.text" = "CheckMe";

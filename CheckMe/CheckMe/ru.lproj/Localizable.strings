@@ -42,12 +42,8 @@
 "Gallery" = "Галерея";
 "Cancel" = "Закрыть";
 
-	//MARK: - Login buttons/labels
-"OyT-Im-1mM.title" = "Создать аккаунт";
-"dqa-dT-mn8" = "Почта";
-"mic-BJ-dv5" = "Пароль";
-"j6t-pK-HJ0.title" = "Забыли пароль";
-"oxo-l4-xCg" = "Войти";
+	// MARK: - CreateStoryViewController
+"Description" = "Описание";
 
 
 

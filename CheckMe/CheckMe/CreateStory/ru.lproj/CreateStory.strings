@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Save post"; ObjectID = "1HT-bw-vse"; */
+"1HT-bw-vse.normalTitle" = "Опубликовать";
+
+/* Class = "UIButton"; normalTitle = "Category"; ObjectID = "32B-SX-3lj"; */
+"32B-SX-3lj.normalTitle" = "Категория";
+
+/* Class = "UILabel"; text = "All categories"; ObjectID = "3xJ-K0-6zK"; */
+"3xJ-K0-6zK.text" = "Все категории";
+
+/* Class = "UITextField"; placeholder = "Product name"; ObjectID = "N86-VU-9r6"; */
+"N86-VU-9r6.placeholder" = "Название";
+
+/* Class = "UINavigationItem"; title = "Make announcements"; ObjectID = "YEa-1z-ukI"; */
+"YEa-1z-ukI.title" = "Подача объявления";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "dHG-aU-xRi"; */
+"dHG-aU-xRi.text" = "Title";

@@ -46,10 +46,10 @@ class SettingsTableViewController: UIViewController {
 			let item2 = userFamilyName
 			let item3 = userCellPhoneNumber
 			let item4 = userPhoneNumber
-			let item5 = "Date of birth"
-			let item6 = "Gender"
-			let item7 = "Password"
-			let item8 = "Logout"
+			let item5 = NSLocalizedString("Date of birth", comment: "")
+			let item6 = NSLocalizedString("Gender", comment: "")
+			let item7 = NSLocalizedString("Password", comment: "")
+			let item8 = NSLocalizedString("Logout", comment: "")
 
 			self.userData = [[item1, item2, item3, item4], [item5, item6], [item7], [item8]]
 			self.tableView.reloadData()
@@ -102,8 +102,8 @@ extension SettingsTableViewController: UITableViewDelegate {
 		}
 
 		if indexPath.section == 3 {
-			let myAlert = UIAlertController(title: "Logout",
-											message: "Are you sure to exit?",
+			let myAlert = UIAlertController(title: NSLocalizedString("Logout", comment: ""),
+											message: NSLocalizedString("Are you sure to exit?", comment: ""),
 											preferredStyle: UIAlertController.Style.alert)
 			myAlert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
 											style: UIAlertAction.Style.cancel,

@@ -1,0 +1,24 @@
+
+/* Class = "UITextField"; placeholder = "New password"; ObjectID = "0wv-fu-RH6"; */
+"0wv-fu-RH6.placeholder" = "Новый пароль";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "76q-T3-soX"; */
+"76q-T3-soX.title" = "Настройки";
+
+/* Class = "UIButton"; normalTitle = "Change password"; ObjectID = "9qe-Oe-jw1"; */
+"9qe-Oe-jw1.normalTitle" = "Изменить пароль";
+
+/* Class = "UINavigationItem"; title = "Change password"; ObjectID = "LTb-Up-jur"; */
+"LTb-Up-jur.title" = "Изменение пароля";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "cNu-Ii-9Vm"; */
+"cNu-Ii-9Vm.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "n6F-fC-fTD"; */
+"n6F-fC-fTD.normalTitle" = "Выйти";
+
+/* Class = "UILabel"; text = "e-mail"; ObjectID = "r8F-VA-LhC"; */
+"r8F-VA-LhC.text" = "e-mail";
+
+/* Class = "UITextField"; placeholder = "Current password"; ObjectID = "zfH-2q-WbN"; */
+"zfH-2q-WbN.placeholder" = "Текущий пароль";

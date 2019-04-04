@@ -101,7 +101,7 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 				result = true
 			}
 
-			if password.isValidLogin() {
+			if password.isValidPassword() {
 				result = true
 			} else {
 				showAlertDataIsWrong()
