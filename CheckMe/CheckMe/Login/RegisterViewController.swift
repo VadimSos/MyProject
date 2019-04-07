@@ -89,16 +89,13 @@ class RegisterViewController: UIViewController {
 			} else {
 				if password.isValidPassword(), passowordTextField.text == confirmpasswordTextField.text {
 					createAccount()
+					showAlertDataSavedSuccefully()
 					result = true
 				} else {
 					showAlertIfDataIsIncorrect()
 					result = false
 				}
 			}
-		}
-
-		if result == true {
-			showAlertDataSavedSuccefully()
 		}
 
 		return result

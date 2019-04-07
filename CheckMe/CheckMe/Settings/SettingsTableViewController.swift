@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseCore
 import FirebaseDatabase
+import AUPickerCell
 
 class SettingsTableViewController: UIViewController {
 
@@ -80,27 +81,66 @@ extension SettingsTableViewController: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return userData[section].count
+			return userData[section].count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "contactInfoCell", for: indexPath)
+		if indexPath.section == 1 {
+			let cell = AUPickerCell(type: .date, reuseIdentifier: "dataCell")
 
-		cell.textLabel?.text = userData[indexPath.section][indexPath.row]
-		tableView.tableFooterView = UIView(frame: .zero)
-		return cell
+			cell.separatorInset = UIEdgeInsets.zero
+			cell.datePickerMode = .time
+			cell.timeZone = TimeZone(abbreviation: "UTC")
+			cell.dateStyle = .none
+			cell.timeStyle = .short
+			cell.separatorHeight = 1
+			cell.unexpandedHeight = 100
+			cell.textLabel?.text = userData[indexPath.section][indexPath.row]
+			tableView.tableFooterView = UIView(frame: .zero)
+			return cell
+		} else {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "contactInfoCell", for: indexPath)
+
+			cell.textLabel?.text = userData[indexPath.section][indexPath.row]
+			tableView.tableFooterView = UIView(frame: .zero)
+			return cell
+
+		}
 	}
 
+	func auPickerCell(_ cell: AUPickerCell, didPick row: Int, value: Any) {
+		print(value)
+//		self.pickedDate = value as! Date
+	}
 }
 
-extension SettingsTableViewController: UITableViewDelegate {
+	// MARK: - UITableViewDelegate
+
+extension SettingsTableViewController: UITableViewDelegate, AUPickerCellDelegate {
+
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		if let cell = tableView.cellForRow(at: indexPath) as? AUPickerCell {
+			return cell.height
+		}
+		return self.tableView(tableView, heightForRowAt: indexPath)
+	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let passwordRow = indexPath
-		if passwordRow.section == 2 {
+
+		//datePicker of birth/gender section used
+		if indexPath.section == 1 {
+			tableView.deselectRow(at: indexPath, animated: true)
+			if let cell = tableView.cellForRow(at: indexPath) as? AUPickerCell {
+				cell.selectedInTableView(tableView)
+			}
+		}
+
+		//password section used
+		if indexPath.section == 2 {
 			self.performSegue(withIdentifier: "changePasswordID", sender: self)
 		}
 
+		//logout section used
 		if indexPath.section == 3 {
 			let myAlert = UIAlertController(title: NSLocalizedString("Logout", comment: ""),
 											message: NSLocalizedString("Are you sure to exit?", comment: ""),
