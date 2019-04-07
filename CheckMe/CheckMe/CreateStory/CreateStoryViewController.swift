@@ -67,7 +67,6 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		ref.child("posts").child(posts.uid).child("description").setValue(descriptionTextView.text)
 		ref.child("posts").child(posts.uid).child("productName").setValue(productNameTF.text)
 
-		/*
 		//Create a reference to the image
 		guard let user = Auth.auth().currentUser else { return }
 		let imageRef = Storage.storage().reference().child("posts").child("images").child(user.uid)
@@ -97,7 +96,6 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		}
 		}
 		}
-		*/
 	}
 
 	func didCellPressed(category: String) {
@@ -135,6 +133,8 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 //	}
 }
 
+	// MARK: - UITextViewDelegate
+
 extension CreateStoryViewController: UITextViewDelegate {
 
 	// MARK: - Description edditing
@@ -154,6 +154,8 @@ extension CreateStoryViewController: UITextViewDelegate {
 	}
 }
 
+	// MARK: - UICollectionViewDataSource
+
 extension CreateStoryViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return 8
@@ -168,6 +170,8 @@ extension CreateStoryViewController: UICollectionViewDataSource {
 		return cell
 	}
 }
+
+	// MARK: - UICollectionViewDelegate
 
 extension CreateStoryViewController: UICollectionViewDelegate {
 
