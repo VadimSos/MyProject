@@ -42,7 +42,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" textLabel="ZJ2-Ak-Ulx" detailTextLabel="QlW-KT-eeQ" style="IBUITableViewCellStyleValue1" id="cV8-7G-dXl" customClass="SettingsTableViewCell" customModule="CheckMe" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="TopLeft" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" textLabel="ZJ2-Ak-Ulx" detailTextLabel="QlW-KT-eeQ" style="IBUITableViewCellStyleValue1" id="cV8-7G-dXl" customClass="SettingsTableViewCell" customModule="CheckMe" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV8-7G-dXl" id="bmO-mA-JiZ">

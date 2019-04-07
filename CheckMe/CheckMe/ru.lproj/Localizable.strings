@@ -27,6 +27,9 @@
 "Password" = "Пароль";
 "Logout" = "Выход";
 "Are you sure to exit?" = "Вы уверены, что хотите выйти?";
+"Not selected" = "Не выбран";
+"Male" = "Мужской";
+"Female" = "Женский";
 
 	// MARK: - CategoryTableViewCell categories
 "Sport" = "Спорт";

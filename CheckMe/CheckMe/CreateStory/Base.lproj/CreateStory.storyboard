@@ -267,6 +267,6 @@
     </scenes>
     <resources>
         <image name="AddPhotoToCollection" width="30" height="30"/>
-        <image name="Add_page" width="30" height="30"/>
+        <image name="Add_page" width="37.5" height="37.5"/>
     </resources>
 </document>

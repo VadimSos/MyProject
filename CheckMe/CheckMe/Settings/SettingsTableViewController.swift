@@ -100,19 +100,23 @@ extension SettingsTableViewController: UITableViewDataSource {
 				cell.timeStyle = .none
 				cell.dateStyle = .medium
 				cell.separatorHeight = 1
-				cell.unexpandedHeight = 100
-				cell.textLabel?.text = userData[indexPath.section][indexPath.row]
-				tableView.tableFooterView = UIView(frame: .zero)
+//				cell.unexpandedHeight = 1
+//				cell.leftLabel.frame.origin.y = 0
+//				cell.leftLabel.frame.origin.x = self.view.frame.height - cell.leftLabel.frame.height
+//				cell.textLabel?.textAlignment = .left
+//				cell.leftLabel.bounds = CGRect(x: 0, y: 0, width: 50, height: 10)
+				cell.textLabel?.text = NSLocalizedString("Date of birth", comment: "")
 				return cell
 			//gender
 			case 1:
 				let cell = AUPickerCell(type: .default, reuseIdentifier: "dataCell")
 
 				cell.delegate = self
-				cell.values = ["Not selected", "Male", "Female"]
+				cell.values = [NSLocalizedString("Not selected", comment: ""),
+							   NSLocalizedString("Male", comment: ""),
+							   NSLocalizedString("Female", comment: "")]
 				cell.selectedRow = 0
-				cell.textLabel?.text = userData[indexPath.section][indexPath.row]
-				tableView.tableFooterView = UIView(frame: .zero)
+				cell.textLabel?.text = NSLocalizedString("Gender", comment: "")
 				return cell
 			default:
 				let cell = tableView.dequeueReusableCell(withIdentifier: "contactInfoCell", for: indexPath)
@@ -146,7 +150,7 @@ extension SettingsTableViewController: UITableViewDelegate, AUPickerCellDelegate
 		if let cell = tableView.cellForRow(at: indexPath) as? AUPickerCell {
 			return cell.height
 		}
-		return 40
+		return 44
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
