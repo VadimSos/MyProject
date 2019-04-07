@@ -85,19 +85,43 @@ extension SettingsTableViewController: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if indexPath.section == 1 {
-			let cell = AUPickerCell(type: .date, reuseIdentifier: "dataCell")
 
-			cell.separatorInset = UIEdgeInsets.zero
-			cell.datePickerMode = .time
-			cell.timeZone = TimeZone(abbreviation: "UTC")
-			cell.dateStyle = .none
-			cell.timeStyle = .short
-			cell.separatorHeight = 1
-			cell.unexpandedHeight = 100
-			cell.textLabel?.text = userData[indexPath.section][indexPath.row]
-			tableView.tableFooterView = UIView(frame: .zero)
-			return cell
+		////datePicker of birth/gender selected
+		if indexPath.section == 1 {
+
+			switch indexPath.row {
+			//day of birth
+			case 0:
+				let cell = AUPickerCell(type: .date, reuseIdentifier: "dataCell")
+
+				cell.delegate = self
+				cell.separatorInset = UIEdgeInsets.zero
+				cell.datePickerMode = .date
+				cell.timeStyle = .none
+				cell.dateStyle = .medium
+				cell.separatorHeight = 1
+				cell.unexpandedHeight = 100
+				cell.textLabel?.text = userData[indexPath.section][indexPath.row]
+				tableView.tableFooterView = UIView(frame: .zero)
+				return cell
+			//gender
+			case 1:
+				let cell = AUPickerCell(type: .default, reuseIdentifier: "dataCell")
+
+				cell.delegate = self
+				cell.values = ["Not selected", "Male", "Female"]
+				cell.selectedRow = 0
+				cell.textLabel?.text = userData[indexPath.section][indexPath.row]
+				tableView.tableFooterView = UIView(frame: .zero)
+				return cell
+			default:
+				let cell = tableView.dequeueReusableCell(withIdentifier: "contactInfoCell", for: indexPath)
+
+				cell.textLabel?.text = userData[indexPath.section][indexPath.row]
+				tableView.tableFooterView = UIView(frame: .zero)
+				return cell
+			}
+
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "contactInfoCell", for: indexPath)
 
@@ -122,7 +146,7 @@ extension SettingsTableViewController: UITableViewDelegate, AUPickerCellDelegate
 		if let cell = tableView.cellForRow(at: indexPath) as? AUPickerCell {
 			return cell.height
 		}
-		return self.tableView(tableView, heightForRowAt: indexPath)
+		return 40
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
