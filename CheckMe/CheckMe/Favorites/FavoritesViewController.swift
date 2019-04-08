@@ -8,13 +8,18 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class FavoritesViewController: UIViewController {
 
 	// MARK: - Variables
 
 	@IBOutlet weak var favoritesTV: UITableView!
-	var postNameFavoritesCD: [Post] = []
+//	var postNameFavoritesCD: [Post] = []
+	var postsArray: [PostModel] = []
+	var imageArray: [UIImage] = []
+	let refDB = Database.database().reference()
+	let storage = Storage.storage().reference()
 
 	// MARK: - Lifecycle
 
@@ -25,23 +30,64 @@ class FavoritesViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
+
+		/*
 		guard let appDelegate =
-			UIApplication.shared.delegate as? AppDelegate else {
-				return
+		UIApplication.shared.delegate as? AppDelegate else {
+		return
 		}
 		let managedContext =
-			appDelegate.persistentContainer.viewContext
-
+		appDelegate.persistentContainer.viewContext
+		
 		let fetchRequest =
-			NSFetchRequest<NSManagedObject>(entityName: "Post")
-
+		NSFetchRequest<NSManagedObject>(entityName: "Post")
+		
 		do {
-			postNameFavoritesCD = try managedContext.fetch(fetchRequest) as? [Post] ?? []
+		postNameFavoritesCD = try managedContext.fetch(fetchRequest) as? [Post] ?? []
 		} catch let error as NSError {
-			print("Could not fetch. \(error), \(error.userInfo)")
+		print("Could not fetch. \(error), \(error.userInfo)")
+		}
+		
+		favoritesTV.reloadData()
+		*/
+	}
+
+	func displayPostsFavoritesVC() {
+
+		guard let posts = Auth.auth().currentUser else {
+			return
 		}
 
-		favoritesTV.reloadData()
+		//download images
+		let storageRef = storage.child("posts").child("images").child(posts.uid)
+
+		storageRef.getData(maxSize: 100 * 1024 * 1024) { (data, error) in
+			if let error = error {
+				print(error)
+			} else {
+				let image = UIImage(data: data!)
+				self.imageArray.append(image!)
+
+				//download posts
+				self.refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
+
+					let value = snapshot.value as? [String: Any]
+					let postCategory = value?["category"] as? String ?? ""
+					let postDescription = value?["description"] as? String ?? ""
+					let postProductName = value?["productName"] as? String ?? ""
+					let postLike = value?["like"] as? Bool ?? false
+
+					let post = PostModel(image: self.imageArray.first ?? UIImage(),
+										 name: postCategory,
+										 description: postDescription,
+										 category: postProductName,
+										 like: postLike)
+					self.postsArray.append(post)
+
+					self.favoritesTV.reloadData()
+				}
+			}
+		}
 	}
 }
 
@@ -50,19 +96,25 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return postNameFavoritesCD.count
+		return postsArray.count //postNameFavoritesCD.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-		let name: Post = postNameFavoritesCD[indexPath.row]
+//		let name: Post = postNameFavoritesCD[indexPath.row]
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as? FavoritesTableViewCell else {
 			fatalError("error")
 		}
 
-		cell.nameFavoritesLabel.text = name.name// value(forKey: "name") as? String
-		cell.descriptionFavoritesLabel.text = name.desciption//.value(forKey: "desciption") as? String
-		cell.categoryFavoritesLabel.text = name.category //.value(forKey: "category") as? String
+		let postInfo: PostModel
+		postInfo = postsArray[indexPath.row]
+		cell.nameFavoritesLabel.text = postInfo.pName
+		cell.descriptionFavoritesLabel.text = postInfo.pDescription
+		cell.categoryFavoritesLabel.text = postInfo.pCategory
+		cell.imageFavorites.image = postInfo.pImage
+//		cell.nameFavoritesLabel.text = name.name// value(forKey: "name") as? String
+//		cell.descriptionFavoritesLabel.text = name.desciption//.value(forKey: "desciption") as? String
+//		cell.categoryFavoritesLabel.text = name.category //.value(forKey: "category") as? String
 
 		return cell
 	}

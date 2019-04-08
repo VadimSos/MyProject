@@ -69,6 +69,7 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		postUserRef.child("category").setValue(categoryLabel.text)
 		postUserRef.child("description").setValue(descriptionTextView.text)
 		postUserRef.child("productName").setValue(productNameTF.text)
+		postUserRef.child("like").setValue(false)
 
 		//Create a reference to the image
 //		guard let user = Auth.auth().currentUser else { return }

@@ -14,4 +14,5 @@ protocol PostModelProtocol {
 	func postName() -> String
 	func postDescription() -> String
 	func postCategory() -> String
+	func postLike() -> Bool
 }

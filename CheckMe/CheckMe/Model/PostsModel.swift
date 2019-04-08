@@ -15,12 +15,14 @@ class PostModel: PostModelProtocol {
 	var pName: String
 	var pDescription: String
 	var pCategory: String
+	var pLike: Bool
 
-	init(image: UIImage, name: String, description: String, category: String) {
+	init(image: UIImage, name: String, description: String, category: String, like: Bool) {
 		pImage = image
 		pName = name
 		pDescription = description
 		pCategory = category
+		pLike = like
 	}
 
 	func postImage() -> UIImage {
@@ -37,5 +39,9 @@ class PostModel: PostModelProtocol {
 
 	func postCategory() -> String {
 		return self.pCategory
+	}
+	
+	func postLike() -> Bool {
+		return self.pLike
 	}
 }

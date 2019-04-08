@@ -10,7 +10,6 @@
 		3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */; };
 		3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */; };
 		3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F4224B46D900159CE2 /* WelcomViewController.swift */; };
-		3F3820F72250B47100159CE2 /* FileUploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F62250B47100159CE2 /* FileUploading.swift */; };
 		3F3820F922529A2A00159CE2 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F822529A2A00159CE2 /* PostsModel.swift */; };
 		3F3820FD225606CB00159CE2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3820FF225606CB00159CE2 /* Login.storyboard */; };
 		3F382102225609E900159CE2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F382104225609E900159CE2 /* Settings.storyboard */; };
@@ -41,6 +40,7 @@
 		3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */; };
 		3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */; };
 		3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */; };
+		3F9E518A225B8A950011DC40 /* PostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5189225B8A950011DC40 /* PostDataManager.swift */; };
 		3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E63223C0453006015CC /* MainTableViewCell.swift */; };
 		3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E66223C22A8006015CC /* HideKeyBoard.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
@@ -55,7 +55,6 @@
 		3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F3820F4224B46D900159CE2 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
-		3F3820F62250B47100159CE2 /* FileUploading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploading.swift; sourceTree = "<group>"; };
 		3F3820F822529A2A00159CE2 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		3F3820FA2256032600159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3F3820FB2256032600159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		3F9E5189225B8A950011DC40 /* PostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataManager.swift; sourceTree = "<group>"; };
 		3FF00E63223C0453006015CC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		3FF00E66223C22A8006015CC /* HideKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoard.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,10 +188,10 @@
 			children = (
 				3F91C29C223ABEC90033AD1F /* Persistance */,
 				3F91C28F223818800033AD1F /* CameraHandler.swift */,
-				3F3820F62250B47100159CE2 /* FileUploading.swift */,
 				3F3820F822529A2A00159CE2 /* PostsModel.swift */,
 				3F382115225B32FE00159CE2 /* PostModelProtocol.swift */,
 				3F382113225A6AA200159CE2 /* PhotoArray.swift */,
+				3F9E5189225B8A950011DC40 /* PostDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -460,7 +460,7 @@
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
 				3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */,
 				3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */,
-				3F3820F72250B47100159CE2 /* FileUploading.swift in Sources */,
+				3F9E518A225B8A950011DC40 /* PostDataManager.swift in Sources */,
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C29F223ABEDF0033AD1F /* Model.xcdatamodeld in Sources */,

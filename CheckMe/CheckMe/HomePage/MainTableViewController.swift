@@ -25,15 +25,22 @@ class MainTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		displayPosts()
+//		displayPostsMainVC()
     }
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		tableView.reloadData()
-		}
+		
+			displayPostsMainVC()
+	}
 
-	func displayPosts() {
+	// MARK: - Actions
+
+	@IBAction func buttonLikeDidTap(_ sender: UIBarButtonItem) {
+		tabBarController?.selectedIndex = 1
+	}
+
+	func displayPostsMainVC() {
 
 		guard let posts = Auth.auth().currentUser else {
 			return
@@ -42,7 +49,7 @@ class MainTableViewController: UIViewController {
 		//download images
 		let storageRef = storage.child("posts").child("images").child(posts.uid)
 
-		storageRef.getData(maxSize: 15 * 1024 * 1024) { (data, error) in
+		storageRef.getData(maxSize: 100 * 1024 * 1024) { (data, error) in
 			if let error = error {
 				print(error)
 			} else {
@@ -56,8 +63,13 @@ class MainTableViewController: UIViewController {
 					let postCategory = value?["category"] as? String ?? ""
 					let postDescription = value?["description"] as? String ?? ""
 					let postProductName = value?["productName"] as? String ?? ""
+					let postLike = value?["like"] as? Bool ?? false
 
-					let post = PostModel(image: self.imageArray.first ?? UIImage(), name: postCategory, description: postDescription, category: postProductName)
+					let post = PostModel(image: self.imageArray.first ?? UIImage(),
+										 name: postCategory,
+										 description: postDescription,
+										 category: postProductName,
+										 like: postLike)
 					self.postsArray.append(post)
 
 					self.tableView.reloadData()
@@ -82,12 +94,7 @@ class MainTableViewController: UIViewController {
 		print("Could not fetch. \(error), \(error.userInfo)")
 		}
 	*/
-		tableView.reloadData()
 	}
-
-	@IBAction func addPostToFavorites(_ sender: UIBarButtonItem) {
-	}
-
 }
 
 	// MARK: - Table view data source
@@ -103,12 +110,7 @@ extension MainTableViewController: UITableViewDataSource {
 			fatalError("error")
 		}
 
-		let postInfo: PostModel
-		postInfo = postsArray[indexPath.row]
-		cell.nameMainVCLabel.text = postInfo.pName
-		cell.descriptionMainVCLabel.text = postInfo.pDescription
-		cell.categoryMainVCLabel.text = postInfo.pCategory
-		cell.imageMainVC.image = postInfo.pImage
+		cell.updateTableView(with: postsArray[indexPath.row])
 
 		/*
 		let name: Post = postNameCD[indexPath.row]

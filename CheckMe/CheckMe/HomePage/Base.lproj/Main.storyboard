@@ -129,7 +129,7 @@
                     <navigationItem key="navigationItem" id="D3W-wO-tuB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jep-dl-1Qe">
                             <connections>
-                                <action selector="addPostToFavorites:" destination="BYZ-38-t0r" id="rDf-wo-hsX"/>
+                                <action selector="buttonLikeDidTap:" destination="BYZ-38-t0r" id="Om6-jW-LMq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
