@@ -16,6 +16,8 @@
 		3F382102225609E900159CE2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F382104225609E900159CE2 /* Settings.storyboard */; };
 		3F38210922560D7200159CE2 /* CreateStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F38210B22560D7200159CE2 /* CreateStory.storyboard */; };
 		3F38210E22560E4900159CE2 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F38211022560E4900159CE2 /* Favorites.storyboard */; };
+		3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F382113225A6AA200159CE2 /* PhotoArray.swift */; };
+		3F382116225B32FE00159CE2 /* PostModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F382115225B32FE00159CE2 /* PostModelProtocol.swift */; };
 		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* RegisterViewController.swift */; };
 		3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C267222F90D40033AD1F /* RoundedUIElements.swift */; };
@@ -67,6 +69,8 @@
 		3F38210D22560D7500159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CreateStory.strings; sourceTree = "<group>"; };
 		3F38210F22560E4900159CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
 		3F38211222560E4C00159CE2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Favorites.strings; sourceTree = "<group>"; };
+		3F382113225A6AA200159CE2 /* PhotoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoArray.swift; sourceTree = "<group>"; };
+		3F382115225B32FE00159CE2 /* PostModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelProtocol.swift; sourceTree = "<group>"; };
 		3F91C261222E49C50033AD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F91C263222EF1570033AD1F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F91C267222F90D40033AD1F /* RoundedUIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIElements.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				3F91C28F223818800033AD1F /* CameraHandler.swift */,
 				3F3820F62250B47100159CE2 /* FileUploading.swift */,
 				3F3820F822529A2A00159CE2 /* PostsModel.swift */,
+				3F382115225B32FE00159CE2 /* PostModelProtocol.swift */,
+				3F382113225A6AA200159CE2 /* PhotoArray.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
 				3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */,
+				3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */,
 				3F3820F72250B47100159CE2 /* FileUploading.swift in Sources */,
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
@@ -463,6 +470,7 @@
 				3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
 				3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */,
+				3F382116225B32FE00159CE2 /* PostModelProtocol.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,

@@ -18,8 +18,9 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	@IBOutlet weak var descriptionTextView: UITextView!
 	@IBOutlet weak var productNameTF: UITextField!
 
-	var imagesArray: [UIImage] = []
-	let ref = Database.database().reference()
+//	var imagesArray: [UIImage] = []
+	let refDB = Database.database().reference()
+	let refStorage = Storage.storage().reference()
 
 	// MARK: - Lifecycle
 
@@ -63,38 +64,43 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 			return
 		}
 
-		ref.child("posts").child(posts.uid).child("category").setValue(categoryLabel.text)
-		ref.child("posts").child(posts.uid).child("description").setValue(descriptionTextView.text)
-		ref.child("posts").child(posts.uid).child("productName").setValue(productNameTF.text)
+		let postUserRef = refDB.child("posts").child(posts.uid)
+
+		postUserRef.child("category").setValue(categoryLabel.text)
+		postUserRef.child("description").setValue(descriptionTextView.text)
+		postUserRef.child("productName").setValue(productNameTF.text)
 
 		//Create a reference to the image
-		guard let user = Auth.auth().currentUser else { return }
-		let imageRef = Storage.storage().reference().child("posts").child("images").child(user.uid)
-		
+//		guard let user = Auth.auth().currentUser else { return }
+		let imageRef = refStorage.child("posts").child("images").child(posts.uid)
+
 		// Get image data
-		let image = CreateStoryCollectionViewCell()
-		if let uploadData = PhotoArray.shareInstance.photosArray.first?.pngData() {
+		//let image = CreateStoryCollectionViewCell()
 		//CameraHandler.shared.imagePickedBlock?(image.photoImageView.image!.pngData()) {
 		//image.photoImageView.image?.pngData() {
 		//imagesArray.first?.pngData() {
+
+		if let uploadData = PhotoArray.sharedInstance.photosArray.first?.pngData() {
 		
-		// Upload image to Firebase Cloud Storage
-		imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
-		guard error == nil else {
-		// Handle error
-		return
-		}
-		// Get full image url
-		imageRef.downloadURL { (url, error) in
-		guard let downloadURL = url else {
-		// Handle error
-		return
-		}
-		
-		// Save url to database
-		Firestore.firestore().collection("images").document("myImage").setData(["imageUrl" : downloadURL.absoluteString])
-		}
-		}
+			// Upload image to Firebase Cloud Storage
+			imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+				guard error == nil else {
+					// Handle error
+					return
+				}
+				
+				// Get full image url
+				imageRef.downloadURL { (url, error) in
+					guard let downloadURL = url else {
+						// Handle error
+						return
+					}
+
+					// Save url to database
+					postUserRef.child("photoURL").setValue(["imageUrl": downloadURL.absoluteString])
+					//Firestore.firestore().collection("images").document("myImage").setData(["imageUrl" : downloadURL.absoluteString])
+				}
+			}
 		}
 	}
 
@@ -182,9 +188,8 @@ extension CreateStoryViewController: UICollectionViewDelegate {
 		CameraHandler.shared.showActioSheet(vcAlert: self)
 		CameraHandler.shared.imagePickedBlock = { (image) in
 			cell.photoImageView.image = image
-			self.imagesArray.append(image)
-			print(image)
-			print(self.imagesArray)
+//			self.imagesArray.append(image)
+			PhotoArray.sharedInstance.photosArray.append(image)
 		}
 	}
 }

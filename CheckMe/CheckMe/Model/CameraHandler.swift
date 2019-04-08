@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-class PhotoArray {
-	static let shareInstance = PhotoArray()
-	var photosArray: [UIImage] = []
-}
-
 class CameraHandler: NSObject {
 
 	static let shared = CameraHandler()

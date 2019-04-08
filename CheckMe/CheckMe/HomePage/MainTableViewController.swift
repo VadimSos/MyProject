@@ -16,8 +16,10 @@ class MainTableViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 //	var postNameCD: [Post] = []
-	var postsArray: [PostsModel] = []
-	let ref = Database.database().reference()
+	var postsArray: [PostModel] = []
+	var imageArray: [UIImage] = []
+	let refDB = Database.database().reference()
+	let storage = Storage.storage().reference()
 
 	// MARK: - Lifecycle
 
@@ -37,13 +39,27 @@ class MainTableViewController: UIViewController {
 			return
 		}
 
-		ref.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
+		//download images
+		let storageRef = storage.child("posts").child("images").child(posts.uid)
+
+		storageRef.getData(maxSize: 15 * 1024 * 1024) { (data, error) in
+			if let error = error {
+				print(error)
+			} else {
+				let image = UIImage(data: data!)
+				self.imageArray.append(image!)
+			}
+		}
+
+		//download posts
+		refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
+			
 			let value = snapshot.value as? [String: Any]
 			let postCategory = value?["category"] as? String ?? ""
 			let postDescription = value?["description"] as? String ?? ""
 			let postProductName = value?["productName"] as? String ?? ""
 
-			let post = PostsModel(name: postCategory, description: postDescription, category: postProductName)
+			let post = PostModel(image: self.imageArray.first ?? UIImage(), name: postCategory, description: postDescription, category: postProductName)
 			self.postsArray.append(post)
 //			self.postsArray = [postCategory, postDescription, postProductName]
 
@@ -88,11 +104,12 @@ extension MainTableViewController: UITableViewDataSource {
 			fatalError("error")
 		}
 
-		let postInfo: PostsModel
+		let postInfo: PostModel
 		postInfo = postsArray[indexPath.row]
-		cell.nameMainVCLabel.text = postInfo.name
-		cell.descriptionMainVCLabel.text = postInfo.description
-		cell.categoryMainVCLabel.text = postInfo.category
+		cell.nameMainVCLabel.text = postInfo.pName
+		cell.descriptionMainVCLabel.text = postInfo.pDescription
+		cell.categoryMainVCLabel.text = postInfo.pCategory
+		cell.imageMainVC.image = postInfo.pImage
 
 		/*
 		let name: Post = postNameCD[indexPath.row]

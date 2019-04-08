@@ -7,11 +7,43 @@
 //
 
 import Foundation
+import UIKit
 
-struct PostsModel {
-
-	var name: String?
-	var description: String?
-	var category: String?
-
+class PostModel: PostModelProtocol {	
+	
+	var pImage: UIImage
+	var pName: String
+	var pDescription: String
+	var pCategory: String
+	
+	init(image: UIImage, name: String, description: String, category: String) {
+		pImage = image
+		pName = name
+		pDescription = description
+		pCategory = category
+	}
+	
+	func postImage() -> UIImage {
+		return self.pImage
+	}
+	
+	func postName() -> String {
+		return self.pName
+	}
+	
+	func postDescription() -> String {
+		return self.pDescription
+	}
+	
+	func postCategory() -> String {
+		return self.pCategory
+	}
 }
+
+//struct PostsModel {
+//
+//	var name: String?
+//	var description: String?
+//	var category: String?
+//
+//}
