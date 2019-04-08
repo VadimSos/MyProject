@@ -48,23 +48,22 @@ class MainTableViewController: UIViewController {
 			} else {
 				let image = UIImage(data: data!)
 				self.imageArray.append(image!)
+
+				//download posts
+				self.refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
+
+					let value = snapshot.value as? [String: Any]
+					let postCategory = value?["category"] as? String ?? ""
+					let postDescription = value?["description"] as? String ?? ""
+					let postProductName = value?["productName"] as? String ?? ""
+
+					let post = PostModel(image: self.imageArray.first ?? UIImage(), name: postCategory, description: postDescription, category: postProductName)
+					self.postsArray.append(post)
+
+					self.tableView.reloadData()
+				}
 			}
 		}
-
-		//download posts
-		refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
-			
-			let value = snapshot.value as? [String: Any]
-			let postCategory = value?["category"] as? String ?? ""
-			let postDescription = value?["description"] as? String ?? ""
-			let postProductName = value?["productName"] as? String ?? ""
-
-			let post = PostModel(image: self.imageArray.first ?? UIImage(), name: postCategory, description: postDescription, category: postProductName)
-			self.postsArray.append(post)
-//			self.postsArray = [postCategory, postDescription, postProductName]
-
-			self.tableView.reloadData()
-	}
 
 		/*
 		guard let appDelegate =

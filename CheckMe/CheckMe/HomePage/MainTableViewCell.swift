@@ -16,7 +16,7 @@ class MainTableViewCell: UITableViewCell {
 	@IBOutlet weak var descriptionMainVCLabel: UILabel!
 	@IBOutlet weak var categoryMainVCLabel: UILabel!
 	@IBOutlet weak var imageMainVC: UIImageView!
-	
+
 	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,7 +27,7 @@ class MainTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-	
+
 	func updateTableView(with item: PostModelProtocol) {
 		nameMainVCLabel.text = item.postName()
 		descriptionMainVCLabel.text = item.postDescription()

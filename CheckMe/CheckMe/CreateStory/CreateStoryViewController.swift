@@ -81,14 +81,14 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		//imagesArray.first?.pngData() {
 
 		if let uploadData = PhotoArray.sharedInstance.photosArray.first?.pngData() {
-		
+
 			// Upload image to Firebase Cloud Storage
 			imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
 				guard error == nil else {
 					// Handle error
 					return
 				}
-				
+
 				// Get full image url
 				imageRef.downloadURL { (url, error) in
 					guard let downloadURL = url else {
