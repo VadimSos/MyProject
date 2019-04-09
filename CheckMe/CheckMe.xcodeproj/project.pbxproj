@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F092A53225CA93E001DF034 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */; };
 		3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */; };
 		3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F4224B46D900159CE2 /* WelcomViewController.swift */; };
@@ -17,7 +18,6 @@
 		3F38210E22560E4900159CE2 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F38211022560E4900159CE2 /* Favorites.storyboard */; };
 		3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F382113225A6AA200159CE2 /* PhotoArray.swift */; };
 		3F382116225B32FE00159CE2 /* PostModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F382115225B32FE00159CE2 /* PostModelProtocol.swift */; };
-		3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
 		3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C263222EF1570033AD1F /* RegisterViewController.swift */; };
 		3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C267222F90D40033AD1F /* RoundedUIElements.swift */; };
 		3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C26B223038900033AD1F /* UIAlertConstructor.swift */; };
@@ -450,7 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */,
-				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
+				3F092A53225CA93E001DF034 /* LoginViewController.swift in Sources */,
 				3F3820F922529A2A00159CE2 /* PostsModel.swift in Sources */,
 				3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */,
 				3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */,
@@ -471,7 +471,6 @@
 				3FD17866225BD47C0043318A /* NetworkManager.swift in Sources */,
 				3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */,
 				3F382116225B32FE00159CE2 /* PostModelProtocol.swift in Sources */,
-				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */,
@@ -588,7 +587,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
