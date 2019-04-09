@@ -62,10 +62,15 @@ class RegisterViewController: UIViewController {
 
 	//notification to send data to other VCz
 	func notifyAboutRegisterInfo() {
-		NotificationCenter.default.post(name: NSNotification.Name.init("userInfo"), object: nil, userInfo: ["name": nameTextField.text!,
-			"familyName": familyNameTextField.text!,
-			"cellPhoneNumberTF": cellPhoneNumberTF.text!,
-			"phoneNumberTF": phoneNumberTF.text!])
+		guard let name = nameTextField.text,
+			let familyName = familyNameTextField.text,
+			let cellPhoneNumber = cellPhoneNumberTF.text,
+			let phoneNumber = phoneNumberTF.text else { return }
+
+		NotificationCenter.default.post(name: NSNotification.Name.init("userInfo"), object: nil, userInfo: ["name": name,
+			"familyName": familyName,
+			"cellPhoneNumberTF": cellPhoneNumber,
+			"phoneNumberTF": phoneNumber])
 	}
 
 	func delegateDataToLoginVC() {
@@ -100,7 +105,9 @@ class RegisterViewController: UIViewController {
 
 	func createAccount() {
 
-		Auth.auth().createUser(withEmail: mailTextField.text!, password: passowordTextField.text!) { (_, error) in
+		guard let mail = mailTextField.text, let password = passowordTextField.text else { return }
+
+		Auth.auth().createUser(withEmail: mail, password: password) { (_, error) in
 			if error != nil {
 				print(error!)
 			} else {

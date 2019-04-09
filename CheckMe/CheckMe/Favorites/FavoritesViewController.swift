@@ -44,11 +44,12 @@ class FavoritesViewController: UIViewController {
 		let storageRef = storage.child("posts").child("images").child(posts.uid)
 
 		storageRef.getData(maxSize: 100 * 1024 * 1024) { (data, error) in
+			guard let data = data else { return }
 			if let error = error {
 				print(error)
 			} else {
-				let image = UIImage(data: data!)
-				self.imageArray.append(image!)
+				guard let image = UIImage(data: data) else { return }
+				self.imageArray.append(image)
 
 				//download posts
 				self.refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in

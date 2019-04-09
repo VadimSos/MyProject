@@ -52,7 +52,8 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 	}
 
 	func doLogin() {
-		Auth.auth().signIn(withEmail: mailTextField.text!, password: passwordTextField.text!) { (_, error) in
+		guard let mail = mailTextField.text, let password = passwordTextField.text else { return }
+		Auth.auth().signIn(withEmail: mail, password: password) { (_, error) in
 			if error != nil {
 				print(error!)
 			} else {

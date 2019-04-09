@@ -47,15 +47,16 @@ class MainTableViewController: UIViewController {
 		//download images
 		let storageRef = storage.child("posts").child("images").child(posts.uid)
 
-		storageRef.getData(maxSize: 100 * 1024 * 1024) { (data, error) in
+		storageRef.getData(maxSize: 100 * 1024 * 1024) { [weak self] (data, error) in
+			guard let data = data else { return }
 			if let error = error {
 				print(error)
 			} else {
-				let image = UIImage(data: data!)
-				self.imageArray.append(image!)
+				guard let image = UIImage(data: data) else { return }
+				self?.imageArray.append(image)
 
 				//download posts
-				self.refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
+				self?.refDB.child("posts").child(posts.uid).observeSingleEvent(of: .value) { (snapshot) in
 
 					let value = snapshot.value as? [String: Any]
 					let postCategory = value?["category"] as? String ?? ""
@@ -63,14 +64,14 @@ class MainTableViewController: UIViewController {
 					let postProductName = value?["productName"] as? String ?? ""
 					let postLike = value?["like"] as? Bool ?? false
 
-					let post = PostModel(image: self.imageArray.first ?? UIImage(),
+					let post = PostModel(image: self?.imageArray.first ?? UIImage(),
 										 name: postCategory,
 										 description: postDescription,
 										 category: postProductName,
 										 like: postLike)
-					self.postsArray.append(post)
+					self?.postsArray.append(post)
 
-					self.tableView.reloadData()
+					self?.tableView.reloadData()
 				}
 			}
 		}
