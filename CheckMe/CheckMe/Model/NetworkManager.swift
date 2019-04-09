@@ -14,6 +14,8 @@ class ConnectionManager {
 	static let sharedInstance = ConnectionManager()
 	private var reachability: Reachability!
 
+	private init() {}
+
 	func observeReachability() {
 		self.reachability = Reachability()
 		NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged), name: NSNotification.Name.reachabilityChanged, object: nil)

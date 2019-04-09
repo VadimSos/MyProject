@@ -13,6 +13,8 @@ class CameraHandler: NSObject {
 
 	static let shared = CameraHandler()
 
+	override private init() {}
+
 	fileprivate var currentVC: UIViewController!
 
 	// MARK: - Internal Properties
