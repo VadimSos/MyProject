@@ -7,10 +7,21 @@
 //
 
 import UIKit
+import Reachability
 
 class WelcomViewController: UIViewController {
 
+	var reachability: Reachability?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+		self.reachability = Reachability.init()
+
+		if (self.reachability?.connection) != .none {
+			print("Internet Available")
+		} else {
+			print("Internet not Available")
+		}
     }
 }

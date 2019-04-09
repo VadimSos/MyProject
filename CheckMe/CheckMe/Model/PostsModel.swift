@@ -40,7 +40,7 @@ class PostModel: PostModelProtocol {
 	func postCategory() -> String {
 		return self.pCategory
 	}
-	
+
 	func postLike() -> Bool {
 		return self.pLike
 	}

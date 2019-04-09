@@ -41,6 +41,7 @@
 		3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */; };
 		3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */; };
 		3F9E518A225B8A950011DC40 /* PostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5189225B8A950011DC40 /* PostDataManager.swift */; };
+		3FD17866225BD47C0043318A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD17865225BD47C0043318A /* NetworkManager.swift */; };
 		3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E63223C0453006015CC /* MainTableViewCell.swift */; };
 		3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E66223C22A8006015CC /* HideKeyBoard.swift */; };
 		3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF79DBA22287972002DDCEB /* AppDelegate.swift */; };
@@ -94,6 +95,7 @@
 		3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		3F9E5189225B8A950011DC40 /* PostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataManager.swift; sourceTree = "<group>"; };
+		3FD17865225BD47C0043318A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FF00E63223C0453006015CC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		3FF00E66223C22A8006015CC /* HideKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoard.swift; sourceTree = "<group>"; };
 		3FF79DB722287972002DDCEB /* CheckMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				3F91C267222F90D40033AD1F /* RoundedUIElements.swift */,
 				3F91C26B223038900033AD1F /* UIAlertConstructor.swift */,
 				3F91C28B223598510033AD1F /* Color.swift */,
+				3FD17865225BD47C0043318A /* NetworkManager.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
 				3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
+				3FD17866225BD47C0043318A /* NetworkManager.swift in Sources */,
 				3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */,
 				3F382116225B32FE00159CE2 /* PostModelProtocol.swift in Sources */,
 				3F91C262222E49C50033AD1F /* LoginViewController.swift in Sources */,

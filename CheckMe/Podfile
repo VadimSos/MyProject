@@ -17,5 +17,6 @@ target 'CheckMe' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'AUPickerCell'
+  pod 'ReachabilitySwift'
 
 end
