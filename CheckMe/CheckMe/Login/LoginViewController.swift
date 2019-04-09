@@ -24,23 +24,6 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 		self.hideKeyboardWhenTappedAround()
     }
 
-//	override func viewWillAppear(_ animated: Bool) {
-//		let login = UserDefaults.standard.string(forKey: "MyMail")
-//		print(login ?? "Mail do not saved")
-//		let password = Locksmith.loadDataForUserAccount(userAccount: "MyPassword")
-//		print(password ?? "Password do not saved")
-//	}
-//
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "createAccount" {
-//			guard let destinationVC = segue.destination as? RegisterViewController else {
-//				return
-//			}
-//			destinationVC.delegate = self
-//		}
-//
-//	}
-
 	// MARK: Actions
 
 	@IBAction func loginButtonDidTap(_ sender: UIButton) {
@@ -69,7 +52,7 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 	}
 
 	func doLogin() {
-		Auth.auth().signIn(withEmail: mailTextField.text!, password: passwordTextField.text!) { (user, error) in
+		Auth.auth().signIn(withEmail: mailTextField.text!, password: passwordTextField.text!) { (_, error) in
 			if error != nil {
 				print(error!)
 			} else {

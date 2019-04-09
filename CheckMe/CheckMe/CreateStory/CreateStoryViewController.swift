@@ -18,7 +18,6 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	@IBOutlet weak var descriptionTextView: UITextView!
 	@IBOutlet weak var productNameTF: UITextField!
 
-//	var imagesArray: [UIImage] = []
 	let refDB = Database.database().reference()
 	let refStorage = Storage.storage().reference()
 
@@ -47,17 +46,10 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	}
 
 	@IBAction func savePostButtonDidTap(_ sender: UIButton) {
-//		saveToCoreData(name: productNameTF.text!, description: descriptionTextView.text, label: categoryLabel.text!)
-
-//		let displayMainVC = UIStoryboard(name: "MainTableViewController", bundle: nil).instantiateInitialViewController()
 		saveInfoToFirebaseDB()
 		tabBarController?.selectedIndex = 0
 	}
 
-	/*
-	Firebase databases don't support adding images to the database.
-	Need upload images to a storage provider such as Firebase Cloud Storage and then save the url to that file in database to download from later.
-	*/
 	func saveInfoToFirebaseDB() {
 
 		guard let posts = Auth.auth().currentUser else {
@@ -72,26 +64,20 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		postUserRef.child("like").setValue(false)
 
 		//Create a reference to the image
-//		guard let user = Auth.auth().currentUser else { return }
 		let imageRef = refStorage.child("posts").child("images").child(posts.uid)
 
 		// Get image data
-		//let image = CreateStoryCollectionViewCell()
-		//CameraHandler.shared.imagePickedBlock?(image.photoImageView.image!.pngData()) {
-		//image.photoImageView.image?.pngData() {
-		//imagesArray.first?.pngData() {
-
 		if let uploadData = PhotoArray.sharedInstance.photosArray.first?.pngData() {
 
 			// Upload image to Firebase Cloud Storage
-			imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+			imageRef.putData(uploadData, metadata: nil) { (_, error) in
 				guard error == nil else {
 					// Handle error
 					return
 				}
 
 				// Get full image url
-				imageRef.downloadURL { (url, error) in
+				imageRef.downloadURL { (url, _) in
 					guard let downloadURL = url else {
 						// Handle error
 						return
@@ -99,7 +85,6 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 
 					// Save url to database
 					postUserRef.child("photoURL").setValue(["imageUrl": downloadURL.absoluteString])
-					//Firestore.firestore().collection("images").document("myImage").setData(["imageUrl" : downloadURL.absoluteString])
 				}
 			}
 		}
@@ -108,36 +93,6 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	func didCellPressed(category: String) {
 		categoryLabel.text = category
 	}
-
-//	func saveToCoreData(name: String, description: String, label: String) {
-//		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-//				return
-//		}
-//
-//		let managedContext = appDelegate.persistentContainer.viewContext
-//
-//		let entity = NSEntityDescription.entity(forEntityName: "Post", in: managedContext)
-//		let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as? Post
-//
-//		newUser?.name = name
-//		newUser?.desciption = descriptionTextView.text
-//		newUser?.category = categoryLabel.text
-//		if let img = UIImage(named: "photo") {
-//			let data = img.pngData() as NSData?
-//			newUser?.photo = data
-//		}
-//		/*
-//		setValue(productNameTF.text, forKey: "name")
-//		newUser.setValue(descriptionTextView.text, forKey: "desciption")
-//		newUser.setValue(categoryLabel.text, forKey: "category")
-//		*/
-//
-//		do {
-//			try managedContext.save()
-//		} catch let error as NSError {
-//			print("Could not save. \(error), \(error.userInfo)")
-//		}
-//	}
 }
 
 	// MARK: - UITextViewDelegate
@@ -189,7 +144,6 @@ extension CreateStoryViewController: UICollectionViewDelegate {
 		CameraHandler.shared.showActioSheet(vcAlert: self)
 		CameraHandler.shared.imagePickedBlock = { (image) in
 			cell.photoImageView.image = image
-//			self.imagesArray.append(image)
 			PhotoArray.sharedInstance.photosArray.append(image)
 		}
 	}

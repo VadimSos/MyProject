@@ -100,11 +100,6 @@ extension SettingsTableViewController: UITableViewDataSource {
 				cell.timeStyle = .none
 				cell.dateStyle = .medium
 				cell.separatorHeight = 1
-//				cell.unexpandedHeight = 1
-//				cell.leftLabel.frame.origin.y = 0
-//				cell.leftLabel.frame.origin.x = self.view.frame.height - cell.leftLabel.frame.height
-//				cell.textLabel?.textAlignment = .left
-//				cell.leftLabel.bounds = CGRect(x: 0, y: 0, width: 50, height: 10)
 				cell.textLabel?.text = NSLocalizedString("Date of birth", comment: "")
 				return cell
 			//gender
@@ -138,7 +133,6 @@ extension SettingsTableViewController: UITableViewDataSource {
 
 	func auPickerCell(_ cell: AUPickerCell, didPick row: Int, value: Any) {
 		print(value)
-//		self.pickedDate = value as! Date
 	}
 }
 

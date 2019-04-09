@@ -18,5 +18,8 @@ target 'CheckMe' do
   pod 'Firebase/Storage'
   pod 'AUPickerCell'
   pod 'ReachabilitySwift'
+  
+  # ignore all warnings from all pods
+  inhibit_all_warnings!
 
 end

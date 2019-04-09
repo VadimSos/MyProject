@@ -30,27 +30,9 @@ class FavoritesViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-
-		/*
-		guard let appDelegate =
-		UIApplication.shared.delegate as? AppDelegate else {
-		return
-		}
-		let managedContext =
-		appDelegate.persistentContainer.viewContext
-		
-		let fetchRequest =
-		NSFetchRequest<NSManagedObject>(entityName: "Post")
-		
-		do {
-		postNameFavoritesCD = try managedContext.fetch(fetchRequest) as? [Post] ?? []
-		} catch let error as NSError {
-		print("Could not fetch. \(error), \(error.userInfo)")
-		}
-		
-		favoritesTV.reloadData()
-		*/
 	}
+
+	// MARK: - Actions
 
 	func displayPostsFavoritesVC() {
 
@@ -101,7 +83,6 @@ extension FavoritesViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-//		let name: Post = postNameFavoritesCD[indexPath.row]
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as? FavoritesTableViewCell else {
 			fatalError("error")
 		}
@@ -112,9 +93,6 @@ extension FavoritesViewController: UITableViewDataSource {
 		cell.descriptionFavoritesLabel.text = postInfo.pDescription
 		cell.categoryFavoritesLabel.text = postInfo.pCategory
 		cell.imageFavorites.image = postInfo.pImage
-//		cell.nameFavoritesLabel.text = name.name// value(forKey: "name") as? String
-//		cell.descriptionFavoritesLabel.text = name.desciption//.value(forKey: "desciption") as? String
-//		cell.categoryFavoritesLabel.text = name.category //.value(forKey: "category") as? String
 
 		return cell
 	}

@@ -29,9 +29,6 @@ class RegisterViewController: UIViewController {
 
 	// MARK: Variables/Constants
 
-//	private let userMail = "MyMail"
-//	let userAccount = "MyAccount"
-//	let userPassword = "MyPassword"
 	let ref = Database.database().reference()
 	weak var delegate: RegisterViewControllerDElegate?
 
@@ -103,7 +100,7 @@ class RegisterViewController: UIViewController {
 
 	func createAccount() {
 
-		Auth.auth().createUser(withEmail: mailTextField.text!, password: passowordTextField.text!) { (authResult, error) in
+		Auth.auth().createUser(withEmail: mailTextField.text!, password: passowordTextField.text!) { (_, error) in
 			if error != nil {
 				print(error!)
 			} else {

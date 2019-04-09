@@ -40,15 +40,15 @@ class CameraHandler: NSObject {
 		currentVC = vcAlert
 		let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-		actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_: UIAlertAction) -> Void in
+		actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: { (_: UIAlertAction) -> Void in
 			self.camera()
 		}))
 
-		actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (_: UIAlertAction!) -> Void in
+		actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: { (_: UIAlertAction!) -> Void in
 			self.photoLibrary()
 		}))
 
-		actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+		actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
 
 		vcAlert.present(actionSheet, animated: true, completion: nil)
 	}
@@ -59,7 +59,7 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
 		currentVC.dismiss(animated: true, completion: nil)
 	}
 
-	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 		if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
 //			let collectionImage = CreateStoryCollectionViewCell()
 			self.imagePickedBlock?(image)

@@ -40,7 +40,7 @@ class ChangePasswordViewController: UIViewController {
 
 	func savePassword() {
 		do {
-			try Locksmith.updateData(data: ["MyAccount" : currentPasswordTextField.text!], forUserAccount: "MyPassword")
+			try Locksmith.updateData(data: ["MyAccount": currentPasswordTextField.text!], forUserAccount: "MyPassword")
 		} catch {
 			print("Password is not saved")
 		}

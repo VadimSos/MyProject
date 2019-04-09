@@ -15,7 +15,6 @@ class MainTableViewController: UIViewController {
 	// MARK: - Variables
 
 	@IBOutlet weak var tableView: UITableView!
-//	var postNameCD: [Post] = []
 	var postsArray: [PostModel] = []
 	var imageArray: [UIImage] = []
 	let refDB = Database.database().reference()
@@ -75,24 +74,6 @@ class MainTableViewController: UIViewController {
 				}
 			}
 		}
-
-		/*
-		guard let appDelegate =
-		UIApplication.shared.delegate as? AppDelegate else {
-		return
-		}
-		let managedContext =
-		appDelegate.persistentContainer.viewContext
-		
-		let fetchRequest =
-		NSFetchRequest<NSManagedObject>(entityName: "Post")
-		
-		do {
-		postNameCD = try managedContext.fetch(fetchRequest) as? [Post] ?? []
-		} catch let error as NSError {
-		print("Could not fetch. \(error), \(error.userInfo)")
-		}
-	*/
 	}
 }
 
@@ -110,13 +91,6 @@ extension MainTableViewController: UITableViewDataSource {
 		}
 
 		cell.updateTableView(with: postsArray[indexPath.row])
-
-		/*
-		let name: Post = postNameCD[indexPath.row]
-		cell.nameMainVCLabel.text = name.name// value(forKey: "name") as? String
-		cell.descriptionMainVCLabel.text = name.desciption//.value(forKey: "desciption") as? String
-		cell.categoryMainVCLabel.text = name.category //.value(forKey: "category") as? String
-		*/
 
 		return cell
 	}
