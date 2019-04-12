@@ -34,11 +34,6 @@
 		3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C296223983690033AD1F /* SettingsTableViewCell.swift */; };
 		3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */; };
 		3F91C29B223ABDCD0033AD1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91C29A223ABDCD0033AD1F /* CoreData.framework */; };
-		3F91C29F223ABEDF0033AD1F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */; };
-		3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A0223AC4890033AD1F /* Post+CoreDataProperties.swift */; };
-		3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A1223AC4890033AD1F /* Post+CoreDataClass.swift */; };
-		3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */; };
-		3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */; };
 		3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */; };
 		3FD17866225BD47C0043318A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD17865225BD47C0043318A /* NetworkManager.swift */; };
 		3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF00E63223C0453006015CC /* MainTableViewCell.swift */; };
@@ -51,7 +46,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2 (User uodated).xcdatamodel"; sourceTree = "<group>"; };
 		3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F3820F4224B46D900159CE2 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
@@ -87,11 +81,6 @@
 		3F91C296223983690033AD1F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3F91C29A223ABDCD0033AD1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		3F91C2A0223AC4890033AD1F /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3F91C2A1223AC4890033AD1F /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		3FD17865225BD47C0043318A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FF00E63223C0453006015CC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,7 +175,6 @@
 		3F91C283223540130033AD1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F91C29C223ABEC90033AD1F /* Persistance */,
 				3F91C28F223818800033AD1F /* CameraHandler.swift */,
 				3F3820F822529A2A00159CE2 /* PostsModel.swift */,
 				3F382115225B32FE00159CE2 /* PostModelProtocol.swift */,
@@ -194,18 +182,6 @@
 				3FD17865225BD47C0043318A /* NetworkManager.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		3F91C29C223ABEC90033AD1F /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-				3F91C2A1223AC4890033AD1F /* Post+CoreDataClass.swift */,
-				3F91C2A0223AC4890033AD1F /* Post+CoreDataProperties.swift */,
-				3F91C2A2223AC4890033AD1F /* User+CoreDataClass.swift */,
-				3F91C2A3223AC4890033AD1F /* User+CoreDataProperties.swift */,
-				3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */,
-			);
-			path = Persistance;
 			sourceTree = "<group>";
 		};
 		3FF00E65223C045B006015CC /* HomePage */ = {
@@ -452,27 +428,22 @@
 				3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */,
 				3F092A53225CA93E001DF034 /* LoginViewController.swift in Sources */,
 				3F3820F922529A2A00159CE2 /* PostsModel.swift in Sources */,
-				3F91C2A7223AC48A0033AD1F /* User+CoreDataProperties.swift in Sources */,
 				3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */,
 				3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */,
 				3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
-				3F91C2A6223AC48A0033AD1F /* User+CoreDataClass.swift in Sources */,
 				3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */,
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
-				3F91C29F223ABEDF0033AD1F /* Model.xcdatamodeld in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
-				3F91C2A4223AC4890033AD1F /* Post+CoreDataProperties.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
 				3FD17866225BD47C0043318A /* NetworkManager.swift in Sources */,
 				3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */,
 				3F382116225B32FE00159CE2 /* PostModelProtocol.swift in Sources */,
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
-				3F91C2A5223AC48A0033AD1F /* Post+CoreDataClass.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */,
 				3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
@@ -730,20 +701,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3F91C29D223ABEDF0033AD1F /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */,
-				3F91C29E223ABEDF0033AD1F /* Model.xcdatamodel */,
-			);
-			currentVersion = 3F3820EF22401DA700159CE2 /* Model 2 (User uodated).xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3FF79DAF22287972002DDCEB /* Project object */;
 }

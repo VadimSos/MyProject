@@ -86,7 +86,7 @@ extension SettingsTableViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-		////datePicker of birth/gender selected
+		//datePicker of birth/gender selected
 		if indexPath.section == 1 {
 
 			switch indexPath.row {

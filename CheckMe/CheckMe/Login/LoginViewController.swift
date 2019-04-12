@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Locksmith
 import FirebaseAuth
 
-class LoginViewController: UIViewController, RegisterViewControllerDElegate {
+class LoginViewController: UIViewController {
 
 	// MARK: Outlets
 
@@ -33,14 +32,7 @@ class LoginViewController: UIViewController, RegisterViewControllerDElegate {
 	}
 
 	@IBAction func forgotPasswordDidTap(_ sender: UIButton) {
-		mailTextField.text = UserDefaults.standard.string(forKey: "MyMail")
-		if let passoword = Locksmith.loadDataForUserAccount(userAccount: "MyPassword") {
-			passwordTextField.text = (passoword["MyAccount"] as? String)
-		}
-	}
-
-	func swithToLoginVC(mail: String) {
-		mailTextField.text = mail
+		//TODO: Send a user a verification email, Send a password reset email
 	}
 
 	func switchToMainVC() {

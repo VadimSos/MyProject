@@ -15,7 +15,6 @@ class FavoritesViewController: UIViewController {
 	// MARK: - Variables
 
 	@IBOutlet weak var favoritesTV: UITableView!
-//	var postNameFavoritesCD: [Post] = []
 	var postsArray: [PostModel] = []
 	var imageArray: [UIImage] = []
 	let refDB = Database.database().reference()

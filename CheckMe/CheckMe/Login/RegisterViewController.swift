@@ -7,13 +7,8 @@
 //
 
 import UIKit
-import Locksmith
 import Firebase
 import FirebaseAuth
-
-protocol  RegisterViewControllerDElegate: class {
-	func swithToLoginVC(mail: String)
-}
 
 class RegisterViewController: UIViewController {
 
@@ -30,7 +25,6 @@ class RegisterViewController: UIViewController {
 	// MARK: Variables/Constants
 
 	let ref = Database.database().reference()
-	weak var delegate: RegisterViewControllerDElegate?
 
 	// MARK: Lifecycle
 
@@ -56,27 +50,6 @@ class RegisterViewController: UIViewController {
 	@IBAction func createAccountButtonDidTap(_ sender: UIButton) {
 		guard saveAccount() else {
 			return
-		}
-		notifyAboutRegisterInfo()
-	}
-
-	//notification to send data to other VCz
-	func notifyAboutRegisterInfo() {
-		guard let name = nameTextField.text,
-			let familyName = familyNameTextField.text,
-			let cellPhoneNumber = cellPhoneNumberTF.text,
-			let phoneNumber = phoneNumberTF.text else { return }
-
-		NotificationCenter.default.post(name: NSNotification.Name.init("userInfo"), object: nil, userInfo: ["name": name,
-			"familyName": familyName,
-			"cellPhoneNumberTF": cellPhoneNumber,
-			"phoneNumberTF": phoneNumber])
-	}
-
-	func delegateDataToLoginVC() {
-		if let delegateMail = mailTextField.text {
-			delegate?.swithToLoginVC(mail: delegateMail)
-			dismiss(animated: true, completion: nil)
 		}
 	}
 

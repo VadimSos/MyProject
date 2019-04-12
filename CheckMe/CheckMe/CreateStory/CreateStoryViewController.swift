@@ -99,19 +99,18 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 
 extension CreateStoryViewController: UITextViewDelegate {
 
-	// MARK: - Description edditing
-
+	//Description edditing
 	func textViewDidBeginEditing(_ textView: UITextView) {
-		if textView.textColor == UIColor.magnezium() {
+		if textView.textColor == .magnezium() {
 			textView.text = nil
-			textView.textColor = UIColor.black
+			textView.textColor = .black
 		}
 	}
 
 	func textViewDidEndEditing(_ textView: UITextView) {
 		if textView.text.isEmpty {
 			textView.text = "Desription"
-			textView.textColor = UIColor.magnezium()
+			textView.textColor = .magnezium()
 		}
 	}
 }

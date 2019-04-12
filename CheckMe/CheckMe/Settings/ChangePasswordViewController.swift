@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Locksmith
 
 class ChangePasswordViewController: UIViewController {
 
@@ -32,17 +31,13 @@ class ChangePasswordViewController: UIViewController {
 	@IBAction func changePasswordButtonDidTap(_ sender: UIButton) {
 
 		if currentPasswordTextField.text == newPasswordTextField.text {
-			savePassword()
+			changePassword()
 		}
 
 		self.performSegue(withIdentifier: "returnToSettingsVC", sender: nil)
 	}
 
-	func savePassword() {
-		do {
-			try Locksmith.updateData(data: ["MyAccount": currentPasswordTextField.text!], forUserAccount: "MyPassword")
-		} catch {
-			print("Password is not saved")
-		}
+	func changePassword() {
+		//TODO: change password in firebase
 	}
 }

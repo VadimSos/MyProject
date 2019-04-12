@@ -16,14 +16,4 @@ class FavoritesTableViewCell: UITableViewCell {
 	@IBOutlet weak var descriptionFavoritesLabel: UILabel!
 	@IBOutlet weak var categoryFavoritesLabel: UILabel!
 	@IBOutlet weak var imageFavorites: UIImageView!
-
-	// MARK: - Lifecycle
-
-	override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }
