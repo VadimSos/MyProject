@@ -48,23 +48,13 @@ class LoginViewController: UIViewController {
 		guard let mail = mailTextField.text, let password = passwordTextField.text else { return }
 
 		Auth.auth().signIn(withEmail: mail, password: password) { (_, error) in
-			if error != nil {
-				if let errorCode = AuthErrorCode(rawValue: error!._code) {
-					switch errorCode {
-					case .userNotFound:
-						UIAlertController.showError(message: NSLocalizedString("User not found", comment: ""),
-													from: self)
-					case .networkError:
-						UIAlertController.showError(message: NSLocalizedString("Network request failed", comment: ""),
-													from: self)
-					default:
-						UIAlertController.showError(message: NSLocalizedString("Error happened", comment: ""),
+			if let error = error {
+				if let errorCode = AuthErrorCode(rawValue: error._code) {
+						UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
 													from: self)
 					}
-				}
-			} else {
-				UIAlertController.showError(message: NSLocalizedString("Error", comment: ""),
-											from: self)
+				} else {
+				self.switchToMainVC()
 			}
 		}
 	}

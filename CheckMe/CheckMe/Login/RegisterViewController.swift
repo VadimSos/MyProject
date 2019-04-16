@@ -38,11 +38,12 @@ class RegisterViewController: UIViewController {
 		super.viewWillDisappear(animated)
 
 		guard let userUID = Auth.auth().currentUser?.uid else { return }
+		let user = ref.child("users").child(userUID)
 
-		ref.child("users").child(userUID).child("name").setValue(nameTextField.text)
-		ref.child("users").child(userUID).child("familyName").setValue(familyNameTextField.text)
-		ref.child("users").child(userUID).child("cellPhoneNumber").setValue(cellPhoneNumberTF.text)
-		ref.child("users").child(userUID).child("phoneNumber").setValue(phoneNumberTF.text)
+		user.child("name").setValue(nameTextField.text)
+		user.child("familyName").setValue(familyNameTextField.text)
+		user.child("cellPhoneNumber").setValue(cellPhoneNumberTF.text)
+		user.child("phoneNumber").setValue(phoneNumberTF.text)
 	}
 
 	// MARK: Actions
@@ -64,7 +65,6 @@ class RegisterViewController: UIViewController {
 			} else {
 				if password.isValidPassword(), passowordTextField.text == confirmpasswordTextField.text {
 					createAccount()
-					showAlertDataSavedSuccefully()
 					result = true
 				} else {
 					showAlertIfDataIsIncorrect()
@@ -81,8 +81,12 @@ class RegisterViewController: UIViewController {
 		guard let mail = mailTextField.text, let password = passowordTextField.text else { return }
 
 		Auth.auth().createUser(withEmail: mail, password: password) { (_, error) in
-			if error != nil {
-				print(error!)
+			if let error = error {
+				if let errorCode = AuthErrorCode(rawValue: error._code) {
+
+					UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
+												from: self)
+				}
 			} else {
 				let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 				let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
@@ -102,9 +106,5 @@ class RegisterViewController: UIViewController {
 
 	func showAlertIfDataIsEmpty() {
 		UIAlertController.showError(message: NSLocalizedString("Empty data", comment: ""), from: self)
-	}
-
-	func showAlertDataSavedSuccefully() {
-		UIAlertController.showSuccess(message: NSLocalizedString("Saved sucesfully", comment: ""), from: self)
 	}
 }

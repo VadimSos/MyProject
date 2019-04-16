@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F092A53225CA93E001DF034 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C261222E49C50033AD1F /* LoginViewController.swift */; };
+		3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0964AB2266574500B2D00B /* AuthErrorHandle.swift */; };
 		3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */; };
 		3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */; };
 		3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3820F4224B46D900159CE2 /* WelcomViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0964AB2266574500B2D00B /* AuthErrorHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandle.swift; sourceTree = "<group>"; };
 		3F3820F0224025F000159CE2 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F3820F4224B46D900159CE2 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				3F382115225B32FE00159CE2 /* PostModelProtocol.swift */,
 				3F382113225A6AA200159CE2 /* PhotoArray.swift */,
 				3FD17865225BD47C0043318A /* NetworkManager.swift */,
+				3F0964AB2266574500B2D00B /* AuthErrorHandle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
+				3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
