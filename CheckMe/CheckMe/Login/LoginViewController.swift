@@ -44,12 +44,27 @@ class LoginViewController: UIViewController {
 	}
 
 	func doLogin() {
+
 		guard let mail = mailTextField.text, let password = passwordTextField.text else { return }
+
 		Auth.auth().signIn(withEmail: mail, password: password) { (_, error) in
 			if error != nil {
-				print(error!)
+				if let errorCode = AuthErrorCode(rawValue: error!._code) {
+					switch errorCode {
+					case .userNotFound:
+						UIAlertController.showError(message: NSLocalizedString("User not found", comment: ""),
+													from: self)
+					case .networkError:
+						UIAlertController.showError(message: NSLocalizedString("Network request failed", comment: ""),
+													from: self)
+					default:
+						UIAlertController.showError(message: NSLocalizedString("Error happened", comment: ""),
+													from: self)
+					}
+				}
 			} else {
-				self.switchToMainVC()
+				UIAlertController.showError(message: NSLocalizedString("Error", comment: ""),
+											from: self)
 			}
 		}
 	}
@@ -91,12 +106,13 @@ class LoginViewController: UIViewController {
 	// MAKR: Alerts
 
 	func showAlertDataIsEmpty() {
-		UIAlertController.showError(message: NSLocalizedString("Data is empty",
-															   comment: ""), from: self)
+		UIAlertController.showError(message: NSLocalizedString("Data is empty", comment: ""),
+									from: self)
 	}
 
 	func showAlertDataIsWrong() {
-		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""), from: self)
+		UIAlertController.showError(message: NSLocalizedString("Data is wrong", comment: ""),
+									from: self)
 	}
 
 }
