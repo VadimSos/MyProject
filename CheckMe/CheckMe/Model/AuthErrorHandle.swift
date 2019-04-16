@@ -14,13 +14,13 @@ extension AuthErrorCode {
 	var errorMessages: String {
 		switch self {
 		case .emailAlreadyInUse:
-			return "Mail already used"
+			return NSLocalizedString("Mail already used", comment: "")
 		case .userNotFound:
-			return "User not found"
+			return NSLocalizedString("User not found", comment: "")
 		case .networkError:
-			return "Network request failed"
+			return NSLocalizedString("Network request failed", comment: "")
 		default:
-			return "Error happened"
+			return NSLocalizedString("Error happened", comment: "")
 		}
 	}
 }
