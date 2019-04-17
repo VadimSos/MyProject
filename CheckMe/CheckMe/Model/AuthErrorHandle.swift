@@ -19,6 +19,8 @@ extension AuthErrorCode {
 			return NSLocalizedString("User not found", comment: "")
 		case .networkError:
 			return NSLocalizedString("Network request failed", comment: "")
+		case .missingEmail:
+			return NSLocalizedString("E-mail missing", comment: "")
 		default:
 			return NSLocalizedString("Error happened", comment: "")
 		}

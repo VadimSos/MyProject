@@ -32,7 +32,17 @@ class LoginViewController: UIViewController {
 	}
 
 	@IBAction func forgotPasswordDidTap(_ sender: UIButton) {
-		//TODO: Send a user a verification email, Send a password reset email
+
+		guard let mail = mailTextField.text else { return }
+
+		Auth.auth().sendPasswordReset(withEmail: mail) { (error) in
+			if let error = error {
+				if let errorCode = AuthErrorCode(rawValue: error._code) {
+					UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
+												from: self)
+				}
+			}
+		}
 	}
 
 	func switchToMainVC() {

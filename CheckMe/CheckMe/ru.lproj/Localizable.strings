@@ -52,6 +52,7 @@
 "User not found" = "Пользователь не существует";
 "Network request failed" = "Сбой сетевого запроса";
 "Error happened" = "Произошла ошибка";
+"E-mail missing" = "E-mail не введен";
 
 
 
