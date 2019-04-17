@@ -41,6 +41,9 @@ class LoginViewController: UIViewController {
 					UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
 												from: self)
 				}
+			} else {
+				UIAlertController.showSuccess(message: NSLocalizedString("Please check your E-mail address", comment: ""),
+											  from: self)
 			}
 		}
 	}
