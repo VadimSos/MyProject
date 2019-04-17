@@ -13,9 +13,9 @@ class ChangePasswordViewController: UIViewController {
 
 	// MARK: - Variables
 
-	@IBOutlet weak var currentPasswordTextField: UITextField!
 	@IBOutlet weak var newPasswordTextField: UITextField!
-
+	@IBOutlet weak var confirmNewPasswordTextField: UITextField!
+	
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
@@ -31,32 +31,22 @@ class ChangePasswordViewController: UIViewController {
 
 	@IBAction func changePasswordButtonDidTap(_ sender: UIButton) {
 
-		//TODO: changePassword function call
-		self.performSegue(withIdentifier: "returnToSettingsVC", sender: nil)
+		changePassword()
 	}
 
-//	func changePassword() {
-//		guard let newPassword = newPasswordTextField.text else { return	}
-//		Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { (error) in
-//			if let error = error {
-//				print(error)
-//				//TODO: proceed the error
-//			} else {
-//				print("Success")
-//			}
-//		})
-//	}
-
-	func changePassword(email: String, currentPassword: String, newPassword: String, completion: @escaping (Error?) -> Void) {
-		let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
-		Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (error) in
-			if error == nil {
-				Auth.auth().currentUser?.updatePassword(to: newPassword) { (errror) in
-					completion(errror)
+	func changePassword() {
+		if let password = confirmNewPasswordTextField.text,
+			newPasswordTextField.text == confirmNewPasswordTextField.text {
+			Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
+				if let error = error {
+					if let errorCode = AuthErrorCode(rawValue: error._code) {
+						UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
+													from: self)
+					}
+				} else {
+					self.performSegue(withIdentifier: "returnToSettingsVC", sender: nil)
 				}
-			} else {
-				completion(error)
-			}
-		})
+			})
+		}
 	}
 }
