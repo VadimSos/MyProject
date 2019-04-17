@@ -54,7 +54,7 @@
 "Network request failed" = "Сбой сетевого запроса";
 "Error happened" = "Произошла ошибка";
 "E-mail missing" = "E-mail не введен";
-
-
+"Wrong password" = "Пароль не верный";
+"Weak password" = "Пароль слишком легкий";
 
 

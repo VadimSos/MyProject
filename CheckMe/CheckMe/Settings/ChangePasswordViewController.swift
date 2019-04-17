@@ -15,7 +15,7 @@ class ChangePasswordViewController: UIViewController {
 
 	@IBOutlet weak var newPasswordTextField: UITextField!
 	@IBOutlet weak var confirmNewPasswordTextField: UITextField!
-	
+
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
@@ -35,18 +35,21 @@ class ChangePasswordViewController: UIViewController {
 	}
 
 	func changePassword() {
-		if let password = confirmNewPasswordTextField.text,
-			newPasswordTextField.text == confirmNewPasswordTextField.text {
+		if let password = confirmNewPasswordTextField.text {
 			Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
 				if let error = error {
-					if let errorCode = AuthErrorCode(rawValue: error._code) {
+					if let errorCode = AuthErrorCode(rawValue: error._code),
+						self.newPasswordTextField.text == self.confirmNewPasswordTextField.text {
 						UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
 													from: self)
 					}
 				} else {
-					self.performSegue(withIdentifier: "returnToSettingsVC", sender: nil)
+					self.navigationController?.popViewController(animated: true)
 				}
 			})
+		} else {
+			UIAlertController.showError(message: NSLocalizedString("Please input password", comment: ""),
+										from: self)
 		}
 	}
 }

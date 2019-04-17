@@ -21,6 +21,10 @@ extension AuthErrorCode {
 			return NSLocalizedString("Network request failed", comment: "")
 		case .missingEmail:
 			return NSLocalizedString("E-mail missing", comment: "")
+		case .wrongPassword:
+			return NSLocalizedString("Wrong password", comment: "")
+		case .weakPassword:
+			return NSLocalizedString("Weak password", comment: "")
 		default:
 			return NSLocalizedString("Error happened", comment: "")
 		}
