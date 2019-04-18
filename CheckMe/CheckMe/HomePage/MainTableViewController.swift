@@ -149,4 +149,15 @@ extension MainTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
 	func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
 		return UIColor.init(red: 0.837, green: 0.837, blue: 0.837, alpha: 1)
 	}
+
+	func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+		let str = "Add Post"
+		let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .callout)]
+		return NSAttributedString(string: str, attributes: attrs)
+	}
+
+	func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+		//Open CreatePost VC
+		tabBarController?.selectedIndex = 2
+	}
 }
