@@ -8,6 +8,7 @@ PODS:
   - BoringSSL-GRPC/Interface (0.0.2)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
+  - DZNEmptyDataSet (1.8.1)
   - Fabric (1.9.0)
   - Firebase/Auth (5.17.0):
     - Firebase/CoreOnly
@@ -126,6 +127,7 @@ PODS:
 DEPENDENCIES:
   - AUPickerCell
   - Crashlytics
+  - DZNEmptyDataSet
   - Fabric
   - Firebase/Auth
   - Firebase/Core
@@ -142,6 +144,7 @@ SPEC REPOS:
     - AUPickerCell
     - BoringSSL-GRPC
     - Crashlytics
+    - DZNEmptyDataSet
     - Fabric
     - Firebase
     - FirebaseAnalytics
@@ -169,6 +172,7 @@ SPEC CHECKSUMS:
   AUPickerCell: 9ee277059c3507bade7089661c59ab973fbc6e90
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 59d557e064217fab6a03ff00baa73c06e73832e6
   FirebaseAnalytics: 75e4bbc6417d190cc98ec1f17c41a4fad4c2c976
@@ -192,6 +196,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: af369c8063c3fc8e05ab9407cfe006ee8a7b10a5
+PODFILE CHECKSUM: 0069947a1864f4f70dadf0f1f188c8cf04773bb0
 
 COCOAPODS: 1.5.3
