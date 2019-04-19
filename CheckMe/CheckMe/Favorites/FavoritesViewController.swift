@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import DZNEmptyDataSet
 
 class FavoritesViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		configureView()
     }
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -95,5 +97,50 @@ extension FavoritesViewController: UITableViewDataSource {
 		cell.imageFavorites.image = postInfo.pImage
 
 		return cell
+	}
+}
+
+// MARK: - DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+
+extension FavoritesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+
+	func configureView() {
+		// Update the user interface for the detail item.
+		favoritesTV.emptyDataSetSource = self
+		favoritesTV.emptyDataSetDelegate = self
+
+		// Removing the cell separators
+		favoritesTV.tableFooterView = UIView()
+	}
+
+	func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+		return UIImage(named: "EmptyPage")
+	}
+
+	func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+		let str = "No Posts"
+		let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)]
+		return NSAttributedString(string: str, attributes: attrs)
+	}
+
+	func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+		let str = "When you chose posts, you'll see them here."
+		let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)]
+		return NSAttributedString(string: str, attributes: attrs)
+	}
+
+	func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+		return UIColor.init(red: 0.837, green: 0.837, blue: 0.837, alpha: 1)
+	}
+
+	func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+		let str = "Like Post"
+		let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .callout)]
+		return NSAttributedString(string: str, attributes: attrs)
+	}
+
+	func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+		//Open CreatePost VC
+		tabBarController?.selectedIndex = 0
 	}
 }
