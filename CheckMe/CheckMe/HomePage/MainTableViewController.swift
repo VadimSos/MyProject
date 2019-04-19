@@ -125,11 +125,6 @@ extension MainTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
 		tableView.tableFooterView = UIView()
 	}
 
-//	func customView(forEmptyDataSet scrollView: UIScrollView!) -> UIView! {
-//		let view = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
-//		return view
-//	}
-
 	func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
 		return UIImage(named: "EmptyPage")
 	}
