@@ -140,7 +140,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AUPickerCell
     - BoringSSL-GRPC
     - Crashlytics
@@ -171,9 +171,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AUPickerCell: 9ee277059c3507bade7089661c59ab973fbc6e90
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Crashlytics: a33af323773f73904037dc2e684cd2f0d29f4fe2
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Fabric: 09ef2d9b99b104702bede1acaf469fb8f20a9146
   Firebase: 59d557e064217fab6a03ff00baa73c06e73832e6
   FirebaseAnalytics: 75e4bbc6417d190cc98ec1f17c41a4fad4c2c976
   FirebaseAuth: 0f61e1329237da5682c49c9abd135e8f9d07a151
@@ -198,4 +198,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0069947a1864f4f70dadf0f1f188c8cf04773bb0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.11.3
