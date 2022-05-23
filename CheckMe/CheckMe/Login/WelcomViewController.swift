@@ -11,30 +11,34 @@ import Reachability
 
 class WelcomViewController: UIViewController {
 
-	var reachability: Reachability?
+    var presenter: WelcomPresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //TODO: better create separate builder for setting module
+        presenter = WelcomPresenter.init(view: self)
     }
-
-	func alert(message: String) {
-		let alert = UIAlertController(title: "Netowrk status", message: message, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-		self.present(alert, animated: true, completion: nil)
-	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-		self.reachability = Reachability.init()
-
-		if (self.reachability?.connection) != .none {
-			self.alert(message: "Connected")
-			print("Internet Available")
-		} else {
-			self.alert(message: "Network is not available")
-			print("Internet not Available")
-		}
+        self.presenter.showReachability()
 	}
+
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Netowrk status", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension WelcomViewController: WelcomViewProtocol {
+    func getReachabilityConnected(status: Bool) {
+        if status == true {
+            self.alert(message: "Connected")
+        } else {
+            self.alert(message: "Network is not available")
+        }
+    }
 }
