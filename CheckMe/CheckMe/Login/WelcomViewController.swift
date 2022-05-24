@@ -15,9 +15,7 @@ class WelcomViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //TODO: better create separate builder for setting module
-        presenter = WelcomPresenter.init(view: self)
+
     }
 
 	override func viewWillAppear(_ animated: Bool) {

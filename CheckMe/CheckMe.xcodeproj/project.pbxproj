@@ -44,6 +44,9 @@
 		3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC122287974002DDCEB /* Assets.xcassets */; };
 		3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */; };
 		9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */; };
+		9A9D25F3283BD3D30046A5CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* Builder.swift */; };
+		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
+		9A9D25F7283C127C0046A5CB /* WelcomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */; };
 		A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,9 @@
 		3FF79DC622287974002DDCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954C181D7A3E11715F79FA96 /* Pods-CheckMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.release.xcconfig"; sourceTree = "<group>"; };
 		9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenter.swift; sourceTree = "<group>"; };
+		9A9D25F2283BD3D30046A5CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomViewController.xib; sourceTree = "<group>"; };
 		A114A2BC7F11C89772AC2BB2 /* Pods-CheckMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.debug.xcconfig"; sourceTree = "<group>"; };
 		F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				3F3820FF225606CB00159CE2 /* Login.storyboard */,
+				9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */,
 				3F3820F4224B46D900159CE2 /* WelcomViewController.swift */,
 				9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */,
 				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
@@ -233,6 +240,7 @@
 				3FF79DC622287974002DDCEB /* Info.plist */,
 				3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */,
 				3F91C29522396F450033AD1F /* Localizable.strings */,
+				9A9D25F2283BD3D30046A5CB /* Builder.swift */,
 			);
 			path = CheckMe;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF79DBA22287972002DDCEB /* AppDelegate.swift */,
+				9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */,
 				3FF79DC122287974002DDCEB /* Assets.xcassets */,
 				3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */,
 			);
@@ -330,6 +339,7 @@
 				3F38210922560D7200159CE2 /* CreateStory.storyboard in Resources */,
 				3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */,
 				3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */,
+				9A9D25F7283C127C0046A5CB /* WelcomViewController.xib in Resources */,
 				3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */,
 				3F38210E22560E4900159CE2 /* Favorites.storyboard in Resources */,
 				3F91C29322396F450033AD1F /* Localizable.strings in Resources */,
@@ -418,6 +428,7 @@
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
+				9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */,
 				3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */,
 				9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
@@ -429,6 +440,7 @@
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */,
 				3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */,
+				9A9D25F3283BD3D30046A5CB /* Builder.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
 				3F91C28A22354C6D0033AD1F /* CategoryTableViewCell.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,
@@ -632,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YKCHYY383;
 				INFOPLIST_FILE = CheckMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,6 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YKCHYY383;
 				INFOPLIST_FILE = CheckMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
