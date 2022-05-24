@@ -43,6 +43,9 @@
 		3FF79DC022287972002DDCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DBE22287972002DDCEB /* Main.storyboard */; };
 		3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC122287974002DDCEB /* Assets.xcassets */; };
 		3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */; };
+		9A60BA76283CEF2A00101A06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */; };
+		9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA77283D01FC00101A06 /* LoginModel.swift */; };
+		9A60BA7A283D1C2B00101A06 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A60BA79283D1C2B00101A06 /* LoginViewController.xib */; };
 		9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */; };
 		9A9D25F3283BD3D30046A5CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* Builder.swift */; };
 		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
@@ -98,6 +101,9 @@
 		3FF79DC422287974002DDCEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF79DC622287974002DDCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954C181D7A3E11715F79FA96 /* Pods-CheckMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.release.xcconfig"; sourceTree = "<group>"; };
+		9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		9A60BA77283D01FC00101A06 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		9A60BA79283D1C2B00101A06 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenter.swift; sourceTree = "<group>"; };
 		9A9D25F2283BD3D30046A5CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 				3F3820F4224B46D900159CE2 /* WelcomViewController.swift */,
 				9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */,
 				3F91C261222E49C50033AD1F /* LoginViewController.swift */,
+				9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */,
+				9A60BA79283D1C2B00101A06 /* LoginViewController.xib */,
+				9A60BA77283D01FC00101A06 /* LoginModel.swift */,
 				3F91C263222EF1570033AD1F /* RegisterViewController.swift */,
 			);
 			path = Login;
@@ -338,6 +347,7 @@
 			files = (
 				3F38210922560D7200159CE2 /* CreateStory.storyboard in Resources */,
 				3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */,
+				9A60BA7A283D1C2B00101A06 /* LoginViewController.xib in Resources */,
 				3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */,
 				9A9D25F7283C127C0046A5CB /* WelcomViewController.xib in Resources */,
 				3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */,
@@ -429,6 +439,7 @@
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */,
+				9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */,
 				3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */,
 				9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
@@ -440,6 +451,7 @@
 				3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */,
 				3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */,
 				3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */,
+				9A60BA76283CEF2A00101A06 /* LoginPresenter.swift in Sources */,
 				9A9D25F3283BD3D30046A5CB /* Builder.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
 				3F91C28A22354C6D0033AD1F /* CategoryTableViewCell.swift in Sources */,

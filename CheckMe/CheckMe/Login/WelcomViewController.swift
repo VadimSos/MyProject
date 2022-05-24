@@ -23,6 +23,10 @@ class WelcomViewController: UIViewController {
 
         self.presenter.showReachability()
 	}
+    @IBAction func loginButtonDidTap(_ sender: RoundButtons) {
+        let loginViewController = ModelBuilder.createLoginModule()
+        navigationController?.pushViewController(loginViewController, animated: true)
+    }
 
     func alert(message: String) {
         let alert = UIAlertController(title: "Netowrk status", message: message, preferredStyle: .alert)

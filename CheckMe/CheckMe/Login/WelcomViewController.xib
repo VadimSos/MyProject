@@ -34,6 +34,9 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Login"/>
+                            <connections>
+                                <action selector="loginButtonDidTap:" destination="-1" eventType="touchUpInside" id="Qov-Hk-Fwr"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s05-kY-FDf" customClass="RoundButtons" customModule="CheckMe" customModuleProvider="target">
                             <rect key="frame" x="36" y="816" width="342" height="60"/>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -15,6 +14,8 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet weak var mailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
+
+    var presenter: LoginPresenterProtocol!
 
 	// MAKR: Lifecycle
 
@@ -26,26 +27,13 @@ class LoginViewController: UIViewController {
 	// MARK: Actions
 
 	@IBAction func loginButtonDidTap(_ sender: UIButton) {
-		if checkDataIsEmpty() {
-			doLogin()
-		}
+        presenter.login(mail: mailTextField.text, password: passwordTextField.text)
 	}
 
 	@IBAction func forgotPasswordDidTap(_ sender: UIButton) {
 
 		guard let mail = mailTextField.text else { return }
-
-		Auth.auth().sendPasswordReset(withEmail: mail) { (error) in
-			if let error = error {
-				if let errorCode = AuthErrorCode(rawValue: error._code) {
-					UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
-												from: self)
-				}
-			} else {
-				UIAlertController.showSuccess(message: NSLocalizedString("Please check your E-mail address", comment: ""),
-											  from: self)
-			}
-		}
+        presenter.resetPasswordWith(mail: mail)
 	}
 
 	func switchToMainVC() {
@@ -54,56 +42,6 @@ class LoginViewController: UIViewController {
 		if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
 			appDelegate.window?.rootViewController = loginVC
 		}
-	}
-
-	func doLogin() {
-
-		guard let mail = mailTextField.text, let password = passwordTextField.text else { return }
-
-		Auth.auth().signIn(withEmail: mail, password: password) { (_, error) in
-			if let error = error {
-				if let errorCode = AuthErrorCode(rawValue: error._code) {
-						UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
-													from: self)
-					}
-				} else {
-				self.switchToMainVC()
-			}
-		}
-	}
-
-	func checkDataIsEmpty() -> Bool {
-		var result = false
-		if let mail = mailTextField.text {
-			if mail.textMailIsEmpty() {
-				showAlertDataIsEmpty()
-			} else {
-				result = true
-			}
-
-			if mail.isValidLogin() {
-				result = true
-			} else {
-				showAlertDataIsWrong()
-				result = false
-			}
-		}
-
-		if let password = passwordTextField.text {
-			if password.textPasswordIsEmpty() {
-				showAlertDataIsEmpty()
-			} else {
-				result = true
-			}
-
-			if password.isValidPassword() {
-				result = true
-			} else {
-				showAlertDataIsWrong()
-				result = false
-			}
-		}
-		return result
 	}
 
 	// MAKR: Alerts
@@ -118,4 +56,38 @@ class LoginViewController: UIViewController {
 									from: self)
 	}
 
+}
+
+extension LoginViewController: LoginViewProtocol {
+    func resetPasswordWith(error: String?) {
+        if let error = error {
+            UIAlertController.showError(message: NSLocalizedString(error, comment: ""),
+                                        from: self)
+        }
+    }
+
+    func loginWith(error: String?) {
+        if let error = error {
+            UIAlertController.showError(message: NSLocalizedString(error, comment: ""),
+                                        from: self)
+        } else {
+            switchToMainVC()
+        }
+    }
+
+    func setPasswordValidationWith(error: String?) {
+        if error == "Empty" {
+            showAlertDataIsEmpty()
+        } else {
+            showAlertDataIsWrong()
+        }
+    }
+
+    func setMailValidationWith(error: String?) {
+        if error == "Empty" {
+            showAlertDataIsEmpty()
+        } else {
+            showAlertDataIsWrong()
+        }
+    }
 }
