@@ -21,7 +21,7 @@ class WelcomViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-        self.presenter.showReachability()
+        self.presenter.checkReachability()
 	}
     @IBAction func loginButtonDidTap(_ sender: RoundButtons) {
         let loginViewController = ModelBuilder.createLoginModule()

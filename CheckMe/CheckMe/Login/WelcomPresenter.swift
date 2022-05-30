@@ -15,7 +15,7 @@ protocol WelcomViewProtocol: class {
 
 protocol WelcomPresenterProtocol: class {
     init(view: WelcomViewProtocol)
-    func showReachability()
+    func checkReachability()
 }
 
 class WelcomPresenter: WelcomPresenterProtocol {
@@ -26,7 +26,7 @@ class WelcomPresenter: WelcomPresenterProtocol {
         self.view = view
     }
 
-    func showReachability() {
+    func checkReachability() {
         reachability = Reachability()
 
         if reachability?.connection != Reachability.Connection.none {
