@@ -14,16 +14,19 @@ protocol WelcomViewProtocol: class {
 }
 
 protocol WelcomPresenterProtocol: class {
-    init(view: WelcomViewProtocol)
+    init(view: WelcomViewProtocol, router: RouterProtocol)
     func checkReachability()
+    func tapOnLogin()
 }
 
 class WelcomPresenter: WelcomPresenterProtocol {
     weak var view: WelcomViewProtocol?
+    var router: RouterProtocol?
     var reachability: Reachability?
 
-    required init(view: WelcomViewProtocol) {
+    required init(view: WelcomViewProtocol, router: RouterProtocol) {
         self.view = view
+        self.router = router
     }
 
     func checkReachability() {
@@ -34,5 +37,9 @@ class WelcomPresenter: WelcomPresenterProtocol {
         } else {
             view?.getReachabilityConnected(status: false)
         }
+    }
+
+    func tapOnLogin() {
+        router?.goToLoginVC()
     }
 }

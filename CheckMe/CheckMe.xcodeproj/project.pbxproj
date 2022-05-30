@@ -47,9 +47,10 @@
 		9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA77283D01FC00101A06 /* LoginModel.swift */; };
 		9A60BA7A283D1C2B00101A06 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A60BA79283D1C2B00101A06 /* LoginViewController.xib */; };
 		9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */; };
-		9A9D25F3283BD3D30046A5CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* Builder.swift */; };
+		9A9D25F3283BD3D30046A5CB /* BuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* BuilderProtocol.swift */; };
 		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
 		9A9D25F7283C127C0046A5CB /* WelcomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */; };
+		9AFB6A8F2844F3CB008C0186 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6A8E2844F3CB008C0186 /* Router.swift */; };
 		A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,9 +106,10 @@
 		9A60BA77283D01FC00101A06 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		9A60BA79283D1C2B00101A06 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenter.swift; sourceTree = "<group>"; };
-		9A9D25F2283BD3D30046A5CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		9A9D25F2283BD3D30046A5CB /* BuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderProtocol.swift; sourceTree = "<group>"; };
 		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomViewController.xib; sourceTree = "<group>"; };
+		9AFB6A8E2844F3CB008C0186 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A114A2BC7F11C89772AC2BB2 /* Pods-CheckMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.debug.xcconfig"; sourceTree = "<group>"; };
 		F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -249,7 +251,8 @@
 				3FF79DC622287974002DDCEB /* Info.plist */,
 				3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */,
 				3F91C29522396F450033AD1F /* Localizable.strings */,
-				9A9D25F2283BD3D30046A5CB /* Builder.swift */,
+				9A9D25F2283BD3D30046A5CB /* BuilderProtocol.swift */,
+				9AFB6A8E2844F3CB008C0186 /* Router.swift */,
 			);
 			path = CheckMe;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
+				9AFB6A8F2844F3CB008C0186 /* Router.swift in Sources */,
 				3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */,
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
@@ -452,7 +456,7 @@
 				3F91C26C223038900033AD1F /* UIAlertConstructor.swift in Sources */,
 				3FF00E67223C22A8006015CC /* HideKeyBoard.swift in Sources */,
 				9A60BA76283CEF2A00101A06 /* LoginPresenter.swift in Sources */,
-				9A9D25F3283BD3D30046A5CB /* Builder.swift in Sources */,
+				9A9D25F3283BD3D30046A5CB /* BuilderProtocol.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
 				3F91C28A22354C6D0033AD1F /* CategoryTableViewCell.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,

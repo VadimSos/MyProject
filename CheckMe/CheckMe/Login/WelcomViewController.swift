@@ -24,8 +24,7 @@ class WelcomViewController: UIViewController {
         self.presenter.checkReachability()
 	}
     @IBAction func loginButtonDidTap(_ sender: RoundButtons) {
-        let loginViewController = ModelBuilder.createLoginModule()
-        navigationController?.pushViewController(loginViewController, animated: true)
+        presenter.tapOnLogin()
     }
 
     func alert(message: String) {

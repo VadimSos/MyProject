@@ -8,20 +8,20 @@
 
 import UIKit
 
-protocol Builder {
-    static func createWelcomModule() -> UIViewController
-    static func createLoginModule() -> UIViewController
+protocol BuilderProtocol {
+    func createWelcomModule(router: RouterProtocol) -> UIViewController
+    func createLoginModule() -> UIViewController
 }
 
-class ModelBuilder: Builder {
-    static func createWelcomModule() -> UIViewController {
+class ModuleBuilder: BuilderProtocol {
+    func createWelcomModule(router: RouterProtocol) -> UIViewController {
         let view = WelcomViewController()
-        let presenter = WelcomPresenter(view: view)
+        let presenter = WelcomPresenter(view: view, router: router)
         view.presenter = presenter
         return view
     }
-    
-    static func createLoginModule() -> UIViewController {
+
+    func createLoginModule() -> UIViewController {
         let view = LoginViewController()
         let model = Login()
         let presenter = LoginPresenter(view: view, loginModel: model)
