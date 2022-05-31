@@ -39,9 +39,8 @@ class LoginViewController: UIViewController {
 	func switchToMainVC() {
 		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 		let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
-		if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-			appDelegate.window?.rootViewController = loginVC
-		}
+        UIApplication.shared.windows.first?.rootViewController = loginVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
 	}
 
 	// MAKR: Alerts
