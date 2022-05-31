@@ -50,6 +50,7 @@
 		9A9D25F3283BD3D30046A5CB /* BuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* BuilderProtocol.swift */; };
 		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
 		9A9D25F7283C127C0046A5CB /* WelcomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */; };
+		9AC2222928462C0A00CF8868 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2222828462C0A00CF8868 /* FirebaseService.swift */; };
 		9AFB6A8F2844F3CB008C0186 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6A8E2844F3CB008C0186 /* Router.swift */; };
 		A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		9A9D25F2283BD3D30046A5CB /* BuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderProtocol.swift; sourceTree = "<group>"; };
 		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9A9D25F6283C127C0046A5CB /* WelcomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomViewController.xib; sourceTree = "<group>"; };
+		9AC2222828462C0A00CF8868 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		9AFB6A8E2844F3CB008C0186 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A114A2BC7F11C89772AC2BB2 /* Pods-CheckMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.debug.xcconfig"; sourceTree = "<group>"; };
 		F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +249,7 @@
 				3F91C27E2230E8020033AD1F /* CreateStory */,
 				3F91C27B2230E7EC0033AD1F /* Settings */,
 				3F91C2782230E7D40033AD1F /* Favorites */,
+				9AC2222A28462C0E00CF8868 /* ServiceLayer */,
 				3F91C265222EF19D0033AD1F /* Login */,
 				3FF79DC622287974002DDCEB /* Info.plist */,
 				3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */,
@@ -266,6 +269,14 @@
 				3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		9AC2222A28462C0E00CF8868 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9AC2222828462C0A00CF8868 /* FirebaseService.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		9D8D2BA08DE68CAE8BFBE3FD /* Pods */ = {
@@ -442,6 +453,7 @@
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
+				9AC2222928462C0A00CF8868 /* FirebaseService.swift in Sources */,
 				9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */,
 				9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */,
 				3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */,

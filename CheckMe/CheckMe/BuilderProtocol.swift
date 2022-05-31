@@ -24,7 +24,8 @@ class ModuleBuilder: BuilderProtocol {
     func createLoginModule() -> UIViewController {
         let view = LoginViewController()
         let model = Login()
-        let presenter = LoginPresenter(view: view, loginModel: model)
+        let firebaseService = FirebaseService()
+        let presenter = LoginPresenter(view: view, loginModel: model, firebaseService: firebaseService)
         view.presenter = presenter
         return view
     }

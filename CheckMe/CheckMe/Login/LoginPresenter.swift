@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import FirebaseAuth
 
 protocol LoginViewProtocol: class {
     func resetPasswordWith(error: String?)
@@ -18,7 +17,7 @@ protocol LoginViewProtocol: class {
 }
 
 protocol LoginPresenterProtocol: class {
-    init(view: LoginViewProtocol, loginModel: Login)
+    init(view: LoginViewProtocol, loginModel: Login, firebaseService: FirebaseServiceProtocol)
     func resetPasswordWith(mail: String?)
     func login(mail: String?, password: String?)
 }
@@ -26,26 +25,24 @@ protocol LoginPresenterProtocol: class {
 class LoginPresenter: LoginPresenterProtocol {
     weak var view: LoginViewProtocol?
     var loginModel: Login?
+    var firebaseService: FirebaseServiceProtocol?
 
-    required init(view: LoginViewProtocol, loginModel: Login) {
+    required init(view: LoginViewProtocol, loginModel: Login, firebaseService: FirebaseServiceProtocol) {
         self.view = view
         self.loginModel = loginModel
+        self.firebaseService = firebaseService
     }
 
     func resetPasswordWith(mail: String?) {
-
         if validationMail(with: mail) == true {
-            Auth.auth().sendPasswordReset(withEmail: mail!) { (error) in
-                if let error = error {
-                    if let errorCode = AuthErrorCode(rawValue: error._code) {
-                        self.view?.resetPasswordWith(error: errorCode.errorMessages)
-                    }
+            firebaseService?.passwordReset(mail: mail ?? "", completion: { [weak self] errorCode, error  in
+                if error != nil {
+                    self?.view?.resetPasswordWith(error: errorCode)
                 } else {
-                    self.view?.resetPasswordWith(error: nil)
+                    self?.view?.resetPasswordWith(error: nil)
                 }
-            }
+            })
         }
-
     }
 
     func login(mail: String?, password: String?) {
@@ -62,15 +59,13 @@ class LoginPresenter: LoginPresenterProtocol {
 
         guard let mail = mail, let password = password else { return }
 
-        Auth.auth().signIn(withEmail: mail, password: password) { (_, error) in
-            if let error = error {
-                if let errorCode = AuthErrorCode(rawValue: error._code) {
-                    self.view?.loginWith(error: errorCode.errorMessages)
-                    }
-                } else {
-                    self.view?.loginWith(error: nil)
+        firebaseService?.signIn(mail: mail, password: password, completion: { [weak self] errorCode, error in
+            if error != nil {
+                self?.view?.loginWith(error: errorCode)
+            } else {
+                self?.view?.loginWith(error: nil)
             }
-        }
+        })
     }
 
     func validationMail(with mail: String?) -> Bool {
