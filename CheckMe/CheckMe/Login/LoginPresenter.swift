@@ -72,7 +72,7 @@ class LoginPresenter: LoginPresenterProtocol {
         var result = false
         if let mail = mail {
             if mail.textMailIsEmpty() {
-                view?.setMailValidationWith(error: "Empty")
+                view?.setMailValidationWith(error: "Empty Mail")
                 result = false
             } else {
                 result = true
@@ -81,7 +81,7 @@ class LoginPresenter: LoginPresenterProtocol {
             if mail.isValidLogin() {
                 result = true
             } else {
-                view?.setMailValidationWith(error: "Wrong")
+                view?.setMailValidationWith(error: "Wrong Mail")
                 result = false
             }
         }
@@ -92,7 +92,7 @@ class LoginPresenter: LoginPresenterProtocol {
         var result = false
         if let password = password {
             if password.textPasswordIsEmpty() {
-                view?.setPasswordValidationWith(error: "Empty")
+                view?.setPasswordValidationWith(error: "Empty Password")
                 result = false
             } else {
                 result = true
@@ -101,7 +101,7 @@ class LoginPresenter: LoginPresenterProtocol {
             if password.isValidPassword() {
                 result = true
             } else {
-                view?.resetPasswordWith(error: "Wrong")
+                view?.resetPasswordWith(error: "Wrong Password")
                 result = false
             }
         }
