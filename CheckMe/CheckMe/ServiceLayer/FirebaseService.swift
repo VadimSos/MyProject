@@ -19,8 +19,9 @@ class FirebaseService: FirebaseServiceProtocol {
             if let error = error {
                 if let errorCode = AuthErrorCode(rawValue: error._code) {
                     completion(errorCode.errorMessages, error)
+                } else {
+                    completion(nil, error)                    
                 }
-                completion(nil, error)
             } else {
                 completion(nil, error)
             }
