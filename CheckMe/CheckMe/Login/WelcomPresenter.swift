@@ -17,6 +17,7 @@ protocol WelcomPresenterProtocol: class {
     init(view: WelcomViewProtocol, router: RouterProtocol)
     func checkReachability()
     func tapOnLogin()
+    func tapOnRegister()
 }
 
 class WelcomPresenter: WelcomPresenterProtocol {
@@ -41,5 +42,9 @@ class WelcomPresenter: WelcomPresenterProtocol {
 
     func tapOnLogin() {
         router?.goToLoginVC()
+    }
+    
+    func tapOnRegister() {
+        router?.goToRegisterVC()
     }
 }

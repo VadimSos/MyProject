@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -24,7 +22,7 @@ class RegisterViewController: UIViewController {
 
 	// MARK: Variables/Constants
 
-	let ref = Database.database().reference()
+    var presenter: RegisterPresenterProtocol!
 
 	// MARK: Lifecycle
 
@@ -34,77 +32,33 @@ class RegisterViewController: UIViewController {
 
 	}
 
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-
-		guard let userUID = Auth.auth().currentUser?.uid else { return }
-		let user = ref.child("users").child(userUID)
-
-		user.child("name").setValue(nameTextField.text)
-		user.child("familyName").setValue(familyNameTextField.text)
-		user.child("cellPhoneNumber").setValue(cellPhoneNumberTF.text)
-		user.child("phoneNumber").setValue(phoneNumberTF.text)
-	}
-
 	// MARK: Actions
 
 	@IBAction func createAccountButtonDidTap(_ sender: UIButton) {
-		guard saveAccount() else {
-			return
-		}
-	}
+        guard let mail = mailTextField.text, let password = passowordTextField.text else { return }
+        presenter.create(mail: mail,
+                         password: password,
+                         name: nameTextField.text,
+                         familyName: familyNameTextField.text,
+                         phoneNumberFirst: Int(cellPhoneNumberTF.text ?? ""),
+                         phoneNumberSecond: Int(phoneNumberTF.text ?? ""))
+    }
 
-	func saveAccount() -> Bool {
+    func switchToMainVC() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
+        UIApplication.shared.windows.first?.rootViewController = loginVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+}
 
-		var result = false
-
-		if let password = passowordTextField.text, let mail = mailTextField.text {
-			if password.textPasswordIsEmpty(), mail.textMailIsEmpty() {
-				showAlertIfDataIsEmpty()
-				result = false
-			} else {
-				if password.isValidPassword(), passowordTextField.text == confirmpasswordTextField.text {
-					createAccount()
-					result = true
-				} else {
-					showAlertIfDataIsIncorrect()
-					result = false
-				}
-			}
-		}
-
-		return result
-	}
-
-	func createAccount() {
-
-		guard let mail = mailTextField.text, let password = passowordTextField.text else { return }
-
-		Auth.auth().createUser(withEmail: mail, password: password) { (_, error) in
-			if let error = error {
-				if let errorCode = AuthErrorCode(rawValue: error._code) {
-
-					UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
-												from: self)
-				}
-			} else {
-				let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-				let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
-				if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-					appDelegate.window?.rootViewController = loginVC
-				}
-			}
-		}
-
-	}
-
-	// MARK: Alerts
-
-	func showAlertIfDataIsIncorrect() {
-		UIAlertController.showError(message: NSLocalizedString("Wrong data", comment: ""), from: self)
-	}
-
-	func showAlertIfDataIsEmpty() {
-		UIAlertController.showError(message: NSLocalizedString("Empty data", comment: ""), from: self)
-	}
+extension RegisterViewController: RegisterViewProtocol {
+    func createUser(error: String?) {
+        if let error = error {
+            UIAlertController.showError(message: NSLocalizedString(error, comment: ""),
+                                        from: self)
+        } else {
+            switchToMainVC()
+        }
+    }
 }

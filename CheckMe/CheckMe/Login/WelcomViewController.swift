@@ -27,6 +27,10 @@ class WelcomViewController: UIViewController {
         presenter.tapOnLogin()
     }
 
+    @IBAction func registerButtonDidTap(_ sender: RoundButtons) {
+        presenter.tapOnRegister()
+    }
+    
     func alert(message: String) {
         let alert = UIAlertController(title: "Netowrk status", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

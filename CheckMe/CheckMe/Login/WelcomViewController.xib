@@ -46,6 +46,9 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Register"/>
+                            <connections>
+                                <action selector="registerButtonDidTap:" destination="-1" eventType="touchUpInside" id="hjX-Sl-xN5"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CheckMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnc-Vw-WY8">
                             <rect key="frame" x="0.0" y="60" width="414" height="60"/>

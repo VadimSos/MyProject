@@ -16,6 +16,7 @@ protocol RouterMain {
 protocol RouterProtocol: RouterMain {
     func initialViewController()
     func goToLoginVC()
+    func goToRegisterVC()
     func popToRoot()
 }
 
@@ -38,6 +39,13 @@ class Router: RouterProtocol {
     func goToLoginVC() {
         if let navigationController = navigationController {
             guard let loginViewController = builder?.createLoginModule() else { return }
+            navigationController.pushViewController(loginViewController, animated: true)
+        }
+    }
+    
+    func goToRegisterVC() {
+        if let navigationController = navigationController {
+            guard let loginViewController = builder?.createRegisterModule() else { return }
             navigationController.pushViewController(loginViewController, animated: true)
         }
     }
