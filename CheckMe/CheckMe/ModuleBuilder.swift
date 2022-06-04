@@ -10,8 +10,8 @@ import UIKit
 
 protocol BuilderProtocol {
     func createWelcomModule(router: RouterProtocol) -> UIViewController
-    func createLoginModule() -> UIViewController
-    func createRegisterModule() -> UIViewController
+    func createLoginModule(router: RouterProtocol) -> UIViewController
+    func createRegisterModule(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: BuilderProtocol {
@@ -22,20 +22,26 @@ class ModuleBuilder: BuilderProtocol {
         return view
     }
 
-    func createLoginModule() -> UIViewController {
+    func createLoginModule(router: RouterProtocol) -> UIViewController {
         let view = LoginViewController()
         let model = Login()
         let firebaseService = FirebaseService()
-        let presenter = LoginPresenter(view: view, loginModel: model, firebaseService: firebaseService)
+        let presenter = LoginPresenter(view: view,
+                                       loginModel: model,
+                                       firebaseService: firebaseService,
+                                       router: router)
         view.presenter = presenter
         return view
     }
-    
-    func createRegisterModule() -> UIViewController {
+
+    func createRegisterModule(router: RouterProtocol) -> UIViewController {
         let view = RegisterViewController()
         let model = RegisterModel()
         let firebaseService = FirebaseService()
-        let presenter = RegisterPresenter(view: view, model: model, firebaseService: firebaseService)
+        let presenter = RegisterPresenter(view: view,
+                                          model: model,
+                                          firebaseService: firebaseService,
+                                          router: router)
         view.presenter = presenter
         return view
     }

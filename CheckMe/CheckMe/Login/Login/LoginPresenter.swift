@@ -17,7 +17,10 @@ protocol LoginViewProtocol: class {
 }
 
 protocol LoginPresenterProtocol: class {
-    init(view: LoginViewProtocol, loginModel: Login, firebaseService: FirebaseServiceProtocol)
+    init(view: LoginViewProtocol,
+         loginModel: Login,
+         firebaseService: FirebaseServiceProtocol,
+         router: RouterProtocol)
     func resetPasswordWith(mail: String?)
     func login(mail: String?, password: String?)
 }
@@ -26,11 +29,16 @@ class LoginPresenter: LoginPresenterProtocol {
     weak var view: LoginViewProtocol?
     var loginModel: Login?
     var firebaseService: FirebaseServiceProtocol?
+    var router: RouterProtocol?
 
-    required init(view: LoginViewProtocol, loginModel: Login, firebaseService: FirebaseServiceProtocol) {
+    required init(view: LoginViewProtocol,
+                  loginModel: Login,
+                  firebaseService: FirebaseServiceProtocol,
+                  router: RouterProtocol) {
         self.view = view
         self.loginModel = loginModel
         self.firebaseService = firebaseService
+        self.router = router
     }
 
     func resetPasswordWith(mail: String?) {

@@ -13,19 +13,27 @@ protocol RegisterViewProtocol: class {
 }
 
 protocol RegisterPresenterProtocol: class {
-    init(view: RegisterViewProtocol, model: RegisterModel, firebaseService: FirebaseService)
+    init(view: RegisterViewProtocol,
+         model: RegisterModel,
+         firebaseService: FirebaseService,
+         router: RouterProtocol)
     func create(mail: String?, password: String?, name: String?, familyName: String?, phoneNumberFirst: Int?, phoneNumberSecond: Int?)
 }
 
 class RegisterPresenter: RegisterPresenterProtocol {
     weak var view: RegisterViewProtocol?
     var model: RegisterModel
-    let firebaseService: FirebaseService
+    let firebaseService: FirebaseServiceProtocol
+    var router: RouterProtocol?
 
-    required init(view: RegisterViewProtocol, model: RegisterModel, firebaseService: FirebaseService) {
+    required init(view: RegisterViewProtocol,
+                  model: RegisterModel,
+                  firebaseService: FirebaseService,
+                  router: RouterProtocol) {
         self.view = view
         self.model = model
         self.firebaseService = firebaseService
+        self.router = router
     }
 
     func create(mail: String?, password: String?, name: String?, familyName: String?, phoneNumberFirst: Int?, phoneNumberSecond: Int?) {

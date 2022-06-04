@@ -38,16 +38,23 @@ class Router: RouterProtocol {
 
     func goToLoginVC() {
         if let navigationController = navigationController {
-            guard let loginViewController = builder?.createLoginModule() else { return }
+            guard let loginViewController = builder?.createLoginModule(router: self) else { return }
             navigationController.pushViewController(loginViewController, animated: true)
         }
     }
-    
+
     func goToRegisterVC() {
         if let navigationController = navigationController {
-            guard let loginViewController = builder?.createRegisterModule() else { return }
+            guard let loginViewController = builder?.createRegisterModule(router: self) else { return }
             navigationController.pushViewController(loginViewController, animated: true)
         }
+    }
+
+    func goToMainVC() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
+        UIApplication.shared.windows.first?.rootViewController = loginVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 
     func popToRoot() {

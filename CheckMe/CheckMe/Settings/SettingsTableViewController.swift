@@ -180,9 +180,14 @@ extension SettingsTableViewController: UITableViewDelegate, AUPickerCellDelegate
 					print ("Error signing out: %@", signOutError)
 				}
 
-				let storyboard = UIStoryboard(name: "Login", bundle: nil)
-				let logout = storyboard.instantiateViewController(withIdentifier: "WelcomViewController") as UIViewController
-				self.present(logout, animated: true, completion: nil)
+                let navigationController = UINavigationController()
+                let builder = ModuleBuilder()
+                let router = Router(navigationController: navigationController, builder: builder)
+                router.initialViewController()
+                navigationController.modalPresentationStyle = .fullScreen
+                self.present(navigationController, animated: true) {
+                    self.tabBarController?.view.removeFromSuperview()
+                }
 			}))
 
 			self.present(myAlert, animated: true, completion: nil)
