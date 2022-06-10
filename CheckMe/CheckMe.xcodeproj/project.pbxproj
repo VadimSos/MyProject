@@ -45,6 +45,8 @@
 		3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */; };
 		9A2314DB2847651F00BE9CD4 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2314DA2847651F00BE9CD4 /* RegisterModel.swift */; };
 		9A2314DD2847B4C100BE9CD4 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2314DC2847B4C100BE9CD4 /* RegisterViewController.xib */; };
+		9A602500284B871600E6DAD5 /* CheckMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6024FF284B871600E6DAD5 /* CheckMeTests.swift */; };
+		9A602507284B879000E6DAD5 /* WelcomPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A602506284B879000E6DAD5 /* WelcomPresenterTest.swift */; };
 		9A60BA76283CEF2A00101A06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */; };
 		9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA77283D01FC00101A06 /* LoginModel.swift */; };
 		9A60BA7A283D1C2B00101A06 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A60BA79283D1C2B00101A06 /* LoginViewController.xib */; };
@@ -57,6 +59,16 @@
 		9AFB6A8F2844F3CB008C0186 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6A8E2844F3CB008C0186 /* Router.swift */; };
 		A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370EE57B261F99AA1FE0A18 /* Pods_CheckMe.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A602501284B871600E6DAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FF79DAF22287972002DDCEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FF79DB622287972002DDCEB;
+			remoteInfo = CheckMe;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3F0964AB2266574500B2D00B /* AuthErrorHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandle.swift; sourceTree = "<group>"; };
@@ -108,6 +120,9 @@
 		954C181D7A3E11715F79FA96 /* Pods-CheckMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.release.xcconfig"; sourceTree = "<group>"; };
 		9A2314DA2847651F00BE9CD4 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		9A2314DC2847B4C100BE9CD4 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9A6024FD284B871600E6DAD5 /* CheckMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6024FF284B871600E6DAD5 /* CheckMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMeTests.swift; sourceTree = "<group>"; };
+		9A602506284B879000E6DAD5 /* WelcomPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenterTest.swift; sourceTree = "<group>"; };
 		9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		9A60BA77283D01FC00101A06 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		9A60BA79283D1C2B00101A06 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -129,6 +144,13 @@
 			files = (
 				3F91C29B223ABDCD0033AD1F /* CoreData.framework in Frameworks */,
 				A86D7CCD7F14F9E038F154C5 /* Pods_CheckMe.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A6024FA284B871600E6DAD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF79DB922287972002DDCEB /* CheckMe */,
+				9A6024FE284B871600E6DAD5 /* CheckMeTests */,
 				3FF79DB822287972002DDCEB /* Products */,
 				9D8D2BA08DE68CAE8BFBE3FD /* Pods */,
 				D59F79435B7A610858A7C144 /* Frameworks */,
@@ -235,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF79DB722287972002DDCEB /* CheckMe.app */,
+				9A6024FD284B871600E6DAD5 /* CheckMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +294,15 @@
 				3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		9A6024FE284B871600E6DAD5 /* CheckMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A6024FF284B871600E6DAD5 /* CheckMeTests.swift */,
+				9A602506284B879000E6DAD5 /* WelcomPresenterTest.swift */,
+			);
+			path = CheckMeTests;
 			sourceTree = "<group>";
 		};
 		9A7947462848E73800655906 /* Welcom */ = {
@@ -353,18 +386,40 @@
 			productReference = 3FF79DB722287972002DDCEB /* CheckMe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9A6024FC284B871600E6DAD5 /* CheckMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A602505284B871600E6DAD5 /* Build configuration list for PBXNativeTarget "CheckMeTests" */;
+			buildPhases = (
+				9A6024F9284B871600E6DAD5 /* Sources */,
+				9A6024FA284B871600E6DAD5 /* Frameworks */,
+				9A6024FB284B871600E6DAD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A602502284B871600E6DAD5 /* PBXTargetDependency */,
+			);
+			name = CheckMeTests;
+			productName = CheckMeTests;
+			productReference = 9A6024FD284B871600E6DAD5 /* CheckMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3FF79DAF22287972002DDCEB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Vadzim Sasnouski";
 				TargetAttributes = {
 					3FF79DB622287972002DDCEB = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					9A6024FC284B871600E6DAD5 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 3FF79DB622287972002DDCEB;
 					};
 				};
 			};
@@ -383,6 +438,7 @@
 			projectRoot = "";
 			targets = (
 				3FF79DB622287972002DDCEB /* CheckMe */,
+				9A6024FC284B871600E6DAD5 /* CheckMeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -404,6 +460,13 @@
 				3FF79DC022287972002DDCEB /* Main.storyboard in Resources */,
 				3F382102225609E900159CE2 /* Settings.storyboard in Resources */,
 				9A2314DD2847B4C100BE9CD4 /* RegisterViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A6024FB284B871600E6DAD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +575,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A6024F9284B871600E6DAD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A602500284B871600E6DAD5 /* CheckMeTests.swift in Sources */,
+				9A602507284B879000E6DAD5 /* WelcomPresenterTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A602502284B871600E6DAD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FF79DB622287972002DDCEB /* CheckMe */;
+			targetProxy = 9A602501284B871600E6DAD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3F3820FF225606CB00159CE2 /* Login.storyboard */ = {
@@ -740,6 +820,51 @@
 			};
 			name = Release;
 		};
+		9A602503284B871600E6DAD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9YKCHYY383;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.vadim.CheckMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheckMe.app/CheckMe";
+			};
+			name = Debug;
+		};
+		9A602504284B871600E6DAD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9YKCHYY383;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.vadim.CheckMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheckMe.app/CheckMe";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -757,6 +882,15 @@
 			buildConfigurations = (
 				3FF79DCA22287974002DDCEB /* Debug */,
 				3FF79DCB22287974002DDCEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A602505284B871600E6DAD5 /* Build configuration list for PBXNativeTarget "CheckMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A602503284B871600E6DAD5 /* Debug */,
+				9A602504284B871600E6DAD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
