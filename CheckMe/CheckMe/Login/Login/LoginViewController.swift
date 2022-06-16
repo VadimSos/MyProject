@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
 	// MARK: Actions
 
 	@IBAction func loginButtonDidTap(_ sender: UIButton) {
-        presenter.login(mail: mailTextField.text, password: passwordTextField.text)
+        presenter.login(mail: mailTextField.text ?? "", password: passwordTextField.text ?? "")
 	}
 
 	@IBAction func forgotPasswordDidTap(_ sender: UIButton) {
