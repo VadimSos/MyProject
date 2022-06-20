@@ -13,6 +13,7 @@ protocol FirebaseServiceProtocol {
     func signIn(mail: String, password: String, completion: @escaping (String?, Error?) -> Void)
     func passwordReset(mail: String, completion: @escaping (String?, Error?) -> Void)
     func create(user: RegisterModel, completion: @escaping (String?, Error?) -> Void)
+    func changePassword(password: String, completion: @escaping (Result<String, Error>) -> Void)
 }
 
 class FirebaseService: FirebaseServiceProtocol {
@@ -60,6 +61,16 @@ class FirebaseService: FirebaseServiceProtocol {
         }
     }
 
+    func changePassword(password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(""))
+            }
+        })
+    }
+
     private func setUserData(user: RegisterModel) {
         let ref = Database.database().reference()
 
@@ -70,5 +81,9 @@ class FirebaseService: FirebaseServiceProtocol {
         firebaseUser.child("familyName").setValue(user.familyName)
         firebaseUser.child("cellPhoneNumber").setValue(user.phoneNumberFirst)
         firebaseUser.child("phoneNumber").setValue(user.phoneNumberSecond)
+    }
+
+    deinit {
+        print("[ARC] firebase is free")
     }
 }

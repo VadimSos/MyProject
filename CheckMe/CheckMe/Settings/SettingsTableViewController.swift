@@ -159,7 +159,13 @@ extension SettingsTableViewController: UITableViewDelegate, AUPickerCellDelegate
 
 		//password section used
 		if indexPath.section == 2 {
-			self.performSegue(withIdentifier: "changePasswordID", sender: self)
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "cahngePasswordVC") as? ChangePasswordViewController
+//            let view = ChangePasswordViewController()
+            let firebase = FirebaseService()
+//            let model = ChangePasswordData()
+            let viewModel = ChangePasswordViewModel(firebaseService: firebase)
+            view?.changePasswordViewModel = viewModel
+            self.present(view!, animated: true)
 		}
 
 		//logout section used

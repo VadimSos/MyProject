@@ -45,6 +45,8 @@
 		3FF79DC522287974002DDCEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF79DC322287974002DDCEB /* LaunchScreen.storyboard */; };
 		9A2314DB2847651F00BE9CD4 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2314DA2847651F00BE9CD4 /* RegisterModel.swift */; };
 		9A2314DD2847B4C100BE9CD4 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2314DC2847B4C100BE9CD4 /* RegisterViewController.xib */; };
+		9A2F8CEB285C78EE009C1B9B /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F8CEA285C78EE009C1B9B /* ChangePasswordModel.swift */; };
+		9A2F8CED285C78FB009C1B9B /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F8CEC285C78FB009C1B9B /* ChangePasswordViewModel.swift */; };
 		9A60BA76283CEF2A00101A06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */; };
 		9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA77283D01FC00101A06 /* LoginModel.swift */; };
 		9A60BA7A283D1C2B00101A06 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A60BA79283D1C2B00101A06 /* LoginViewController.xib */; };
@@ -108,6 +110,8 @@
 		954C181D7A3E11715F79FA96 /* Pods-CheckMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckMe/Pods-CheckMe.release.xcconfig"; sourceTree = "<group>"; };
 		9A2314DA2847651F00BE9CD4 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		9A2314DC2847B4C100BE9CD4 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9A2F8CEA285C78EE009C1B9B /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		9A2F8CEC285C78FB009C1B9B /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		9A60BA77283D01FC00101A06 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		9A60BA79283D1C2B00101A06 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */,
 				3F91C296223983690033AD1F /* SettingsTableViewCell.swift */,
 				3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */,
+				9A2F8CEA285C78EE009C1B9B /* ChangePasswordModel.swift */,
+				9A2F8CEC285C78FB009C1B9B /* ChangePasswordViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -493,9 +499,11 @@
 				9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */,
 				3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */,
 				9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */,
+				9A2F8CED285C78FB009C1B9B /* ChangePasswordViewModel.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,
+				9A2F8CEB285C78EE009C1B9B /* ChangePasswordModel.swift in Sources */,
 				9AC2222D2846A01800CF8868 /* RegisterPresenter.swift in Sources */,
 				3FD17866225BD47C0043318A /* NetworkManager.swift in Sources */,
 				3F3820F5224B46D900159CE2 /* WelcomViewController.swift in Sources */,

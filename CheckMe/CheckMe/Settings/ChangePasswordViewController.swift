@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class ChangePasswordViewController: UIViewController {
 
@@ -16,40 +15,36 @@ class ChangePasswordViewController: UIViewController {
 	@IBOutlet weak var newPasswordTextField: UITextField!
 	@IBOutlet weak var confirmNewPasswordTextField: UITextField!
 
+    var changePasswordViewModel: ChangePasswordViewModelProtocol!
+    var viewData: ChangePasswordData = .initial(nil)
+
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.hideKeyboardWhenTappedAround()
+
+        changePasswordViewModel.updateViewData = { data in
+            self.viewData = data
+            switch data {
+            case .initial(let initial):
+                self.update(viewData: initial)
+            case .loading(let loading):
+                self.update(viewData: loading)
+            case .success(let success):
+                self.update(viewData: success)
+            case .failure(let failure):
+                self.update(viewData: failure)
+            }
+        }
 	}
-
-	// MARK: - Actions
-
-	@IBAction func returnToSettingsVC(_ sender: UIBarButtonItem) {
-		self.performSegue(withIdentifier: "stopBarButton", sender: nil)
-			}
 
 	@IBAction func changePasswordButtonDidTap(_ sender: UIButton) {
+        changePasswordViewModel.resetPassword(with: newPasswordTextField.text ?? "")
+        }
 
-		changePassword()
-	}
-
-	func changePassword() {
-		if let password = confirmNewPasswordTextField.text {
-			Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
-				if let error = error {
-					if let errorCode = AuthErrorCode(rawValue: error._code),
-						self.newPasswordTextField.text == self.confirmNewPasswordTextField.text {
-						UIAlertController.showError(message: NSLocalizedString(errorCode.errorMessages, comment: ""),
-													from: self)
-					}
-				} else {
-					self.navigationController?.popViewController(animated: true)
-				}
-			})
-		} else {
-			UIAlertController.showError(message: NSLocalizedString("Please input password", comment: ""),
-										from: self)
-		}
-	}
+        private func update(viewData: ChangePasswordData.PasswordData?) {
+            newPasswordTextField.text = viewData?.password
+            confirmNewPasswordTextField.text = viewData?.passwordConfirm
+        }
 }
