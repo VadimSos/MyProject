@@ -23,6 +23,9 @@ final class ChangePasswordViewModel: ChangePasswordViewModelProtocol {
     init(firebaseService: FirebaseServiceProtocol) {
         self.firebaseService = firebaseService
 
+    }
+
+    func updateViewForInitial() {
         updateViewData?(.initial(ChangePasswordData.PasswordData(password: "Initial",
                                                                  passwordConfirm: "Initial")))
     }

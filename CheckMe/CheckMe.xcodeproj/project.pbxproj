@@ -32,7 +32,6 @@
 		3F91C28E2236E5350033AD1F /* CreateStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28D2236E5350033AD1F /* CreateStoryCollectionViewCell.swift */; };
 		3F91C290223818800033AD1F /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C28F223818800033AD1F /* CameraHandler.swift */; };
 		3F91C29322396F450033AD1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F91C29522396F450033AD1F /* Localizable.strings */; };
-		3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C296223983690033AD1F /* SettingsTableViewCell.swift */; };
 		3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */; };
 		3F91C29B223ABDCD0033AD1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91C29A223ABDCD0033AD1F /* CoreData.framework */; };
 		3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */; };
@@ -50,6 +49,13 @@
 		9A60BA76283CEF2A00101A06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */; };
 		9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A60BA77283D01FC00101A06 /* LoginModel.swift */; };
 		9A60BA7A283D1C2B00101A06 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A60BA79283D1C2B00101A06 /* LoginViewController.xib */; };
+		9A6D60B72863162700317209 /* SettingsInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6D60B62863162700317209 /* SettingsInfoCell.xib */; };
+		9A6D60B9286316D900317209 /* SettingsPickerCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6D60B8286316D900317209 /* SettingsPickerCellVC.xib */; };
+		9A6D60BB2863179E00317209 /* SettingsTableActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6D60BA2863179E00317209 /* SettingsTableActionCell.xib */; };
+		9A6D60BD2863180A00317209 /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60BC2863180A00317209 /* SettingsInfoCell.swift */; };
+		9A6D60BF28631CEA00317209 /* SettingsPickerCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60BE28631CEA00317209 /* SettingsPickerCellVC.swift */; };
+		9A6D60C128631DAC00317209 /* SettingsTableActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60C028631DAC00317209 /* SettingsTableActionCell.swift */; };
+		9A6D60C3286361D800317209 /* SettingsTableContentControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60C2286361D800317209 /* SettingsTableContentControllerCell.swift */; };
 		9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */; };
 		9A9D25F3283BD3D30046A5CB /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */; };
 		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
@@ -86,7 +92,7 @@
 		3F91C26B223038900033AD1F /* UIAlertConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertConstructor.swift; sourceTree = "<group>"; };
 		3F91C26D2230451A0033AD1F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3F91C2762230E7CD0033AD1F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryViewController.swift; sourceTree = "<group>"; };
 		3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		3F91C28922354C6D0033AD1F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,7 +100,6 @@
 		3F91C28D2236E5350033AD1F /* CreateStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F91C28F223818800033AD1F /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		3F91C29422396F450033AD1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3F91C296223983690033AD1F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3F91C29A223ABDCD0033AD1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3F91C2A8223ACD970033AD1F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +120,13 @@
 		9A60BA75283CEF2A00101A06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		9A60BA77283D01FC00101A06 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		9A60BA79283D1C2B00101A06 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		9A6D60B62863162700317209 /* SettingsInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsInfoCell.xib; sourceTree = "<group>"; };
+		9A6D60B8286316D900317209 /* SettingsPickerCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPickerCellVC.xib; sourceTree = "<group>"; };
+		9A6D60BA2863179E00317209 /* SettingsTableActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableActionCell.xib; sourceTree = "<group>"; };
+		9A6D60BC2863180A00317209 /* SettingsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
+		9A6D60BE28631CEA00317209 /* SettingsPickerCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerCellVC.swift; sourceTree = "<group>"; };
+		9A6D60C028631DAC00317209 /* SettingsTableActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableActionCell.swift; sourceTree = "<group>"; };
+		9A6D60C2286361D800317209 /* SettingsTableContentControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableContentControllerCell.swift; sourceTree = "<group>"; };
 		9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenter.swift; sourceTree = "<group>"; };
 		9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,11 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				3F382104225609E900159CE2 /* Settings.storyboard */,
-				3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */,
-				3F91C296223983690033AD1F /* SettingsTableViewCell.swift */,
-				3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */,
-				9A2F8CEA285C78EE009C1B9B /* ChangePasswordModel.swift */,
-				9A2F8CEC285C78FB009C1B9B /* ChangePasswordViewModel.swift */,
+				9A85B89F2864A51E00EB50E0 /* Settings */,
+				9A85B8A02864A52C00EB50E0 /* ChangePassword */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -310,6 +319,31 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		9A85B89F2864A51E00EB50E0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9A6D60B62863162700317209 /* SettingsInfoCell.xib */,
+				9A6D60C2286361D800317209 /* SettingsTableContentControllerCell.swift */,
+				9A6D60BC2863180A00317209 /* SettingsInfoCell.swift */,
+				9A6D60B8286316D900317209 /* SettingsPickerCellVC.xib */,
+				9A6D60BE28631CEA00317209 /* SettingsPickerCellVC.swift */,
+				9A6D60BA2863179E00317209 /* SettingsTableActionCell.xib */,
+				9A6D60C028631DAC00317209 /* SettingsTableActionCell.swift */,
+				3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9A85B8A02864A52C00EB50E0 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				3F91C298223A23A60033AD1F /* ChangePasswordViewController.swift */,
+				9A2F8CEA285C78EE009C1B9B /* ChangePasswordModel.swift */,
+				9A2F8CEC285C78FB009C1B9B /* ChangePasswordViewModel.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		9AC2222A28462C0E00CF8868 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,12 +438,15 @@
 				3F3820F322466D8C00159CE2 /* GoogleService-Info.plist in Resources */,
 				9A9D25F7283C127C0046A5CB /* WelcomViewController.xib in Resources */,
 				3FF79DC222287974002DDCEB /* Assets.xcassets in Resources */,
+				9A6D60B72863162700317209 /* SettingsInfoCell.xib in Resources */,
 				3F38210E22560E4900159CE2 /* Favorites.storyboard in Resources */,
+				9A6D60BB2863179E00317209 /* SettingsTableActionCell.xib in Resources */,
 				3F91C29322396F450033AD1F /* Localizable.strings in Resources */,
 				3F3820FD225606CB00159CE2 /* Login.storyboard in Resources */,
 				3FF79DC022287972002DDCEB /* Main.storyboard in Resources */,
 				3F382102225609E900159CE2 /* Settings.storyboard in Resources */,
 				9A2314DD2847B4C100BE9CD4 /* RegisterViewController.xib in Resources */,
+				9A6D60B9286316D900317209 /* SettingsPickerCellVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,22 +519,25 @@
 			files = (
 				3FF00E64223C0453006015CC /* MainTableViewCell.swift in Sources */,
 				9A2314DB2847651F00BE9CD4 /* RegisterModel.swift in Sources */,
+				9A6D60C128631DAC00317209 /* SettingsTableActionCell.swift in Sources */,
 				3F092A53225CA93E001DF034 /* LoginViewController.swift in Sources */,
 				3F3820F922529A2A00159CE2 /* PostsModel.swift in Sources */,
 				3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */,
-				3F91C297223983690033AD1F /* SettingsTableViewCell.swift in Sources */,
 				3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
 				3F91C299223A23A60033AD1F /* ChangePasswordViewController.swift in Sources */,
+				9A6D60BF28631CEA00317209 /* SettingsPickerCellVC.swift in Sources */,
 				9AFB6A8F2844F3CB008C0186 /* Router.swift in Sources */,
 				3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */,
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
+				9A6D60BD2863180A00317209 /* SettingsInfoCell.swift in Sources */,
 				3F91C268222F90D40033AD1F /* RoundedUIElements.swift in Sources */,
 				9AC2222928462C0A00CF8868 /* FirebaseService.swift in Sources */,
 				9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */,
 				9A60BA78283D01FC00101A06 /* LoginModel.swift in Sources */,
 				3F0964AC2266574500B2D00B /* AuthErrorHandle.swift in Sources */,
+				9A6D60C3286361D800317209 /* SettingsTableContentControllerCell.swift in Sources */,
 				9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */,
 				9A2F8CED285C78FB009C1B9B /* ChangePasswordViewModel.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,

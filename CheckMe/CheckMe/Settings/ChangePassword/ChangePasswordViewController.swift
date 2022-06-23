@@ -17,6 +17,7 @@ class ChangePasswordViewController: UIViewController {
 
     var changePasswordViewModel: ChangePasswordViewModelProtocol!
     var viewData: ChangePasswordData = .initial(nil)
+    var testValue = 0
 
 	// MARK: - Lifecycle
 
