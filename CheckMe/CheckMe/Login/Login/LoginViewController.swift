@@ -36,13 +36,6 @@ class LoginViewController: UIViewController {
         presenter.resetPasswordWith(mail: mail)
 	}
 
-	func switchToMainVC() {
-		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-		let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
-        UIApplication.shared.windows.first?.rootViewController = loginVC
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
-	}
-
 	// MAKR: Alerts
 
 	func showAlertDataIsEmpty() {
@@ -70,7 +63,7 @@ extension LoginViewController: LoginViewProtocol {
             UIAlertController.showError(message: NSLocalizedString(error, comment: ""),
                                         from: self)
         } else {
-            switchToMainVC()
+            presenter.passwordSuccess()
         }
     }
 

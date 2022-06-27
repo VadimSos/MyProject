@@ -13,10 +13,12 @@ class SettingsInfoCell: UITableViewCell {
     static let reuseIdentifier: String = "SettingsInfoCell"
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
 }
 
 extension SettingsInfoCell {
     func setup(title: String?, detail: String?) {
         self.titleLabel.text = title
+        self.detailLabel.text = detail
     }
 }

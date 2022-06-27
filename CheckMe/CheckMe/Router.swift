@@ -17,6 +17,7 @@ protocol RouterProtocol: RouterMain {
     func initialViewController()
     func goToLoginVC()
     func goToRegisterVC()
+    func goToMainVC()
     func popToRoot()
 }
 
@@ -52,8 +53,11 @@ class Router: RouterProtocol {
 
     func goToMainVC() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
-        UIApplication.shared.windows.first?.rootViewController = loginVC
+        let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main")
+        if let tabBarController = mainViewController as? TabBarController {
+            tabBarController.builder = builder
+        }
+        UIApplication.shared.windows.first?.rootViewController = mainViewController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 

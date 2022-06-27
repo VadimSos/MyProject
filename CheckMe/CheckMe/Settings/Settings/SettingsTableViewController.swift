@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import FirebaseCore
 import FirebaseDatabase
-//import AUPickerCell
 
 class SettingsTableViewController: UIViewController {
 
@@ -19,23 +18,22 @@ class SettingsTableViewController: UIViewController {
 	@IBOutlet weak var mailLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
     private var content: [Section] = []
-    
-	var userData: [[String]] = []
-	let headers = [" ", " ", " ", " "]
-	let ref = Database.database().reference()
-    
+
+    var viewModel: SettingsViewModelProtocol?
+    var viewData: SettingsUserData.UserData?
+
     private struct Row {
         enum ContentType {
             case simple(text: String, detail: String?)
             case custom(viewController: UIViewController)
         }
-        
+
         let content: ContentType
         let reuseIdentifier: String
         let action: (() -> Void)?
         let isEnabled: Bool
     }
-    
+
     private struct Section {
         let headerTitle: String?
         let rows: [Row]
@@ -57,7 +55,18 @@ class SettingsTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel?.getUserData()
         rebuildContent()
+
+        viewModel?.updateTable = { [weak self] data in
+            switch data {
+            case.success(let user):
+                self?.viewData = user
+                self?.rebuildContent()
+            default:
+                break
+            }
+        }
     }
 
     private func registerCellsAndReloadData() {
@@ -96,25 +105,25 @@ class SettingsTableViewController: UIViewController {
         var rows: [Row] = []
 
         let nameRow = Row(content: .simple(text: "Name",
-                                           detail: nil),
+                                           detail: viewData?.name),
                           reuseIdentifier: SettingsInfoCell.reuseIdentifier,
                           action: nil,
                           isEnabled: true)
 
         let familyNameRow = Row(content: .simple(text: "Fmaily Name",
-                                           detail: nil),
+                                                 detail: viewData?.familyName),
                           reuseIdentifier: SettingsInfoCell.reuseIdentifier,
                           action: nil,
                           isEnabled: true)
 
         let phoneNUmber = Row(content: .simple(text: "Phone number",
-                                           detail: nil),
+                                               detail: viewData?.phoneNumber),
                           reuseIdentifier: SettingsInfoCell.reuseIdentifier,
                           action: nil,
                           isEnabled: true)
 
         let secondPhoneNUmber = Row(content: .simple(text: "Second phone number",
-                                           detail: nil),
+                                                     detail: viewData?.additionalPhoneNumber),
                           reuseIdentifier: SettingsInfoCell.reuseIdentifier,
                           action: nil,
                           isEnabled: true)
@@ -215,33 +224,6 @@ class SettingsTableViewController: UIViewController {
 
         return Section(headerTitle: nil, row: logoutRow, footerTitle: nil)
     }
-
-	// MARK: - Actiones
-
-	func setupTableViewData() {
-
-		guard let userID = Auth.auth().currentUser?.uid else { return }
-
-		ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-		let value = snapshot.value as? [String: Any]
-		let userName = value?["name"] as? String ?? ""
-		let userFamilyName = value?["familyName"] as? String ?? ""
-		let userCellPhoneNumber = value?["cellPhoneNumber"] as? String ?? ""
-		let userPhoneNumber = value?["phoneNumber"] as? String ?? ""
-
-			let item1 = userName
-			let item2 = userFamilyName
-			let item3 = userCellPhoneNumber
-			let item4 = userPhoneNumber
-			let item5 = NSLocalizedString("Date of birth", comment: "")
-			let item6 = NSLocalizedString("Gender", comment: "")
-			let item7 = NSLocalizedString("Password", comment: "")
-			let item8 = NSLocalizedString("Logout", comment: "")
-
-			self.userData = [[item1, item2, item3, item4], [item5, item6], [item7], [item8]]
-			self.tableView.reloadData()
-		})
-	}
 }
 
 	// MARK: - UITableViewDataSource
@@ -277,11 +259,11 @@ extension SettingsTableViewController: UITableViewDataSource {
         case .custom(viewController: let viewController):
             let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
             (cell as? SettingsTableContentControllerCell)?.viewController = viewController
-            if let vc = viewController as? SettingsPickerCellVC {
+            if let viewController = viewController as? SettingsPickerCellVC {
                 if indexPath.row == 0 {
-                    vc.setup(type: .datePicker)
+                    viewController.setup(type: .datePicker)
                 } else if indexPath.row == 1 {
-                    vc.setup(type: .viewPicker)
+                    viewController.setup(type: .viewPicker)
                 }
             }
             return cell

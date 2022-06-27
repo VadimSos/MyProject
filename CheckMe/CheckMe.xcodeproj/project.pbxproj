@@ -56,6 +56,9 @@
 		9A6D60BF28631CEA00317209 /* SettingsPickerCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60BE28631CEA00317209 /* SettingsPickerCellVC.swift */; };
 		9A6D60C128631DAC00317209 /* SettingsTableActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60C028631DAC00317209 /* SettingsTableActionCell.swift */; };
 		9A6D60C3286361D800317209 /* SettingsTableContentControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D60C2286361D800317209 /* SettingsTableContentControllerCell.swift */; };
+		9A78BEB92869B15900E290EA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78BEB82869B15900E290EA /* TabBarController.swift */; };
+		9A85B8A22865A60A00EB50E0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85B8A12865A60A00EB50E0 /* SettingsViewModel.swift */; };
+		9A85B8A42865AA4700EB50E0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85B8A32865AA4700EB50E0 /* SettingsModel.swift */; };
 		9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */; };
 		9A9D25F3283BD3D30046A5CB /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */; };
 		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
@@ -127,6 +130,9 @@
 		9A6D60BE28631CEA00317209 /* SettingsPickerCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerCellVC.swift; sourceTree = "<group>"; };
 		9A6D60C028631DAC00317209 /* SettingsTableActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableActionCell.swift; sourceTree = "<group>"; };
 		9A6D60C2286361D800317209 /* SettingsTableContentControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableContentControllerCell.swift; sourceTree = "<group>"; };
+		9A78BEB82869B15900E290EA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9A85B8A12865A60A00EB50E0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		9A85B8A32865AA4700EB50E0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenter.swift; sourceTree = "<group>"; };
 		9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 				3F3820F222466D8B00159CE2 /* GoogleService-Info.plist */,
 				3F91C29522396F450033AD1F /* Localizable.strings */,
 				9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */,
+				9A78BEB82869B15900E290EA /* TabBarController.swift */,
 				9AFB6A8E2844F3CB008C0186 /* Router.swift */,
 			);
 			path = CheckMe;
@@ -330,6 +337,8 @@
 				9A6D60BA2863179E00317209 /* SettingsTableActionCell.xib */,
 				9A6D60C028631DAC00317209 /* SettingsTableActionCell.swift */,
 				3F91C2792230E7E80033AD1F /* SettingsTableViewController.swift */,
+				9A85B8A12865A60A00EB50E0 /* SettingsViewModel.swift */,
+				9A85B8A32865AA4700EB50E0 /* SettingsModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -529,6 +538,8 @@
 				9A6D60BF28631CEA00317209 /* SettingsPickerCellVC.swift in Sources */,
 				9AFB6A8F2844F3CB008C0186 /* Router.swift in Sources */,
 				3F382114225A6AA200159CE2 /* PhotoArray.swift in Sources */,
+				9A85B8A42865AA4700EB50E0 /* SettingsModel.swift in Sources */,
+				9A85B8A22865A60A00EB50E0 /* SettingsViewModel.swift in Sources */,
 				3F3820F1224025F000159CE2 /* FavoritesTableViewCell.swift in Sources */,
 				3F91C2772230E7CD0033AD1F /* FavoritesViewController.swift in Sources */,
 				9A6D60BD2863180A00317209 /* SettingsInfoCell.swift in Sources */,
@@ -540,6 +551,7 @@
 				9A6D60C3286361D800317209 /* SettingsTableContentControllerCell.swift in Sources */,
 				9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */,
 				9A2F8CED285C78FB009C1B9B /* ChangePasswordViewModel.swift in Sources */,
+				9A78BEB92869B15900E290EA /* TabBarController.swift in Sources */,
 				3F91C28222353BE00033AD1F /* CategoryTableViewController.swift in Sources */,
 				3F91C27D2230E7FE0033AD1F /* CreateStoryViewController.swift in Sources */,
 				3F91C28C223598510033AD1F /* Color.swift in Sources */,

@@ -172,7 +172,7 @@
         <scene sceneID="LCe-7Q-igA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wFG-D3-bJI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Settings_page" id="IS3-5I-Pnv">
+                    <tabBarItem key="tabBarItem" title="" id="IS3-5I-Pnv">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -197,7 +197,6 @@
     </scenes>
     <resources>
         <image name="ChangePassword" width="256" height="256"/>
-        <image name="Settings_page" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

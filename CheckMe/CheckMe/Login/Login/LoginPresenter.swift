@@ -23,6 +23,7 @@ protocol LoginPresenterProtocol: class {
          router: RouterProtocol)
     func resetPasswordWith(mail: String?)
     func login(mail: String, password: String)
+    func passwordSuccess()
 }
 
 class LoginPresenter: LoginPresenterProtocol {
@@ -76,6 +77,10 @@ class LoginPresenter: LoginPresenterProtocol {
                 self?.view?.loginWith(error: nil)
             }
         })
+    }
+    
+    func passwordSuccess() {
+        router?.goToMainVC()
     }
 
     func validationMail(with mail: String?) -> Bool {
