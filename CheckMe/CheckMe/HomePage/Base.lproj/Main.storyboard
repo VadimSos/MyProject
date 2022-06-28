@@ -179,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="n2J-Z2-mmd" kind="relationship" relationship="viewControllers" id="FLj-a6-0E7"/>
@@ -196,7 +196,7 @@
         <scene sceneID="Oy5-s7-dWS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n2J-Z2-mmd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Home_page" selectedImage="Home_page" id="zxN-6q-ha9"/>
+                    <tabBarItem key="tabBarItem" title="" id="zxN-6q-ha9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EWS-Io-lGO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -213,7 +213,4 @@
             <point key="canvasLocation" x="1008.8" y="122.78860569715144"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Home_page" width="25" height="25"/>
-    </resources>
 </document>
