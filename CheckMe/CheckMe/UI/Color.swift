@@ -20,4 +20,8 @@ extension UIColor {
 	static func magnezium() -> UIColor {
 		return UIColor.init(red: 0.754, green: 0.754, blue: 0.754, alpha: 1.0)
 	}
+    
+    static var tabBatItemAccent: UIColor {
+        #colorLiteral(red: 1, green: 0.5764705882, blue: 0, alpha: 1)
+    }
 }

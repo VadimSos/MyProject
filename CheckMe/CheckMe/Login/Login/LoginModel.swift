@@ -9,6 +9,6 @@
 import Foundation
 
 struct Login {
-    var mail: String?
-    var password: String?
+    var mail: String? = "vadimsos@icloud.com"
+    var password: String? = "qwerty123"
 }

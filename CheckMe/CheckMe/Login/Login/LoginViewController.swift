@@ -27,20 +27,13 @@ class LoginViewController: UIViewController {
 	// MARK: Actions
 
 	@IBAction func loginButtonDidTap(_ sender: UIButton) {
-        presenter.login(mail: mailTextField.text, password: passwordTextField.text)
+        presenter.login(mail: mailTextField.text ?? "", password: passwordTextField.text ?? "")
 	}
 
 	@IBAction func forgotPasswordDidTap(_ sender: UIButton) {
 
 		guard let mail = mailTextField.text else { return }
         presenter.resetPasswordWith(mail: mail)
-	}
-
-	func switchToMainVC() {
-		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-		let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "Main")
-        UIApplication.shared.windows.first?.rootViewController = loginVC
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
 	}
 
 	// MAKR: Alerts
@@ -70,7 +63,7 @@ extension LoginViewController: LoginViewProtocol {
             UIAlertController.showError(message: NSLocalizedString(error, comment: ""),
                                         from: self)
         } else {
-            switchToMainVC()
+            presenter.passwordSuccess()
         }
     }
 

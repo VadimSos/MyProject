@@ -22,7 +22,8 @@ protocol LoginPresenterProtocol: class {
          firebaseService: FirebaseServiceProtocol,
          router: RouterProtocol)
     func resetPasswordWith(mail: String?)
-    func login(mail: String?, password: String?)
+    func login(mail: String, password: String)
+    func passwordSuccess()
 }
 
 class LoginPresenter: LoginPresenterProtocol {
@@ -53,14 +54,16 @@ class LoginPresenter: LoginPresenterProtocol {
         }
     }
 
-    func login(mail: String?, password: String?) {
-        if validationMail(with: mail) == true && validationPassword(with: password) == true {
+    func login(mail: String, password: String) {
+//        if validationMail(with: mail) == true && validationPassword(with: password) == true {
 
+        if !mail.isEmpty || !password.isEmpty {
             loginModel?.mail = mail
             loginModel?.password = password
-
-            doLogin(mail: mail, password: password)
         }
+
+        doLogin(mail: loginModel?.mail, password: loginModel?.password)
+//        }
     }
 
     func doLogin(mail: String?, password: String?) {
@@ -74,6 +77,10 @@ class LoginPresenter: LoginPresenterProtocol {
                 self?.view?.loginWith(error: nil)
             }
         })
+    }
+    
+    func passwordSuccess() {
+        router?.goToMainVC()
     }
 
     func validationMail(with mail: String?) -> Bool {

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mwJ-eK-3fa">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mwJ-eK-3fa">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,12 +12,12 @@
         <scene sceneID="MEU-km-wFn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mwJ-eK-3fa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Like_page" id="QE1-kE-uDx">
+                    <tabBarItem key="tabBarItem" title="" id="QE1-kE-uDx">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xbu-Ub-xUt">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,21 +43,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edZ-mV-fN9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="164" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tYd-Lc-1wX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoritesCell" rowHeight="165" id="adb-P2-Vbt" customClass="FavoritesTableViewCell" customModule="CheckMe" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="165"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="375" height="165"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="adb-P2-Vbt" id="2vC-u2-bGP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZv-EZ-F0r">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuL-zk-zS7">
                                                                     <rect key="frame" x="173" y="133" width="138" height="20"/>
@@ -90,7 +88,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vYX-v4-1pA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="164.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="165" id="MgT-xU-Ra5"/>
                                                                     </constraints>
@@ -142,6 +140,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9od-C2-juD"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="edZ-mV-fN9" firstAttribute="trailing" secondItem="9od-C2-juD" secondAttribute="trailing" id="CaC-7i-bKO"/>
@@ -149,7 +148,6 @@
                             <constraint firstItem="edZ-mV-fN9" firstAttribute="leading" secondItem="9od-C2-juD" secondAttribute="leading" id="XaS-Rc-x0B"/>
                             <constraint firstItem="edZ-mV-fN9" firstAttribute="top" secondItem="9od-C2-juD" secondAttribute="top" id="xFQ-tg-YPG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9od-C2-juD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="DZo-hv-NzW"/>
                     <connections>
@@ -161,7 +159,4 @@
             <point key="canvasLocation" x="1888.8" y="122.78860569715144"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Like_page" width="40" height="40"/>
-    </resources>
 </document>

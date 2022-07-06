@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsPickerCellVC" customModule="CheckMe" customModuleProvider="target">
+            <connections>
+                <outlet property="datePickerView" destination="qyZ-MU-2MV" id="1q0-M3-YfC"/>
+                <outlet property="namePickerLabel" destination="SCd-ku-ldf" id="TfI-VI-AQ7"/>
+                <outlet property="pickerView" destination="l24-ZF-kG0" id="mfe-Tt-kdl"/>
+                <outlet property="view" destination="iN0-l3-epB" id="PD9-Ie-ZWi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l24-ZF-kG0">
+                    <rect key="frame" x="207" y="0.0" width="207" height="200"/>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-ku-ldf">
+                    <rect key="frame" x="20" y="90" width="164" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qyZ-MU-2MV">
+                    <rect key="frame" x="207" y="0.0" width="207" height="200"/>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="SCd-ku-ldf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6ak-Y1-6Pc"/>
+                <constraint firstItem="SCd-ku-ldf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="8LO-1z-wme"/>
+                <constraint firstItem="l24-ZF-kG0" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="91w-b8-wC6"/>
+                <constraint firstItem="qyZ-MU-2MV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="HcZ-5f-UNY"/>
+                <constraint firstItem="l24-ZF-kG0" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="Hi6-pb-8vr"/>
+                <constraint firstItem="l24-ZF-kG0" firstAttribute="leading" secondItem="SCd-ku-ldf" secondAttribute="trailing" constant="23" id="X60-DT-iUI"/>
+                <constraint firstItem="l24-ZF-kG0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="b73-eh-2dd"/>
+                <constraint firstItem="qyZ-MU-2MV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cvN-Td-SJ2"/>
+                <constraint firstAttribute="trailing" secondItem="qyZ-MU-2MV" secondAttribute="trailing" id="fr9-CH-1Pc"/>
+                <constraint firstAttribute="trailing" secondItem="l24-ZF-kG0" secondAttribute="trailing" id="gBi-sZ-U1c"/>
+                <constraint firstItem="qyZ-MU-2MV" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="v6n-6Z-5q8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-7.2463768115942031" y="38.839285714285715"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

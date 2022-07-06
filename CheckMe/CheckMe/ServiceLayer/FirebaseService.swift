@@ -8,11 +8,14 @@
 
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 protocol FirebaseServiceProtocol {
     func signIn(mail: String, password: String, completion: @escaping (String?, Error?) -> Void)
     func passwordReset(mail: String, completion: @escaping (String?, Error?) -> Void)
     func create(user: RegisterModel, completion: @escaping (String?, Error?) -> Void)
+    func changePassword(password: String, completion: @escaping (Result<String, Error>) -> Void)
+    func getUserData(completion: @escaping (Result<SettingsUserData.UserData, Error>) -> Void)
 }
 
 class FirebaseService: FirebaseServiceProtocol {
@@ -60,6 +63,36 @@ class FirebaseService: FirebaseServiceProtocol {
         }
     }
 
+    func changePassword(password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(""))
+            }
+        })
+    }
+
+    func getUserData(completion: @escaping (Result<SettingsUserData.UserData, Error>) -> Void) {
+        let ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+
+        ref.child("users").child(userID).observeSingleEvent(of: .value, with: { snapshot in
+
+        let value = snapshot.value as? [String: Any]
+        let userName = value?["name"] as? String ?? ""
+        let userFamilyName = value?["familyName"] as? String ?? ""
+        let userCellPhoneNumber = value?["cellPhoneNumber"] as? String ?? ""
+        let userPhoneNumber = value?["phoneNumber"] as? String ?? ""
+
+            let user: SettingsUserData.UserData = .init(name: userName,
+                                                        familyName: userFamilyName,
+                                                        phoneNumber: userCellPhoneNumber,
+                                                        additionalPhoneNumber: userPhoneNumber)
+            completion(.success(user))
+        })
+    }
+
     private func setUserData(user: RegisterModel) {
         let ref = Database.database().reference()
 
@@ -70,5 +103,9 @@ class FirebaseService: FirebaseServiceProtocol {
         firebaseUser.child("familyName").setValue(user.familyName)
         firebaseUser.child("cellPhoneNumber").setValue(user.phoneNumberFirst)
         firebaseUser.child("phoneNumber").setValue(user.phoneNumberSecond)
+    }
+
+    deinit {
+        print("[ARC] firebase is free")
     }
 }

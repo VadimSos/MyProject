@@ -12,6 +12,7 @@ protocol BuilderProtocol {
     func createWelcomModule(router: RouterProtocol) -> UIViewController
     func createLoginModule(router: RouterProtocol) -> UIViewController
     func createRegisterModule(router: RouterProtocol) -> UIViewController
+    func configureSettingsModule(viewController: SettingsTableViewController)
 }
 
 class ModuleBuilder: BuilderProtocol {
@@ -44,5 +45,11 @@ class ModuleBuilder: BuilderProtocol {
                                           router: router)
         view.presenter = presenter
         return view
+    }
+
+    func configureSettingsModule(viewController: SettingsTableViewController) {
+        let firebase = FirebaseService()
+        let viewModel = SettingsViewModel(firebase: firebase)
+        viewController.viewModel = viewModel
     }
 }
