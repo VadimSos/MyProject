@@ -12,4 +12,7 @@ class CategoryTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var titleLabel: UILabel!
 
+    func setup(title: String?) {
+        self.titleLabel.text = title
+    }
 }

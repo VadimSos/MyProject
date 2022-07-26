@@ -59,6 +59,9 @@
 		9A78BEB92869B15900E290EA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78BEB82869B15900E290EA /* TabBarController.swift */; };
 		9A85B8A22865A60A00EB50E0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85B8A12865A60A00EB50E0 /* SettingsViewModel.swift */; };
 		9A85B8A42865AA4700EB50E0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85B8A32865AA4700EB50E0 /* SettingsModel.swift */; };
+		9A9AD147288E9CA500A42C2C /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AD146288E9CA500A42C2C /* CategoryPresenter.swift */; };
+		9A9AD149288E9E7200A42C2C /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AD148288E9E7200A42C2C /* CategoryModel.swift */; };
+		9A9AD14B288ED0C100A42C2C /* CreateStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AD14A288ED0C100A42C2C /* CreateStoryPresenter.swift */; };
 		9A9D25EF283B8BD90046A5CB /* WelcomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */; };
 		9A9D25F3283BD3D30046A5CB /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */; };
 		9A9D25F5283BD6090046A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */; };
@@ -133,6 +136,9 @@
 		9A78BEB82869B15900E290EA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9A85B8A12865A60A00EB50E0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		9A85B8A32865AA4700EB50E0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		9A9AD146288E9CA500A42C2C /* CategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
+		9A9AD148288E9E7200A42C2C /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		9A9AD14A288ED0C100A42C2C /* CreateStoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryPresenter.swift; sourceTree = "<group>"; };
 		9A9D25EE283B8BD90046A5CB /* WelcomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomPresenter.swift; sourceTree = "<group>"; };
 		9A9D25F2283BD3D30046A5CB /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		9A9D25F4283BD6090046A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,8 +218,11 @@
 			children = (
 				3F38210B22560D7200159CE2 /* CreateStory.storyboard */,
 				3F91C27C2230E7FE0033AD1F /* CreateStoryViewController.swift */,
+				9A9AD14A288ED0C100A42C2C /* CreateStoryPresenter.swift */,
 				3F91C28D2236E5350033AD1F /* CreateStoryCollectionViewCell.swift */,
 				3F91C28122353BE00033AD1F /* CategoryTableViewController.swift */,
+				9A9AD146288E9CA500A42C2C /* CategoryPresenter.swift */,
+				9A9AD148288E9E7200A42C2C /* CategoryModel.swift */,
 				3F91C28922354C6D0033AD1F /* CategoryTableViewCell.swift */,
 			);
 			path = CreateStory;
@@ -531,6 +540,7 @@
 				9A6D60C128631DAC00317209 /* SettingsTableActionCell.swift in Sources */,
 				3F092A53225CA93E001DF034 /* LoginViewController.swift in Sources */,
 				3F3820F922529A2A00159CE2 /* PostsModel.swift in Sources */,
+				9A9AD147288E9CA500A42C2C /* CategoryPresenter.swift in Sources */,
 				3F91C2A9223ACD970033AD1F /* MainTableViewController.swift in Sources */,
 				3F91C264222EF1570033AD1F /* RegisterViewController.swift in Sources */,
 				3F91C26E2230451A0033AD1F /* StringExtension.swift in Sources */,
@@ -567,7 +577,9 @@
 				9A9D25F3283BD3D30046A5CB /* ModuleBuilder.swift in Sources */,
 				3F91C290223818800033AD1F /* CameraHandler.swift in Sources */,
 				3F91C28A22354C6D0033AD1F /* CategoryTableViewCell.swift in Sources */,
+				9A9AD14B288ED0C100A42C2C /* CreateStoryPresenter.swift in Sources */,
 				3FF79DBB22287972002DDCEB /* AppDelegate.swift in Sources */,
+				9A9AD149288E9E7200A42C2C /* CategoryModel.swift in Sources */,
 				3F91C27A2230E7E80033AD1F /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

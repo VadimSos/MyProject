@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 
-class CreateStoryViewController: UIViewController, CategoryTableViewControllerDelegate {
+class CreateStoryViewController: UIViewController, StoryViewProtocol {
 
 	// MARK: - Variables
 
@@ -18,6 +18,7 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 	@IBOutlet weak var descriptionTextView: UITextView!
 	@IBOutlet weak var productNameTF: UITextField!
 
+    var presenter: StoryPresenterProtocol!
 	let refDB = Database.database().reference()
 	let refStorage = Storage.storage().reference()
 
@@ -29,26 +30,24 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 		descriptionTextView.textColor = .magnezium()
 
 		self.hideKeyboardWhenTappedAround()
-	}
 
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "showCategoryVC" {
-			guard let destinationVC = segue.destination as? CategoryTableViewController else {
-				return
-			}
-			destinationVC.delegate = self
-		}
+        presenter.setupStoryView()
 	}
 
 	// MARK: - Actions
 
 	@IBAction func choseCategoryButtonDidTap(_ sender: UIButton) {
+        presenter.goToCategoryVC()
 	}
 
 	@IBAction func savePostButtonDidTap(_ sender: UIButton) {
 		saveInfoToFirebaseDB()
 		tabBarController?.selectedIndex = 0
 	}
+
+    func setupStoryView(with category: String) {
+        categoryLabel.text = category
+    }
 
 	func saveInfoToFirebaseDB() {
 
@@ -88,10 +87,6 @@ class CreateStoryViewController: UIViewController, CategoryTableViewControllerDe
 				}
 			}
 		}
-	}
-
-	func didCellPressed(category: String) {
-		categoryLabel.text = category
 	}
 }
 

@@ -13,6 +13,8 @@ protocol BuilderProtocol {
     func createLoginModule(router: RouterProtocol) -> UIViewController
     func createRegisterModule(router: RouterProtocol) -> UIViewController
     func configureSettingsModule(viewController: SettingsTableViewController)
+    func createStoryModule(viewController: CreateStoryViewController, router: RouterProtocol)
+    func createCategoryTableModule(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: BuilderProtocol {
@@ -51,5 +53,25 @@ class ModuleBuilder: BuilderProtocol {
         let firebase = FirebaseService()
         let viewModel = SettingsViewModel(firebase: firebase)
         viewController.viewModel = viewModel
+    }
+
+    func createStoryModule(viewController: CreateStoryViewController, router: RouterProtocol) {
+        let firebaseService = FirebaseService()
+        let presenter = CreateStoryPresenter(view: viewController,
+                                             firebaseService: firebaseService,
+                                             router: router,
+                                             model: CategoryModel.category)
+        viewController.presenter = presenter
+    }
+
+    func createCategoryTableModule(router: RouterProtocol) -> UIViewController {
+        let mainStoryboard = UIStoryboard(name: "CreateStory", bundle: nil)
+        let view = mainStoryboard.instantiateViewController(withIdentifier: "createStory") as? CategoryTableViewController
+//        let view = CategoryTableViewController()
+        let presenter = CategoryPresenter(view: view!,
+                                          model: CategoryModel.category,
+                                          router: router)
+        view!.presenter = presenter
+        return view!
     }
 }

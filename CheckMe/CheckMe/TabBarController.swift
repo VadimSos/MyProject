@@ -11,6 +11,7 @@ import UIKit
 class TabBarController: UITabBarController {
     
     var builder: BuilderProtocol?
+    var router: RouterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class TabBarController: UITabBarController {
 
         for viewController in viewControllers {
             var childVC: UIViewController?
-            
+
             if let navigationController = viewController as? UINavigationController {
                 childVC = navigationController.viewControllers.first
             } else {
@@ -38,7 +39,7 @@ class TabBarController: UITabBarController {
                                     title: "Home",
                                     image: UIImage(named: "Home_page"))
             case let viewController as CreateStoryViewController:
-                // TODO: - build story module
+                builder?.createStoryModule(viewController: viewController, router: router)
                 generateTabBarItems(viewController: viewController,
                                     title: "Add story",
                                     image: UIImage(named: "Add_page"))
@@ -78,7 +79,7 @@ class TabBarController: UITabBarController {
                                       cornerRadius: height / 2)
 
         roundLayer.path = bezierPath.cgPath
-        
+
         tabBar.layer.insertSublayer(roundLayer, at: 0)
 
         tabBar.itemWidth = width / 5

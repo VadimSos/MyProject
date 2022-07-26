@@ -8,36 +8,31 @@
 
 import UIKit
 
-protocol CategoryTableViewControllerDelegate: class {
-	func didCellPressed(category: String)
-}
-
-class CategoryTableViewController: UIViewController {
+class CategoryTableViewController: UIViewController, CategoryViewProtocol {
 
 	// MARK: - Variables
 
 	var categoryNames: [String] = []
-	weak var delegate: CategoryTableViewControllerDelegate?
+    var presenter: CategoryPresenterProtocol!
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupTableViewData()
+        presenter.setupCategoryView()
 	}
 
 	// MARK: - Actiones
-
-	func setupTableViewData() {
-		let item1 = NSLocalizedString("Sport", comment: "")
-		let item2 = NSLocalizedString("Gas", comment: "")
-		let item3 = NSLocalizedString("Taxi", comment: "")
-		let item4 = NSLocalizedString("Foot", comment: "")
-		let item5 = NSLocalizedString("Medicine", comment: "")
-		let item6 = NSLocalizedString("Treatment", comment: "")
-		categoryNames = [item1, item2, item3, item4, item5, item6]
-	}
-
+    
+    func setupCategoryView(data: [CategoryModel]) {
+        let item1 = NSLocalizedString(data[0].localizedTitle, comment: "")
+        let item2 = NSLocalizedString(data[1].localizedTitle, comment: "")
+        let item3 = NSLocalizedString(data[2].localizedTitle, comment: "")
+        let item4 = NSLocalizedString(data[3].localizedTitle, comment: "")
+        let item5 = NSLocalizedString(data[4].localizedTitle, comment: "")
+        let item6 = NSLocalizedString(data[5].localizedTitle, comment: "")
+        categoryNames = [item1, item2, item3, item4, item5, item6]
+    }
 }
 
 // MARK: - Extensions
@@ -51,7 +46,7 @@ extension CategoryTableViewController: UITableViewDataSource {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryTableViewCell else {
 			fatalError("Fatal Error")
 		}
-		cell.textLabel?.text = categoryNames[indexPath.row]
+        cell.setup(title: categoryNames[indexPath.row])
 		tableView.tableFooterView = UIView(frame: .zero)
 		return cell
 	}
@@ -61,8 +56,6 @@ extension CategoryTableViewController: UITableViewDataSource {
 extension CategoryTableViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let category = categoryNames[indexPath.row]
-		delegate?.didCellPressed(category: category)
-
-		navigationController?.popViewController(animated: true)
+        presenter.choose(category: category)
 	}
 }
