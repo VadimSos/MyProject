@@ -12,6 +12,7 @@ class TabBarController: UITabBarController {
     
     var builder: BuilderProtocol?
     var router: RouterProtocol!
+    var routerTB: RouterTabBarProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class TabBarController: UITabBarController {
                                     title: "Home",
                                     image: UIImage(named: "Home_page"))
             case let viewController as CreateStoryViewController:
-                builder?.createStoryModule(viewController: viewController, router: router)
+                builder?.createStoryModule(viewController: viewController, router: routerTB)
                 generateTabBarItems(viewController: viewController,
                                     title: "Add story",
                                     image: UIImage(named: "Add_page"))

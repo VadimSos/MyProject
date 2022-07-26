@@ -13,7 +13,7 @@ protocol StoryViewProtocol: class {
 }
 
 protocol StoryPresenterProtocol {
-    init(view: StoryViewProtocol, firebaseService: FirebaseServiceProtocol, router: RouterProtocol, model: CategoryModel)
+    init(view: StoryViewProtocol, firebaseService: FirebaseServiceProtocol, router: RouterTabBarProtocol, model: CategoryModel)
     func setupStoryView()
     func goToCategoryVC()
 }
@@ -22,10 +22,10 @@ class CreateStoryPresenter: StoryPresenterProtocol {
     
     weak var view: StoryViewProtocol?
     var firebaseService: FirebaseServiceProtocol
-    var router: RouterProtocol
+    var router: RouterTabBarProtocol
     var model: CategoryModel
 
-    required init(view: StoryViewProtocol, firebaseService: FirebaseServiceProtocol, router: RouterProtocol, model: CategoryModel) {
+    required init(view: StoryViewProtocol, firebaseService: FirebaseServiceProtocol, router: RouterTabBarProtocol, model: CategoryModel) {
         self.view = view
         self.firebaseService = firebaseService
         self.router = router

@@ -18,16 +18,24 @@ protocol RouterProtocol: RouterMain {
     func goToLoginVC()
     func goToRegisterVC()
     func goToMainVC()
-    func goToCategoryVC()
-    func returnToCreateStoryVC(with category: String)
     func goToPreviousVC()
     func popToRoot()
+}
+
+protocol RouterTabBarProtocol {
+    var tabBarController: UITabBarController? { get set }
+    var builder: BuilderProtocol? { get set }
+    var navigationController: [UINavigationController?] { get set }
+
+    func goToCategoryVC()
+    func returnToCreateStoryVC(with category: String)
+    func goToPreviousVC(with index: Int)
+    func popToRoot(with index: Int)
 }
 
 class Router: RouterProtocol {
     var navigationController: UINavigationController?
     var builder: BuilderProtocol?
-    var selfTabBarController: TabBarController?
 
     init(navigationController: UINavigationController, builder: BuilderProtocol) {
         self.navigationController = navigationController
@@ -56,35 +64,19 @@ class Router: RouterProtocol {
     }
 
     func goToMainVC() {
-        if let navigationController = navigationController {
+//        if let navigationController = navigationController {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main")
             if let tabBarController = mainViewController as? TabBarController {
-                selfTabBarController = tabBarController
                 tabBarController.builder = builder
                 tabBarController.router = self
-            }
-            UIApplication.shared.windows.first?.rootViewController = navigationController
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
-            navigationController.pushViewController(mainViewController, animated: true)
-        }
-    }
+                tabBarController.routerTB = RouterTabBar(tabBarController: tabBarController, builder: builder!)
 
-    func goToCategoryVC() {
-        if let navigationController = navigationController {
-            guard let categoryViewController = builder?.createCategoryTableModule(router: self) else { return }
-            navigationController.pushViewController(categoryViewController, animated: true)
-        }
-    }
-
-    func returnToCreateStoryVC(with category: String) {
-        let thirdTabBatController = (selfTabBarController?.viewControllers?.count ?? 4) - 2
-        if let navVC = selfTabBarController?.viewControllers?[thirdTabBatController] as? UINavigationController {
-            if let createStoryVC = navVC.viewControllers.first as? CreateStoryViewController {
-                createStoryVC.setupStoryView(with: category)
-                goToPreviousVC()
+                UIApplication.shared.windows.first?.rootViewController = mainViewController
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
             }
-        }
+//            navigationController.pushViewController(mainViewController, animated: true)
+//        }
     }
 
     func goToPreviousVC() {
@@ -95,6 +87,60 @@ class Router: RouterProtocol {
 
     func popToRoot() {
         if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
+}
+
+class RouterTabBar: RouterTabBarProtocol {
+    var navigationController: [UINavigationController?]
+    var builder: BuilderProtocol?
+    var tabBarController: UITabBarController?
+
+    enum TabBarIndex: Int {
+        case mainVC = 0
+        case favoriteVC
+        case createStoryVC
+        case settingsVC
+    }
+
+    init(tabBarController: TabBarController, builder: BuilderProtocol) {
+        self.builder = builder
+        self.tabBarController = tabBarController
+
+        let mainNavigation = tabBarController.viewControllers?[TabBarIndex.mainVC.rawValue] as? UINavigationController
+        let favoriteNavigation = tabBarController.viewControllers?[TabBarIndex.favoriteVC.rawValue] as? UINavigationController
+        let createStoryNavigation = tabBarController.viewControllers?[TabBarIndex.createStoryVC.rawValue] as? UINavigationController
+        let settingsNavigation = tabBarController.viewControllers?[TabBarIndex.settingsVC.rawValue] as? UINavigationController
+
+        self.navigationController = [mainNavigation, favoriteNavigation, createStoryNavigation, settingsNavigation]
+    }
+
+    func goToCategoryVC() {
+        if navigationController.count == 4 {
+            guard let categoryViewController = builder?.createCategoryTableModule(router: self) else { return }
+            navigationController[TabBarIndex.createStoryVC.rawValue]?.pushViewController(categoryViewController, animated: true)
+        }
+    }
+
+    func returnToCreateStoryVC(with category: String) {
+        let thirdTabBatControllerIndex = TabBarIndex.createStoryVC.rawValue
+        if let navVC = tabBarController?.viewControllers?[thirdTabBatControllerIndex] as? UINavigationController {
+            if let createStoryVC = navVC.viewControllers.first as? CreateStoryViewController {
+                createStoryVC.setupStoryView(with: category)
+                goToPreviousVC(with: thirdTabBatControllerIndex)
+            }
+        }
+    }
+
+    func goToPreviousVC(with index: TabBarIndex.RawValue) {
+        if let navigationController = tabBarController?.viewControllers?[index] as? UINavigationController {
+            navigationController.popViewController(animated: true)
+        }
+    }
+
+    func popToRoot(with index: TabBarIndex.RawValue) {
+        if let navigationController = tabBarController?.viewControllers?[index] as? UINavigationController {
             navigationController.popToRootViewController(animated: true)
         }
     }

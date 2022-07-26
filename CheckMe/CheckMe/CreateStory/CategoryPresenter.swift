@@ -13,7 +13,7 @@ protocol CategoryViewProtocol: class {
 }
 
 protocol CategoryPresenterProtocol {
-    init(view: CategoryViewProtocol, model: CategoryModel, router: RouterProtocol)
+    init(view: CategoryViewProtocol, model: CategoryModel, router: RouterTabBarProtocol)
     func setupCategoryView()
     func choose(category: String)
 }
@@ -22,9 +22,9 @@ class CategoryPresenter: CategoryPresenterProtocol {
 
     weak var view: CategoryViewProtocol?
     var model: CategoryModel
-    var router: RouterProtocol
+    var router: RouterTabBarProtocol
     
-    required init(view: CategoryViewProtocol, model: CategoryModel, router: RouterProtocol) {
+    required init(view: CategoryViewProtocol, model: CategoryModel, router: RouterTabBarProtocol) {
         self.view = view
         self.model = model
         self.router = router
